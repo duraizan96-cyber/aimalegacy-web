@@ -30,41 +30,44 @@ const automationSteps = [
 function ChatDemo() {
   const [visibleCount, setVisibleCount] = useState(0)
   const [isTyping, setIsTyping] = useState(false)
+  const [cycleKey, setCycleKey] = useState(0)
   const ref = useRef(null)
   const inView = useInView(ref, { once: false, margin: '-100px' })
-  const [key, setKey] = useState(0)
 
   useEffect(() => {
     if (!inView) return
-    setVisibleCount(0)
-    setKey(k => k + 1)
 
-    const timeouts: ReturnType<typeof setTimeout>[] = []
+    let timeouts: ReturnType<typeof setTimeout>[] = []
 
-    conversation.forEach((msg, i) => {
-      // Show typing indicator before bot messages
-      if (msg.from === 'bot') {
-        timeouts.push(setTimeout(() => setIsTyping(true), msg.delay - 600))
-        timeouts.push(setTimeout(() => setIsTyping(false), msg.delay))
-      }
-      timeouts.push(setTimeout(() => setVisibleCount(i + 1), msg.delay))
-    })
+    const runCycle = () => {
+      // Clear previous timeouts
+      timeouts.forEach(clearTimeout)
+      timeouts = []
 
-    // Loop: restart after last message
-    timeouts.push(setTimeout(() => {
+      // Reset UI
       setVisibleCount(0)
-    }, 10000))
+      setIsTyping(false)
+      setCycleKey((k) => k + 1)
 
-    return () => timeouts.forEach(clearTimeout)
-  }, [inView, key])
-
-  // Restart loop
-  useEffect(() => {
-    if (visibleCount === 0 && inView) {
-      const t = setTimeout(() => setKey(k => k + 1), 500)
-      return () => clearTimeout(t)
+      // Schedule messages
+      conversation.forEach((msg, i) => {
+        if (msg.from === 'bot') {
+          timeouts.push(setTimeout(() => setIsTyping(true), msg.delay - 600))
+          timeouts.push(setTimeout(() => setIsTyping(false), msg.delay))
+        }
+        timeouts.push(setTimeout(() => setVisibleCount(i + 1), msg.delay))
+      })
     }
-  }, [visibleCount, inView])
+
+    runCycle()
+    // Total conversation takes ~8s, pause 2s, repeat
+    const interval = setInterval(runCycle, 10000)
+
+    return () => {
+      clearInterval(interval)
+      timeouts.forEach(clearTimeout)
+    }
+  }, [inView])
 
   return (
     <div ref={ref} className="relative rounded-2xl bg-black-card border border-white/[0.08] overflow-hidden h-full">
@@ -90,7 +93,7 @@ function ChatDemo() {
         <AnimatePresence mode="popLayout">
           {conversation.slice(0, visibleCount).map((msg, i) => (
             <motion.div
-              key={`${key}-${i}`}
+              key={`${cycleKey}-${i}`}
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
