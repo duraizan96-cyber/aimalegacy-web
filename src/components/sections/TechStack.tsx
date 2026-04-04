@@ -12,42 +12,47 @@ interface ResultMetric {
   label: string
   sublabel: string
   color: string
+  bgColor: string
 }
 
 const metrics: ResultMetric[] = [
   {
-    icon: <TrendingDown className="h-5 w-5" />,
+    icon: <TrendingDown className="h-6 w-6" />,
     value: 40,
     suffix: '%',
     label: 'Menos costes operativos',
     sublabel: 'en tareas repetitivas',
     color: 'text-red-400',
+    bgColor: 'from-red-500/10 to-red-500/[0.02]',
   },
   {
-    icon: <Clock className="h-5 w-5" />,
+    icon: <Clock className="h-6 w-6" />,
     value: 10,
     suffix: 'h/sem',
     prefix: '+',
     label: 'Tiempo recuperado',
     sublabel: 'de media por negocio',
     color: 'text-cyan',
+    bgColor: 'from-cyan/10 to-cyan/[0.02]',
   },
   {
-    icon: <TrendingUp className="h-5 w-5" />,
+    icon: <TrendingUp className="h-6 w-6" />,
     value: 60,
     suffix: '%',
     prefix: '+',
     label: 'Más eficiencia',
     sublabel: 'en procesos del día a día',
     color: 'text-accent',
+    bgColor: 'from-accent/10 to-accent/[0.02]',
   },
   {
-    icon: <ShieldCheck className="h-5 w-5" />,
+    icon: <ShieldCheck className="h-6 w-6" />,
     value: 24,
     suffix: '/7',
     label: 'Siempre activo',
     sublabel: 'sin intervención manual',
     color: 'text-green-400',
+    bgColor: 'from-green-400/10 to-green-400/[0.02]',
   },
 ]
 
@@ -55,14 +60,14 @@ export function TechStack() {
   return (
     <section className="relative py-20 lg:py-24 overflow-hidden">
       {/* Subtle top line */}
-      <div className="line-glow mx-auto max-w-xl mb-12" />
+      <div className="h-px mx-auto max-w-xl bg-gradient-to-r from-transparent via-accent/30 to-transparent mb-12" />
 
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <ScrollReveal className="text-center mb-12">
-          <span className="text-[11px] font-semibold tracking-[0.2em] text-white/30 uppercase">
+          <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
             Resultados reales
           </span>
-          <h3 className="mt-2 text-lg sm:text-xl font-semibold text-white/60">
+          <h3 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
             Lo que consiguen los negocios{' '}
             <span className="text-gradient-accent-static">que trabajan con nosotros</span>
           </h3>
@@ -72,13 +77,16 @@ export function TechStack() {
           {metrics.map((m, i) => (
             <ScrollReveal key={m.label} delay={i * 0.1}>
               <motion.div
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 text-center hover:border-accent/20 hover:bg-accent/[0.03] transition-all duration-300"
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className={`group relative rounded-2xl border border-white/[0.08] bg-gradient-to-b ${m.bgColor} p-6 text-center hover:border-accent/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)] overflow-hidden`}
               >
-                <div className={`inline-flex mb-4 ${m.color} opacity-60 group-hover:opacity-100 transition-opacity`}>
+                {/* Subtle top line per card */}
+                <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                <div className={`inline-flex mb-4 ${m.color} opacity-70 group-hover:opacity-100 transition-opacity`}>
                   {m.icon}
                 </div>
-                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
+                <div className="text-3xl lg:text-4xl font-bold text-white mb-1 font-[family-name:var(--font-display)]">
                   <AnimatedCounter
                     target={m.value}
                     prefix={m.prefix}
@@ -99,7 +107,7 @@ export function TechStack() {
       </div>
 
       {/* Bottom line */}
-      <div className="line-glow mx-auto max-w-xl mt-12" />
+      <div className="h-px mx-auto max-w-xl mt-12 bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   )
 }

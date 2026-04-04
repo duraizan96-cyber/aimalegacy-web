@@ -32,14 +32,27 @@ function ServiceCard({
     <ScrollReveal delay={delay}>
       <SpotlightCard className={`h-full ${featured ? 'md:col-span-2 lg:row-span-2' : ''}`}>
         {/* Card body */}
-        <div className="relative rounded-2xl bg-black-card border border-white/[0.06] p-7 lg:p-8 h-full flex flex-col group-hover:border-accent/15 transition-colors duration-500">
+        <div className={`relative rounded-2xl border p-7 lg:p-8 h-full flex flex-col transition-all duration-500 overflow-hidden ${
+          featured
+            ? 'bg-gradient-to-br from-accent/[0.06] to-black-card border-accent/[0.15] shadow-[0_0_40px_rgba(6,182,212,0.06)] group-hover:border-accent/25 group-hover:shadow-[0_0_60px_rgba(6,182,212,0.1)]'
+            : 'bg-black-card border-white/[0.08] group-hover:border-accent/15'
+        }`}>
+          {/* Top accent line on featured */}
+          {featured && (
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent/60 via-accent-light/80 to-accent/60" />
+          )}
+
           {/* Inset glow */}
-          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.05)]" />
+          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.06)]" />
 
           <div className="relative z-10 flex flex-col h-full">
             {/* Header */}
             <div className="flex items-start justify-between mb-5">
-              <div className="inline-flex items-center justify-center rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.12)] transition-all duration-300">
+              <div className={`inline-flex items-center justify-center rounded-2xl p-3.5 text-accent transition-all duration-300 ${
+                featured
+                  ? 'bg-accent/15 shadow-[0_0_20px_rgba(6,182,212,0.15)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.25)]'
+                  : 'bg-accent/10 group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.12)]'
+              }`}>
                 {icon}
               </div>
               <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
@@ -56,10 +69,10 @@ function ServiceCard({
             </p>
 
             {/* Features */}
-            <ul className="space-y-2.5 pt-5 border-t border-white/[0.05]">
+            <ul className="space-y-2.5 pt-5 border-t border-white/[0.06]">
               {features.map((f) => (
-                <li key={f} className="flex items-center gap-2.5 text-sm text-white/50 group-hover:text-white/60 transition-colors">
-                  <div className="h-1.5 w-1.5 rounded-full bg-accent/60 flex-shrink-0" />
+                <li key={f} className="flex items-center gap-2.5 text-sm text-white/50 group-hover:text-white/65 transition-colors">
+                  <div className="h-1.5 w-1.5 rounded-full bg-accent/70 flex-shrink-0 shadow-[0_0_6px_rgba(6,182,212,0.4)]" />
                   {f}
                 </li>
               ))}
@@ -134,6 +147,9 @@ const services = [
 export function Services() {
   return (
     <section id="servicios" className="relative py-24 lg:py-32 mesh-gradient-4">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent" />
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">

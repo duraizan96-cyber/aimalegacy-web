@@ -1,6 +1,6 @@
 import { useEffect, useState, lazy, Suspense, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { GlowButton } from '../ui/GlowButton'
 
 const ParticleField = lazy(() =>
@@ -42,12 +42,12 @@ function AnimatedStat({ value, label, sub }: { value: string; label: string; sub
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="flex flex-col items-center py-6 px-4"
+      className="flex flex-col items-center py-7 px-4"
     >
-      <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static">
+      <span className="text-3xl sm:text-4xl font-bold text-gradient-accent-static font-[family-name:var(--font-display)]">
         {value}
       </span>
-      <span className="mt-1 text-xs font-medium text-white/60 tracking-wider uppercase">
+      <span className="mt-1.5 text-xs font-medium text-white/60 tracking-wider uppercase">
         {label}
       </span>
       <span className="text-[10px] text-white/30 mt-0.5 hidden sm:block">
@@ -100,28 +100,13 @@ export function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: contentY, opacity }}
-        className="relative z-10 mx-auto max-w-5xl px-6 text-center"
+        className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-20"
       >
         <motion.div variants={stagger} initial="hidden" animate="visible">
-          {/* Badge */}
-          <motion.div variants={fadeUp} className="mb-8">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/[0.06] px-5 py-2.5 backdrop-blur-md">
-              <div className="relative">
-                <Sparkles className="h-3.5 w-3.5 text-accent" />
-                <div className="absolute inset-0 animate-ping">
-                  <Sparkles className="h-3.5 w-3.5 text-accent opacity-40" />
-                </div>
-              </div>
-              <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/90 uppercase">
-                IA para negocios locales
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Headline */}
+          {/* Headline — no badge, clean and big */}
           <motion.h1
             variants={fadeUp}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight font-[family-name:var(--font-display)]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-extrabold leading-[0.92] tracking-tight font-[family-name:var(--font-display)]"
           >
             <span className="text-white">Tu negocio</span>
             <br />
@@ -143,13 +128,18 @@ export function Hero() {
             <span className="text-white">con IA</span>
           </motion.h1>
 
+          {/* Accent line under headline */}
+          <motion.div variants={fadeUp} className="flex justify-center mt-6">
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(6,182,212,0.5)]" />
+          </motion.div>
+
           {/* Subtitle */}
           <motion.p
             variants={fadeUp}
-            className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white-dim leading-relaxed"
+            className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
           >
             Reduce costes, ahorra horas cada semana y haz crecer tu facturación.
-            <span className="block mt-1 text-white/50">
+            <span className="block mt-2 text-white/45">
               Sin complicaciones técnicas. Solo resultados para tu negocio.
             </span>
           </motion.p>
@@ -160,7 +150,7 @@ export function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <GlowButton href="#contacto" variant="primary">
-              Solicitar Diagnóstico
+              Solicitar Diagnóstico Gratis
               <ArrowRight className="h-4 w-4" />
             </GlowButton>
             <GlowButton href="#servicios" variant="secondary">
@@ -171,12 +161,12 @@ export function Hero() {
           {/* Stats strip */}
           <motion.div
             variants={fadeUp}
-            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.015] backdrop-blur-sm shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.04)]"
+            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-accent/[0.12] bg-accent/[0.03] backdrop-blur-sm shadow-[0_0_40px_rgba(6,182,212,0.06),inset_0_-20px_60px_-20px_rgba(6,182,212,0.05)]"
           >
-            <div className="border-r border-white/[0.06]">
+            <div className="border-r border-accent/[0.1]">
               <AnimatedStat value="-40%" label="Costes" sub="en tareas repetitivas" />
             </div>
-            <div className="border-r border-white/[0.06]">
+            <div className="border-r border-accent/[0.1]">
               <AnimatedStat value="+10h" label="A la semana" sub="tiempo recuperado" />
             </div>
             <div>
