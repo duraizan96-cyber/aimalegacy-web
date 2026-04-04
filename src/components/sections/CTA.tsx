@@ -25,16 +25,16 @@ export function CTA() {
               <div className="absolute top-10 right-10 w-24 h-24 bg-accent/[0.06] rounded-full blur-[40px] float" />
               <div className="absolute bottom-10 left-10 w-20 h-20 bg-blue/[0.04] rounded-full blur-[30px] float-delayed" />
 
-              {/* Icon */}
-              <motion.div
+              {/* Logo */}
+              <motion.img
+                src="/logo-aima.jpg"
+                alt="AIMA Legacy"
+                className="h-16 w-16 rounded-2xl object-cover mx-auto mb-8 shadow-[0_0_40px_rgba(6,182,212,0.2)]"
                 initial={{ scale: 0, rotate: -180 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 transition={{ type: 'spring', bounce: 0.4, delay: 0.2 }}
-                className="relative mx-auto mb-8 inline-flex items-center justify-center rounded-2xl bg-accent/10 p-4 pulse-ring"
-              >
-                <Zap className="h-8 w-8 text-accent" />
-              </motion.div>
+              />
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1]">
                 ¿Quieres gastar menos{' '}
@@ -42,7 +42,7 @@ export function CTA() {
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empezamos analizando tu negocio gratis. Te decimos exactamente
+                Empezamos analizando tu negocio. Te decimos exactamente
                 dónde pierdes dinero y cómo solucionarlo.
               </p>
 

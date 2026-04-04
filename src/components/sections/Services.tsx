@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import {
   Search,
   Workflow,
@@ -9,6 +8,7 @@ import {
 } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
+import { SpotlightCard } from '../ui/SpotlightCard'
 import type { ReactNode } from 'react'
 
 interface ServiceProps {
@@ -16,7 +16,6 @@ interface ServiceProps {
   title: string
   description: string
   features: string[]
-  accentColor: string
   delay: number
   featured?: boolean
 }
@@ -26,52 +25,30 @@ function ServiceCard({
   title,
   description,
   features,
-  accentColor,
   delay,
   featured,
 }: ServiceProps) {
   return (
     <ScrollReveal delay={delay}>
-      <motion.div
-        whileHover={{ y: -6, transition: { duration: 0.25, ease: 'easeOut' } }}
-        className={`group relative h-full rounded-2xl overflow-hidden ${
-          featured ? 'md:col-span-2 lg:row-span-2' : ''
-        }`}
-      >
-        {/* Animated border */}
-        <div className="absolute inset-0 rounded-2xl gradient-border gradient-border-animated" />
-
+      <SpotlightCard className={`h-full ${featured ? 'md:col-span-2 lg:row-span-2' : ''}`}>
         {/* Card body */}
-        <div className="relative rounded-2xl bg-black-card p-7 lg:p-8 h-full flex flex-col">
-          {/* Hover accent glow */}
-          <div
-            className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-            style={{ background: accentColor }}
-          />
-
-          {/* Top line accent on hover */}
-          <div
-            className="absolute top-0 left-6 right-6 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-            style={{ background: `linear-gradient(90deg, transparent, ${accentColor}, transparent)` }}
-          />
+        <div className="relative rounded-2xl bg-black-card border border-white/[0.06] p-7 lg:p-8 h-full flex flex-col group-hover:border-accent/15 transition-colors duration-500">
+          {/* Inset glow */}
+          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.05)]" />
 
           <div className="relative z-10 flex flex-col h-full">
             {/* Header */}
             <div className="flex items-start justify-between mb-5">
-              <div className="inline-flex items-center justify-center rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent/15 group-hover:shadow-[0_0_16px_rgba(6,182,212,0.12)] transition-all duration-300">
+              <div className="inline-flex items-center justify-center rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.12)] transition-all duration-300">
                 {icon}
               </div>
-              <motion.div
-                initial={{ opacity: 0, x: -8 }}
-                whileHover={{ opacity: 1, x: 0 }}
-                className="opacity-0 group-hover:opacity-100 transition-all duration-300"
-              >
+              <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-8px] group-hover:translate-x-0">
                 <ArrowUpRight className="h-5 w-5 text-accent" />
-              </motion.div>
+              </div>
             </div>
 
             {/* Content */}
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient-accent-static transition-colors">
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
               {title}
             </h3>
             <p className="text-sm text-white/45 leading-relaxed mb-6 flex-grow">
@@ -89,7 +66,7 @@ function ServiceCard({
             </ul>
           </div>
         </div>
-      </motion.div>
+      </SpotlightCard>
     </ScrollReveal>
   )
 }
@@ -106,7 +83,6 @@ const services = [
       'Plan de acción claro y realista',
       'Todo revisado desde la seguridad',
     ],
-    accentColor: 'rgba(6, 182, 212, 0.15)',
     featured: true,
   },
   {
@@ -119,7 +95,6 @@ const services = [
       'Funciona mientras tú duermes',
       'Cero errores humanos',
     ],
-    accentColor: 'rgba(59, 130, 246, 0.12)',
   },
   {
     icon: <PenTool className="h-6 w-6" />,
@@ -131,7 +106,6 @@ const services = [
       'Contenido adaptado a tu marca',
       'Más visibilidad, más clientes',
     ],
-    accentColor: 'rgba(6, 182, 212, 0.12)',
   },
   {
     icon: <Megaphone className="h-6 w-6" />,
@@ -143,7 +117,6 @@ const services = [
       'Sin tirar dinero a ciegas',
       'Optimización continua por datos',
     ],
-    accentColor: 'rgba(6, 182, 212, 0.12)',
   },
   {
     icon: <Database className="h-6 w-6" />,
@@ -155,7 +128,6 @@ const services = [
       'Seguimiento automático de cada uno',
       'Datos claros para tomar decisiones',
     ],
-    accentColor: 'rgba(59, 130, 246, 0.12)',
   },
 ]
 

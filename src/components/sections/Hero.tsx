@@ -1,5 +1,5 @@
-import { useEffect, useState, lazy, Suspense } from 'react'
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useState, lazy, Suspense, useRef } from 'react'
+import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { GlowButton } from '../ui/GlowButton'
 
@@ -18,18 +18,43 @@ const rotatingWords = [
 const stagger = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.4 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
   },
 }
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
+  hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
   visible: {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
-    transition: { duration: 0.9, ease: [0.25, 0.4, 0.25, 1] },
+    transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] },
   },
+}
+
+function AnimatedStat({ value, label, sub }: { value: string; label: string; sub: string }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-50px' })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="flex flex-col items-center py-6 px-4"
+    >
+      <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static">
+        {value}
+      </span>
+      <span className="mt-1 text-xs font-medium text-white/60 tracking-wider uppercase">
+        {label}
+      </span>
+      <span className="text-[10px] text-white/30 mt-0.5 hidden sm:block">
+        {sub}
+      </span>
+    </motion.div>
+  )
 }
 
 export function Hero() {
@@ -48,11 +73,11 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Volumetric light layers — creates depth behind particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rotate-[-15deg] bg-gradient-to-br from-accent/[0.06] via-transparent to-transparent blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] rotate-[30deg] bg-gradient-to-tl from-blue/[0.04] via-transparent to-transparent blur-[100px]" />
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-accent/[0.03] to-transparent blur-[80px] rounded-full" />
+      {/* Volumetric light layers */}
+      <div className="absolute inset-0 pointer-events-none isolate">
+        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rotate-[-12deg] bg-gradient-to-br from-accent/[0.07] via-transparent to-transparent blur-[120px]" />
+        <div className="absolute bottom-[30%] right-[20%] w-[500px] h-[400px] rotate-[25deg] bg-gradient-to-tl from-blue/[0.05] via-transparent to-transparent blur-[100px]" />
+        <div className="absolute top-[60%] left-[15%] w-[400px] h-[400px] bg-gradient-to-r from-accent/[0.04] to-transparent blur-[80px] rounded-full" />
       </div>
 
       {/* Particle background with parallax */}
@@ -64,7 +89,7 @@ export function Hero() {
 
       {/* Morphing gradient blob */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="morphing-blob w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-accent/[0.08] via-accent/[0.03] to-blue/[0.04] blur-[80px]" />
+        <div className="morphing-blob w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-accent/[0.08] via-accent/[0.02] to-blue/[0.04] blur-[80px]" />
       </div>
 
       {/* Ambient orbs */}
@@ -78,20 +103,8 @@ export function Hero() {
         className="relative z-10 mx-auto max-w-5xl px-6 text-center"
       >
         <motion.div variants={stagger} initial="hidden" animate="visible">
-          {/* Logo mark */}
-          <motion.div variants={fadeUp} className="mb-8">
-            <motion.img
-              src="/logo-aima.jpg"
-              alt="AIMA Legacy"
-              className="h-20 w-20 sm:h-24 sm:w-24 rounded-2xl object-cover mx-auto shadow-[0_0_60px_rgba(6,182,212,0.25)]"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: 'spring', bounce: 0.35, delay: 0.2, duration: 1.2 }}
-            />
-          </motion.div>
-
           {/* Badge */}
-          <motion.div variants={fadeUp} className="mb-10">
+          <motion.div variants={fadeUp} className="mb-8">
             <div className="inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/[0.06] px-5 py-2.5 backdrop-blur-md">
               <div className="relative">
                 <Sparkles className="h-3.5 w-3.5 text-accent" />
@@ -100,7 +113,7 @@ export function Hero() {
                 </div>
               </div>
               <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/90 uppercase">
-                Inteligencia Artificial para negocios locales
+                IA para negocios locales
               </span>
             </div>
           </motion.div>
@@ -158,30 +171,17 @@ export function Hero() {
           {/* Stats strip */}
           <motion.div
             variants={fadeUp}
-            className="mt-20 grid grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/[0.06] shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.04)]"
+            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.015] backdrop-blur-sm shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.04)]"
           >
-            {[
-              { value: '-40%', label: 'Costes', sub: 'en tareas repetitivas' },
-              { value: '+10h', label: 'A la semana', sub: 'tiempo recuperado' },
-              { value: '24/7', label: 'Siempre activo', sub: 'sin intervención' },
-            ].map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`flex flex-col items-center py-6 px-4 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 ${
-                  i < 2 ? 'border-r border-white/[0.06]' : ''
-                }`}
-              >
-                <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static">
-                  {stat.value}
-                </span>
-                <span className="mt-1 text-xs font-medium text-white/60 tracking-wider uppercase">
-                  {stat.label}
-                </span>
-                <span className="text-[10px] text-white/30 mt-0.5 hidden sm:block">
-                  {stat.sub}
-                </span>
-              </div>
-            ))}
+            <div className="border-r border-white/[0.06]">
+              <AnimatedStat value="-40%" label="Costes" sub="en tareas repetitivas" />
+            </div>
+            <div className="border-r border-white/[0.06]">
+              <AnimatedStat value="+10h" label="A la semana" sub="tiempo recuperado" />
+            </div>
+            <div>
+              <AnimatedStat value="24/7" label="Siempre activo" sub="sin intervención" />
+            </div>
           </motion.div>
         </motion.div>
       </motion.div>

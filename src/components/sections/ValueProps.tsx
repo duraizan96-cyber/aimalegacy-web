@@ -1,9 +1,9 @@
-import { motion, useMotionValue, useTransform } from 'framer-motion'
 import { Clock, ShieldCheck, BarChart3 } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 import { AnimatedCounter } from '../ui/AnimatedCounter'
-import type { ReactNode, MouseEvent } from 'react'
+import { SpotlightCard } from '../ui/SpotlightCard'
+import type { ReactNode } from 'react'
 
 interface ValueCardProps {
   icon: ReactNode
@@ -14,31 +14,10 @@ interface ValueCardProps {
 }
 
 function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) {
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
-  const rotateX = useTransform(mouseY, [-150, 150], [4, -4])
-  const rotateY = useTransform(mouseX, [-150, 150], [-4, 4])
-
-  const handleMouse = (e: MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    mouseX.set(e.clientX - rect.left - rect.width / 2)
-    mouseY.set(e.clientY - rect.top - rect.height / 2)
-  }
-
-  const handleLeave = () => {
-    mouseX.set(0)
-    mouseY.set(0)
-  }
-
   return (
     <ScrollReveal delay={delay}>
-      <motion.div
-        onMouseMove={handleMouse}
-        onMouseLeave={handleLeave}
-        style={{ rotateX, rotateY, transformPerspective: 800 }}
-        className="group relative rounded-2xl h-full gradient-border"
-      >
-        <div className="relative z-10 rounded-2xl bg-black-card p-8 h-full">
+      <SpotlightCard className="h-full">
+        <div className="relative z-10 rounded-2xl bg-black-card border border-white/[0.06] p-8 h-full group-hover:border-accent/15 transition-colors duration-500">
           {/* Hover glow */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -49,7 +28,7 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient-accent-static transition-colors duration-300">
+            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
               {title}
             </h3>
 
@@ -71,7 +50,7 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
             </div>
           </div>
         </div>
-      </motion.div>
+      </SpotlightCard>
     </ScrollReveal>
   )
 }
