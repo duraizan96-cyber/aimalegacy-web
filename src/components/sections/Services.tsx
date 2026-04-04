@@ -97,13 +97,13 @@ function ServiceCard({
 const services = [
   {
     icon: <Search className="h-6 w-6" />,
-    title: 'Saber exactamente d\u00f3nde pierdes dinero',
+    title: 'Saber exactamente dónde pierdes dinero',
     description:
-      'Analizamos c\u00f3mo funciona tu negocio hoy, detectamos d\u00f3nde est\u00e1s perdiendo tiempo y dinero, y te damos un plan claro con oportunidades reales de mejora.',
+      'Analizamos cómo funciona tu negocio hoy, detectamos dónde estás perdiendo tiempo y dinero, y te damos un plan claro con oportunidades reales de mejora.',
     features: [
-      'Ves d\u00f3nde se van tus horas y tu dinero',
+      'Ves dónde se van tus horas y tu dinero',
       'Oportunidades ordenadas por impacto',
-      'Plan de acci\u00f3n claro y realista',
+      'Plan de acción claro y realista',
       'Todo revisado desde la seguridad',
     ],
     accentColor: 'rgba(6, 182, 212, 0.15)',
@@ -111,12 +111,12 @@ const services = [
   },
   {
     icon: <Workflow className="h-6 w-6" />,
-    title: 'Eliminar tareas que te roban el d\u00eda',
+    title: 'Eliminar tareas que te roban el día',
     description:
-      'Citas, emails, facturas, seguimientos... Todo lo que hoy haces a mano, funcionando solo. T\u00fa te dedicas a lo importante, el sistema trabaja 24/7.',
+      'Citas, emails, facturas, seguimientos... Todo lo que hoy haces a mano, funcionando solo. Tú te dedicas a lo importante, el sistema trabaja 24/7.',
     features: [
       'Ahorra +10 horas a la semana',
-      'Funciona mientras t\u00fa duermes',
+      'Funciona mientras tú duermes',
       'Cero errores humanos',
     ],
     accentColor: 'rgba(59, 130, 246, 0.12)',
@@ -125,11 +125,11 @@ const services = [
     icon: <PenTool className="h-6 w-6" />,
     title: 'Atraer clientes sin estar pendiente',
     description:
-      'Contenido profesional para tus redes que se genera y publica solo. Tu negocio visible todos los d\u00edas sin que t\u00fa toques nada.',
+      'Contenido profesional para tus redes que se genera y publica solo. Tu negocio visible todos los días sin que tú toques nada.',
     features: [
       'Presencia online constante',
       'Contenido adaptado a tu marca',
-      'M\u00e1s visibilidad, m\u00e1s clientes',
+      'Más visibilidad, más clientes',
     ],
     accentColor: 'rgba(6, 182, 212, 0.12)',
   },
@@ -137,11 +137,11 @@ const services = [
     icon: <Megaphone className="h-6 w-6" />,
     title: 'Que cada euro en publicidad rinda',
     description:
-      'Campa\u00f1as que sabes exactamente cu\u00e1nto te cuestan y cu\u00e1nto te generan. Cada euro invertido, controlado y optimizado.',
+      'Campañas que sabes exactamente cuánto te cuestan y cuánto te generan. Cada euro invertido, controlado y optimizado.',
     features: [
-      'ROI visible desde el d\u00eda uno',
+      'ROI visible desde el día uno',
       'Sin tirar dinero a ciegas',
-      'Optimizaci\u00f3n continua por datos',
+      'Optimización continua por datos',
     ],
     accentColor: 'rgba(6, 182, 212, 0.12)',
   },
@@ -149,10 +149,10 @@ const services = [
     icon: <Database className="h-6 w-6" />,
     title: 'No perder ni un cliente por desorden',
     description:
-      'Todos tus clientes organizados, con seguimiento autom\u00e1tico para que ninguno se te escape. Sabes qui\u00e9n te debe, qui\u00e9n vuelve y qui\u00e9n necesita atenci\u00f3n.',
+      'Todos tus clientes organizados, con seguimiento automático para que ninguno se te escape. Sabes quién te debe, quién vuelve y quién necesita atención.',
     features: [
-      'Ning\u00fan cliente se te olvida',
-      'Seguimiento autom\u00e1tico de cada uno',
+      'Ningún cliente se te olvida',
+      'Seguimiento automático de cada uno',
       'Datos claros para tomar decisiones',
     ],
     accentColor: 'rgba(59, 130, 246, 0.12)',
@@ -161,7 +161,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="relative py-24 lg:py-32">
+    <section id="servicios" className="relative py-24 lg:py-32 mesh-gradient-4">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
@@ -171,8 +171,8 @@ export function Services() {
             <span className="text-gradient-accent">soluciones reales</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            No vendemos tecnolog\u00eda. Resolvemos lo que te frena cada d\u00eda
-            para que tu negocio facture m\u00e1s con menos esfuerzo.
+            No vendemos tecnología. Resolvemos lo que te frena cada día
+            para que tu negocio facture más con menos esfuerzo.
           </p>
         </ScrollReveal>
 

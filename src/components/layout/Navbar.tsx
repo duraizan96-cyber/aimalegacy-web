@@ -13,17 +13,16 @@ const navLinks = [
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { scrollY } = useScroll()
-  const bgOpacity = useTransform(scrollY, [0, 100], [0, 1])
-  const borderOpacity = useTransform(scrollY, [0, 100], [0, 0.08])
+  const bgOpacity = useTransform(scrollY, [0, 80], [0, 0.95])
+  const blurAmount = useTransform(scrollY, [0, 80], [0, 20])
+  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.12])
 
-  // Close mobile menu on resize
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  // Lock body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -34,14 +33,15 @@ export function Navbar() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+        transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-        {/* Dynamic background */}
         <motion.div
-          className="absolute inset-0 backdrop-blur-xl"
+          className="absolute inset-0"
           style={{
             backgroundColor: `rgba(4, 4, 15, ${bgOpacity})`,
+            backdropFilter: `blur(${blurAmount}px)`,
+            WebkitBackdropFilter: `blur(${blurAmount}px)`,
             borderBottom: `1px solid rgba(6, 182, 212, ${borderOpacity})`,
           }}
         />
@@ -51,11 +51,12 @@ export function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group relative z-10">
               <div className="relative">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-light shadow-[0_0_20px_rgba(6,182,212,0.25)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.45)] transition-shadow duration-300">
-                  <span className="text-lg font-extrabold text-black">A</span>
-                </div>
-                {/* Pulse ring on logo */}
-                <div className="absolute inset-0 rounded-xl border border-accent/30 animate-ping opacity-0 group-hover:opacity-30" />
+                <img
+                  src="/logo-aima.jpg"
+                  alt="AIMA Legacy"
+                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.45)] transition-all duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 rounded-xl border border-accent/20 group-hover:border-accent/40 transition-colors" />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">
@@ -119,6 +120,14 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center"
           >
+            {/* Logo in mobile menu */}
+            <motion.img
+              src="/logo-aima.jpg"
+              alt="AIMA Legacy"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(6,182,212,0.3)]"
+            />
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (
                 <motion.a

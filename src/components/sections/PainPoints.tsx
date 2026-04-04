@@ -72,22 +72,22 @@ const painPoints = [
   {
     pain: 'Pierdes horas contestando los mismos mensajes y gestionando citas a mano.',
     solution:
-      'Respuestas autom\u00e1ticas inteligentes y reservas online 24/7. Recuperas +10 horas/semana.',
+      'Respuestas automáticas inteligentes y reservas online 24/7. Recuperas +10 horas/semana.',
   },
   {
     pain: 'No tienes presencia online o tu contenido no conecta con tus clientes.',
     solution:
-      'Estrategia de contenido con IA: posts, Reels y copy adaptados a tu marca autom\u00e1ticamente.',
+      'Estrategia de contenido con IA: posts, Reels y copy adaptados a tu marca automáticamente.',
   },
   {
-    pain: 'Gastas en publicidad sin saber qu\u00e9 funciona ni d\u00f3nde va tu dinero.',
+    pain: 'Gastas en publicidad sin saber qué funciona ni dónde va tu dinero.',
     solution:
-      'Campa\u00f1as optimizadas con IA, m\u00e9tricas claras y cada euro controlado. ROI visible.',
+      'Campañas optimizadas con IA, métricas claras y cada euro controlado. ROI visible.',
   },
   {
-    pain: 'Quieres usar IA pero no sabes por d\u00f3nde empezar ni en qui\u00e9n confiar.',
+    pain: 'Quieres usar IA pero no sabes por dónde empezar ni en quién confiar.',
     solution:
-      'Diagn\u00f3stico profesional: entendemos tu negocio, proponemos mejoras seguras con un plan claro.',
+      'Diagnóstico profesional: entendemos tu negocio, proponemos mejoras seguras con un plan claro.',
   },
   {
     pain: 'Los errores humanos te cuestan clientes: citas olvidadas, mensajes sin responder.',
@@ -95,28 +95,28 @@ const painPoints = [
       'Sistemas con Plan A/B/C/D: si algo falla, hay alternativa activa. Nunca te quedas bloqueado.',
   },
   {
-    pain: 'Los negocios grandes tienen tecnolog\u00eda que t\u00fa no puedes permitirte.',
+    pain: 'Los negocios grandes tienen tecnología que tú no puedes permitirte.',
     solution:
-      'Misma tecnolog\u00eda IA adaptada a negocio local. Precio justo, resultados reales, sin humo.',
+      'Misma tecnología IA adaptada a negocio local. Precio justo, resultados reales, sin humo.',
   },
 ]
 
 export function PainPoints() {
   return (
-    <section id="problemas" className="relative py-24 lg:py-32">
+    <section id="problemas" className="relative py-24 lg:py-32 mesh-gradient-3">
       {/* Dot grid background */}
       <div className="absolute inset-0 dot-grid opacity-30 pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Antes y despu\u00e9s</SectionBadge>
+          <SectionBadge>Antes y después</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Tu negocio hoy{' '}
             <span className="text-gradient-accent">vs con nosotros</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Estos problemas te est\u00e1n costando dinero cada d\u00eda. Aqu\u00ed est\u00e1 la diferencia.
+            Estos problemas te están costando dinero cada día. Aquí está la diferencia.
           </p>
         </ScrollReveal>
 

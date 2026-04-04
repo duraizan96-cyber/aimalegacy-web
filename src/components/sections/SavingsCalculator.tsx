@@ -23,11 +23,11 @@ export function SavingsCalculator() {
             Calculadora de ahorro
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
-            \u00bfCu\u00e1nto dinero{' '}
-            <span className="text-gradient-accent">est\u00e1s tirando</span>?
+            ¿Cuánto dinero{' '}
+            <span className="text-gradient-accent">estás tirando</span>?
           </h2>
           <p className="mt-4 text-white-dim max-w-xl mx-auto">
-            Mueve el slider y mira cu\u00e1nto podr\u00edas ahorrar cada mes
+            Mueve el slider y mira cuánto podrías ahorrar cada mes
             eliminando las tareas que hoy haces a mano.
           </p>
         </ScrollReveal>
@@ -70,7 +70,7 @@ export function SavingsCalculator() {
               {[
                 {
                   icon: <Clock className="h-5 w-5" />,
-                  label: 'Horas al a\u00f1o',
+                  label: 'Horas al año',
                   value: yearlyHours,
                   suffix: 'h',
                   color: 'text-cyan',
@@ -121,7 +121,7 @@ export function SavingsCalculator() {
 
             {/* Bottom note */}
             <p className="mt-8 text-center text-xs text-white/30">
-              * Estimaci\u00f3n basada en un coste medio de {HOURLY_COST}\u20AC/hora.
+              * Estimación basada en un coste medio de {HOURLY_COST}\u20AC/hora.
               Los resultados reales dependen de tu negocio.
             </p>
           </div>

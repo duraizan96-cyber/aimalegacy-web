@@ -69,39 +69,39 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
 
 const faqs = [
   {
-    question: '\u00bfQu\u00e9 incluye el diagn\u00f3stico inicial?',
+    question: '¿Qué incluye el diagnóstico inicial?',
     answer:
-      'El diagn\u00f3stico es un producto cerrado de 4 fases: mapeo de procesos BPMN, detecci\u00f3n de mejoras y oportunidades, revisi\u00f3n de ciberseguridad, y un roadmap priorizado a medida. Recibes un documento profesional con todo analizado \u2014 no es una reuni\u00f3n ni una charla informal.',
+      'El diagnóstico es un producto cerrado de 4 fases: mapeo de procesos BPMN, detección de mejoras y oportunidades, revisión de ciberseguridad, y un roadmap priorizado a medida. Recibes un documento profesional con todo analizado — no es una reunión ni una charla informal.',
   },
   {
-    question: '\u00bfCu\u00e1nto tiempo tarda en verse resultados?',
+    question: '¿Cuánto tiempo tarda en verse resultados?',
     answer:
-      'El diagn\u00f3stico se entrega en 5-7 d\u00edas laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Algunos clientes ven ahorro de tiempo desde la primera semana de implementaci\u00f3n.',
+      'El diagnóstico se entrega en 5-7 días laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Algunos clientes ven ahorro de tiempo desde la primera semana de implementación.',
   },
   {
-    question: '\u00bfNecesito conocimientos t\u00e9cnicos?',
+    question: '¿Necesito conocimientos técnicos?',
     answer:
-      'No. Nosotros nos encargamos de todo lo t\u00e9cnico. T\u00fa solo necesitas contarnos c\u00f3mo funciona tu negocio y qu\u00e9 problemas tienes. El diagn\u00f3stico traduce la tecnolog\u00eda en decisiones claras que puedes entender.',
+      'No. Nosotros nos encargamos de todo lo técnico. Tú solo necesitas contarnos cómo funciona tu negocio y qué problemas tienes. El diagnóstico traduce la tecnología en decisiones claras que puedes entender.',
   },
   {
-    question: '\u00bfQu\u00e9 tipo de negocios atend\u00e9is?',
+    question: '¿Qué tipo de negocios atendéis?',
     answer:
-      'Trabajamos con negocios locales en Espa\u00f1a: cl\u00ednicas, restaurantes, peluquer\u00edas, tatuadores, tiendas, estudios de yoga, academias... Cualquier negocio que tenga procesos repetitivos y quiera optimizarlos con IA.',
+      'Trabajamos con negocios locales en España: clínicas, restaurantes, peluquerías, tatuadores, tiendas, estudios de yoga, academias... Cualquier negocio que tenga procesos repetitivos y quiera optimizarlos con IA.',
   },
   {
-    question: '\u00bfQu\u00e9 pasa si algo falla despu\u00e9s de implementar?',
+    question: '¿Qué pasa si algo falla después de implementar?',
     answer:
-      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas autom\u00e1ticas. Tu negocio nunca se queda bloqueado. Adem\u00e1s, monitorizamos todo con alertas en tiempo real.',
+      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automáticas. Tu negocio nunca se queda bloqueado. Además, monitorizamos todo con alertas en tiempo real.',
   },
   {
-    question: '\u00bfPuedo ver un ejemplo antes de contratar?',
+    question: '¿Puedo ver un ejemplo antes de contratar?',
     answer:
-      'El diagn\u00f3stico inicial es precisamente eso: nuestro primer producto donde demostramos que entendemos tu negocio. No implementamos sin diagn\u00f3stico previo \u2014 as\u00ed aseguramos que cada propuesta tiene sentido real.',
+      'El diagnóstico inicial es precisamente eso: nuestro primer producto donde demostramos que entendemos tu negocio. No implementamos sin diagnóstico previo — así aseguramos que cada propuesta tiene sentido real.',
   },
   {
-    question: '\u00bfCu\u00e1nto cuesta?',
+    question: '¿Cuánto cuesta?',
     answer:
-      'Depende del tama\u00f1o y complejidad de tu negocio. El diagn\u00f3stico tiene un precio fijo que te comunicamos en la primera conversaci\u00f3n. La implementaci\u00f3n se presupuesta una vez tenemos el roadmap aprobado. Sin sorpresas ni costes ocultos.',
+      'Depende del tamaño y complejidad de tu negocio. El diagnóstico tiene un precio fijo que te comunicamos en la primera conversación. La implementación se presupuesta una vez tenemos el roadmap aprobado. Sin sorpresas ni costes ocultos.',
   },
 ]
 
@@ -109,7 +109,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative py-24 lg:py-32">
+    <section id="faq" className="relative py-24 lg:py-32 mesh-gradient-4">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-14">

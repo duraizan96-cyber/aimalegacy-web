@@ -18,17 +18,17 @@ const rotatingWords = [
 const stagger = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.4 },
   },
 }
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
   visible: {
     opacity: 1,
     y: 0,
     filter: 'blur(0px)',
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
+    transition: { duration: 0.9, ease: [0.25, 0.4, 0.25, 1] },
   },
 }
 
@@ -48,6 +48,13 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Volumetric light layers — creates depth behind particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rotate-[-15deg] bg-gradient-to-br from-accent/[0.06] via-transparent to-transparent blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[400px] rotate-[30deg] bg-gradient-to-tl from-blue/[0.04] via-transparent to-transparent blur-[100px]" />
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-accent/[0.03] to-transparent blur-[80px] rounded-full" />
+      </div>
+
       {/* Particle background with parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
         <Suspense fallback={null}>
@@ -71,6 +78,18 @@ export function Hero() {
         className="relative z-10 mx-auto max-w-5xl px-6 text-center"
       >
         <motion.div variants={stagger} initial="hidden" animate="visible">
+          {/* Logo mark */}
+          <motion.div variants={fadeUp} className="mb-8">
+            <motion.img
+              src="/logo-aima.jpg"
+              alt="AIMA Legacy"
+              className="h-20 w-20 sm:h-24 sm:w-24 rounded-2xl object-cover mx-auto shadow-[0_0_60px_rgba(6,182,212,0.25)]"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ type: 'spring', bounce: 0.35, delay: 0.2, duration: 1.2 }}
+            />
+          </motion.div>
+
           {/* Badge */}
           <motion.div variants={fadeUp} className="mb-10">
             <div className="inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/[0.06] px-5 py-2.5 backdrop-blur-md">
@@ -139,17 +158,17 @@ export function Hero() {
           {/* Stats strip */}
           <motion.div
             variants={fadeUp}
-            className="mt-20 grid grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/[0.04]"
+            className="mt-20 grid grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/[0.06] shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.04)]"
           >
             {[
-              { value: '100%', label: 'Personalizado', sub: 'para tu negocio' },
-              { value: '4 Fases', label: 'Diagnóstico', sub: 'metodología propia' },
-              { value: '24/7', label: 'Sistemas activos', sub: 'sin intervención' },
+              { value: '-40%', label: 'Costes', sub: 'en tareas repetitivas' },
+              { value: '+10h', label: 'A la semana', sub: 'tiempo recuperado' },
+              { value: '24/7', label: 'Siempre activo', sub: 'sin intervención' },
             ].map((stat, i) => (
               <div
                 key={stat.label}
-                className={`flex flex-col items-center py-6 px-4 bg-white/[0.02] ${
-                  i < 2 ? 'border-r border-white/[0.04]' : ''
+                className={`flex flex-col items-center py-6 px-4 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300 ${
+                  i < 2 ? 'border-r border-white/[0.06]' : ''
                 }`}
               >
                 <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static">
@@ -171,7 +190,7 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
+        transition={{ delay: 2.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
@@ -187,7 +206,7 @@ export function Hero() {
       </motion.div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
     </section>
   )
 }

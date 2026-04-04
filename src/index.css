@@ -110,6 +110,7 @@ body {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(6, 182, 212, 0.1);
+  box-shadow: inset 0 -20px 60px -20px rgba(6, 182, 212, 0.03);
 }
 
 /* ============================
@@ -198,26 +199,7 @@ body {
 }
 
 /* ============================
-   MARQUEE
-   ============================ */
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 30s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ============================
-   SECTION BACKGROUNDS
+   SECTION BACKGROUNDS — varied to break black monotony
    ============================ */
 
 .section-alt {
@@ -226,15 +208,32 @@ body {
 
 .mesh-gradient-1 {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.02) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.025) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-black) 0%, var(--color-black-alt) 50%, var(--color-black) 100%);
 }
 
 .mesh-gradient-2 {
   background:
-    radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 20% 80%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+    radial-gradient(ellipse at 80% 50%, rgba(6, 182, 212, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-black-alt) 0%, var(--color-black-soft) 100%);
+}
+
+.mesh-gradient-3 {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(6, 182, 212, 0.06) 0%, transparent 40%),
+    radial-gradient(ellipse at 0% 100%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 50%, rgba(6, 182, 212, 0.03) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-black) 0%, var(--color-black-soft) 50%, var(--color-black) 100%);
+}
+
+.mesh-gradient-4 {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(6, 182, 212, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, var(--color-black-soft) 0%, var(--color-black) 100%);
 }
 
 /* ============================
@@ -305,4 +304,20 @@ body {
   z-index: 0;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
+}
+
+/* ============================
+   SECTION DIVIDERS
+   ============================ */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.15) 20%,
+    rgba(6, 182, 212, 0.3) 50%,
+    rgba(6, 182, 212, 0.15) 80%,
+    transparent 100%
+  );
 }

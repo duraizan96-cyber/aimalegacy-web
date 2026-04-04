@@ -15,26 +15,26 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Mar\u00eda Garc\u00eda',
+    name: 'María García',
     role: 'Propietaria',
-    business: 'Cl\u00ednica Dental Sonrisa',
-    text: 'Antes perd\u00edamos 2 horas al d\u00eda gestionando citas por tel\u00e9fono. Ahora los pacientes reservan solos y reciben recordatorios autom\u00e1ticos. Hemos reducido las faltas un 40%.',
+    business: 'Clínica Dental Sonrisa',
+    text: 'Antes perdíamos 2 horas al día gestionando citas por teléfono. Ahora los pacientes reservan solos y reciben recordatorios automáticos. Hemos reducido las faltas un 40%.',
     rating: 5,
-    result: '-2h/d\u00eda en gesti\u00f3n',
+    result: '-2h/día en gestión',
   },
   {
     name: 'Carlos Ruiz',
     role: 'Chef & Fundador',
     business: 'Restaurante La Brasa',
-    text: 'No ten\u00eda ni redes sociales. AIMA Legacy nos mont\u00f3 la estrategia de contenido con IA y ahora publicamos Reels cada d\u00eda sin que yo toque nada. Las reservas online han subido un 60%.',
+    text: 'No tenía ni redes sociales. AIMA Legacy nos montó la estrategia de contenido con IA y ahora publicamos Reels cada día sin que yo toque nada. Las reservas online han subido un 60%.',
     rating: 5,
     result: '+60% reservas online',
   },
   {
-    name: 'Laura Fern\u00e1ndez',
+    name: 'Laura Fernández',
     role: 'Directora',
     business: 'Studio Pilates Zen',
-    text: 'El diagn\u00f3stico fue un antes y un despu\u00e9s. Nos ense\u00f1aron exactamente d\u00f3nde perd\u00edamos dinero y tiempo. En 3 semanas ten\u00edamos todo automatizado. Incre\u00edble el nivel de profesionalidad.',
+    text: 'El diagnóstico fue un antes y un después. Nos enseñaron exactamente dónde perdíamos dinero y tiempo. En 3 semanas teníamos todo automatizado. Increíble el nivel de profesionalidad.',
     rating: 5,
     result: '3 semanas hasta ROI',
   },

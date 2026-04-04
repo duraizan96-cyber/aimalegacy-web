@@ -20,13 +20,13 @@ const steps: Step[] = [
     number: '01',
     icon: <MapPin className="h-6 w-6" />,
     title: 'Entendemos tu negocio',
-    subtitle: 'An\u00e1lisis',
+    subtitle: 'Análisis',
     description:
-      'Nos sentamos contigo y analizamos c\u00f3mo funciona tu negocio hoy: d\u00f3nde pierdes tiempo, d\u00f3nde se te escapan clientes y qu\u00e9 tareas te est\u00e1n costando dinero.',
+      'Nos sentamos contigo y analizamos cómo funciona tu negocio hoy: dónde pierdes tiempo, dónde se te escapan clientes y qué tareas te están costando dinero.',
     details: [
-      'Revisamos marketing, ventas, gesti\u00f3n y admin',
+      'Revisamos marketing, ventas, gestión y admin',
       'Identificamos tareas que te roban horas',
-      'Detectamos d\u00f3nde se pierde dinero',
+      'Detectamos dónde se pierde dinero',
       'Primero entendemos, luego proponemos',
     ],
     color: '#06b6d4',
@@ -37,12 +37,12 @@ const steps: Step[] = [
     title: 'Detectamos oportunidades',
     subtitle: 'Mejoras',
     description:
-      'Te mostramos exactamente d\u00f3nde puedes reducir costes, ahorrar tiempo y ganar m\u00e1s clientes. Solo proponemos lo que tiene impacto real en tu facturaci\u00f3n.',
+      'Te mostramos exactamente dónde puedes reducir costes, ahorrar tiempo y ganar más clientes. Solo proponemos lo que tiene impacto real en tu facturación.',
     details: [
       'Primero simplificar, luego automatizar',
       'Cada mejora tiene un impacto medible',
       'Solo lo que tiene sentido para tu negocio',
-      'Priorizamos lo que m\u00e1s dinero te ahorra',
+      'Priorizamos lo que más dinero te ahorra',
     ],
     color: '#3b82f6',
   },
@@ -52,7 +52,7 @@ const steps: Step[] = [
     title: 'Protegemos tu negocio',
     subtitle: 'Seguridad',
     description:
-      'Antes de implementar nada, nos aseguramos de que tus datos, tus clientes y tu negocio est\u00e1n protegidos. Si no es seguro, no se hace.',
+      'Antes de implementar nada, nos aseguramos de que tus datos, tus clientes y tu negocio están protegidos. Si no es seguro, no se hace.',
     details: [
       'Tus datos de clientes protegidos',
       'Sin riesgos ni dependencias peligrosas',
@@ -64,15 +64,15 @@ const steps: Step[] = [
   {
     number: '04',
     icon: <Route className="h-6 w-6" />,
-    title: 'Tu plan de acci\u00f3n claro',
+    title: 'Tu plan de acción claro',
     subtitle: 'Roadmap',
     description:
-      'Recibes un documento con todo: qu\u00e9 mejorar, en qu\u00e9 orden, cu\u00e1nto te va a ahorrar cada paso y plazos realistas. Sin sorpresas, sin letra peque\u00f1a.',
+      'Recibes un documento con todo: qué mejorar, en qué orden, cuánto te va a ahorrar cada paso y plazos realistas. Sin sorpresas, sin letra pequeña.',
     details: [
       'Cada paso con su ahorro estimado',
       'Plazos realistas y claros',
-      'Sabes exactamente qu\u00e9 esperar',
-      'Listo para empezar cuando t\u00fa digas',
+      'Sabes exactamente qué esperar',
+      'Listo para empezar cuando tú digas',
     ],
     color: '#06b6d4',
   },
@@ -88,12 +88,12 @@ export function Process() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Nuestro proceso</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            C\u00f3mo pasamos de problema{' '}
+            Cómo pasamos de problema{' '}
             <span className="text-gradient-accent">a resultado</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
             Antes de hacer nada, entendemos tu negocio a fondo.
-            As\u00ed cada mejora tiene un impacto real en tu d\u00eda a d\u00eda y en tu facturaci\u00f3n.
+            Así cada mejora tiene un impacto real en tu día a día y en tu facturación.
           </p>
         </ScrollReveal>
 

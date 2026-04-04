@@ -20,10 +20,13 @@ export default function App() {
       <main>
         <Hero />
         <TechStack />
+        <div className="section-divider mx-auto max-w-4xl" />
         <ValueProps />
         <Services />
+        <div className="section-divider mx-auto max-w-4xl" />
         <Process />
         <SavingsCalculator />
+        <div className="section-divider mx-auto max-w-4xl" />
         <PainPoints />
         <FAQ />
         <CTA />

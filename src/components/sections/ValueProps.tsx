@@ -95,24 +95,24 @@ const values = [
     icon: <BarChart3 className="h-6 w-6" />,
     title: 'Sabes Lo Que Ganas',
     description:
-      'Nada de intuiciones. Ves exactamente cu\u00e1nto tiempo ahorras, cu\u00e1ntos clientes gestionas y cu\u00e1nto dinero te est\u00e1s ahorrando cada mes. Datos reales, decisiones claras.',
+      'Nada de intuiciones. Ves exactamente cuánto tiempo ahorras, cuántos clientes gestionas y cuánto dinero te estás ahorrando cada mes. Datos reales, decisiones claras.',
     metric: { value: 40, suffix: '%', label: 'mejora media en eficiencia' },
   },
 ]
 
 export function ValueProps() {
   return (
-    <section className="relative py-24 lg:py-32">
+    <section className="relative py-24 lg:py-32 mesh-gradient-3">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Por qu\u00e9 elegirnos</SectionBadge>
+          <SectionBadge>Por qué elegirnos</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Menos esfuerzo,{' '}
-            <span className="text-gradient-accent">m\u00e1s beneficio</span>
+            <span className="text-gradient-accent">más beneficio</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Tu negocio funciona mejor, gasta menos y factura m\u00e1s. As\u00ed de simple.
+            Tu negocio funciona mejor, gasta menos y factura más. Así de simple.
           </p>
         </ScrollReveal>
 
