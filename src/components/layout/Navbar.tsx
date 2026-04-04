@@ -42,7 +42,7 @@ export function Navbar() {
           className="absolute inset-0 backdrop-blur-xl"
           style={{
             backgroundColor: `rgba(4, 4, 15, ${bgOpacity})`,
-            borderBottom: `1px solid rgba(201, 168, 76, ${borderOpacity})`,
+            borderBottom: `1px solid rgba(6, 182, 212, ${borderOpacity})`,
           }}
         />
 
@@ -51,17 +51,17 @@ export function Navbar() {
             {/* Logo */}
             <a href="#" className="flex items-center gap-3 group relative z-10">
               <div className="relative">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-gold to-gold-light shadow-[0_0_20px_rgba(201,168,76,0.25)] group-hover:shadow-[0_0_30px_rgba(201,168,76,0.45)] transition-shadow duration-300">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-light shadow-[0_0_20px_rgba(6,182,212,0.25)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.45)] transition-shadow duration-300">
                   <span className="text-lg font-extrabold text-black">A</span>
                 </div>
                 {/* Pulse ring on logo */}
-                <div className="absolute inset-0 rounded-xl border border-gold/30 animate-ping opacity-0 group-hover:opacity-30" />
+                <div className="absolute inset-0 rounded-xl border border-accent/30 animate-ping opacity-0 group-hover:opacity-30" />
               </div>
               <div className="flex flex-col">
                 <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">
                   AIMA
                 </span>
-                <span className="text-[9px] font-medium tracking-[0.35em] text-gold/60 uppercase">
+                <span className="text-[9px] font-medium tracking-[0.35em] text-accent/60 uppercase">
                   Legacy
                 </span>
               </div>
@@ -76,7 +76,7 @@ export function Navbar() {
                   className="relative px-4 py-2 text-sm text-white/50 hover:text-white transition-colors duration-200 tracking-wide group"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-4 right-4 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </a>
               ))}
             </div>
@@ -84,14 +84,14 @@ export function Navbar() {
             {/* CTA */}
             <div className="hidden md:block">
               <GlowButton href="#contacto" variant="primary">
-                Solicitar Diagnostico
+                Solicitar Diagnóstico
               </GlowButton>
             </div>
 
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden relative z-10 p-2 text-white/60 hover:text-gold transition-colors cursor-pointer"
+              className="md:hidden relative z-10 p-2 text-white/60 hover:text-accent transition-colors cursor-pointer"
             >
               <AnimatePresence mode="wait">
                 {mobileOpen ? (
@@ -129,7 +129,7 @@ export function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ delay: i * 0.08, duration: 0.3 }}
-                  className="text-2xl font-semibold text-white/60 hover:text-gold transition-colors"
+                  className="text-2xl font-semibold text-white/60 hover:text-accent transition-colors"
                 >
                   {link.label}
                 </motion.a>
@@ -145,7 +145,7 @@ export function Navbar() {
                   variant="primary"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Solicitar Diagnostico
+                  Solicitar Diagnóstico
                 </GlowButton>
               </motion.div>
             </div>

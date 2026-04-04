@@ -12,10 +12,10 @@ export function SectionBadge({ children, icon }: SectionBadgeProps) {
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/[0.06] px-4 py-1.5 backdrop-blur-sm"
+      className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.06] px-4 py-1.5 backdrop-blur-sm"
     >
-      {icon && <span className="text-gold">{icon}</span>}
-      <span className="text-[11px] font-semibold tracking-[0.2em] text-gold uppercase">
+      {icon && <span className="text-accent">{icon}</span>}
+      <span className="text-[11px] font-semibold tracking-[0.2em] text-accent uppercase">
         {children}
       </span>
     </motion.div>

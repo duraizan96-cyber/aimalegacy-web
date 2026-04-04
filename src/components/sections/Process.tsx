@@ -22,41 +22,41 @@ const steps: Step[] = [
     title: 'Mapeo de Procesos',
     subtitle: 'BPMN',
     description:
-      'Analizamos cada area de tu negocio: marketing, ventas, delivery y admin. Dibujamos tus procesos reales y detectamos donde hay caos y friccion.',
+      'Analizamos cada \u00e1rea de tu negocio: marketing, ventas, delivery y admin. Dibujamos tus procesos reales y detectamos d\u00f3nde hay caos y fricci\u00f3n.',
     details: [
-      'Analisis de las 4 areas clave',
+      'An\u00e1lisis de las 4 \u00e1reas clave',
       'Diagrama BPMN profesional',
-      'Identificacion de pasos innecesarios',
-      'Sin hablar de IA todavia — primero entender',
+      'Identificaci\u00f3n de pasos innecesarios',
+      'Sin hablar de IA todav\u00eda \u2014 primero entender',
     ],
-    color: '#c9a84c',
+    color: '#06b6d4',
   },
   {
     number: '02',
     icon: <Lightbulb className="h-6 w-6" />,
     title: 'Mejoras y Oportunidades',
-    subtitle: 'Optimizacion',
+    subtitle: 'Optimizaci\u00f3n',
     description:
-      'Primero optimizamos procesos ineficientes. Luego detectamos donde la automatizacion e IA tienen sentido real — no por moda, por resultados.',
+      'Primero optimizamos procesos ineficientes. Luego detectamos d\u00f3nde la automatizaci\u00f3n e IA tienen sentido real \u2014 no por moda, por resultados.',
     details: [
       'Optimizar antes de automatizar',
-      'Deteccion de cuellos de botella',
+      'Detecci\u00f3n de cuellos de botella',
       'Oportunidades reales de IA',
-      'Priorizacion por impacto vs esfuerzo',
+      'Priorizaci\u00f3n por impacto vs esfuerzo',
     ],
-    color: '#2563eb',
+    color: '#3b82f6',
   },
   {
     number: '03',
     icon: <Shield className="h-6 w-6" />,
     title: 'Ciberseguridad',
-    subtitle: 'Revision',
+    subtitle: 'Revisi\u00f3n',
     description:
-      'Cada oportunidad se revisa desde accesos, datos, dependencias y riesgos. Si no es seguro, no se propone. Tu negocio protegido desde el dia uno.',
+      'Cada oportunidad se revisa desde accesos, datos, dependencias y riesgos. Si no es seguro, no se propone. Tu negocio protegido desde el d\u00eda uno.',
     details: [
-      'Revision de accesos y permisos',
-      'Proteccion de datos sensibles',
-      'Analisis de dependencias',
+      'Revisi\u00f3n de accesos y permisos',
+      'Protecci\u00f3n de datos sensibles',
+      'An\u00e1lisis de dependencias',
       'Si no es seguro, no se implementa',
     ],
     color: '#06b6d4',
@@ -65,16 +65,16 @@ const steps: Step[] = [
     number: '04',
     icon: <Route className="h-6 w-6" />,
     title: 'Roadmap a Medida',
-    subtitle: 'Plan de Accion',
+    subtitle: 'Plan de Acci\u00f3n',
     description:
-      'Ordenamos todas las oportunidades, priorizamos por impacto vs riesgo, y te explicamos el porque de cada fase. Un plan claro y accionable.',
+      'Ordenamos todas las oportunidades, priorizamos por impacto vs riesgo, y te explicamos el porqu\u00e9 de cada fase. Un plan claro y accionable.',
     details: [
       'Oportunidades ordenadas por prioridad',
       'Fases claras con plazos realistas',
-      'Explicacion del porque de cada paso',
+      'Explicaci\u00f3n del porqu\u00e9 de cada paso',
       'Listo para implementar',
     ],
-    color: '#c9a84c',
+    color: '#06b6d4',
   },
 ]
 
@@ -88,12 +88,12 @@ export function Process() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Nuestro proceso</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Diagnostico en{' '}
-            <span className="text-gradient-gold">4 fases</span>
+            Diagn\u00f3stico en{' '}
+            <span className="text-gradient-accent">4 fases</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
             Un producto cerrado que te da claridad total. Analizamos, optimizamos,
-            aseguramos y planificamos — antes de tocar nada.
+            aseguramos y planificamos \u2014 antes de tocar nada.
           </p>
         </ScrollReveal>
 
@@ -107,7 +107,7 @@ export function Process() {
                   onClick={() => setActiveStep(i)}
                   className={`group w-full text-left rounded-xl p-5 transition-all duration-300 cursor-pointer border relative overflow-hidden ${
                     activeStep === i
-                      ? 'glass-strong border-gold/20 shadow-[0_0_30px_rgba(201,168,76,0.06)]'
+                      ? 'glass-strong border-accent/20 shadow-[0_0_30px_rgba(6,182,212,0.06)]'
                       : 'border-transparent hover:bg-white/[0.02] hover:border-white/[0.05]'
                   }`}
                 >
@@ -115,7 +115,7 @@ export function Process() {
                   {activeStep === i && (
                     <motion.div
                       layoutId="activeStep"
-                      className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-gold"
+                      className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-accent"
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -123,7 +123,7 @@ export function Process() {
                   <div className="flex items-center gap-4 pl-2">
                     <span
                       className={`text-xs font-mono font-bold tracking-wider transition-colors ${
-                        activeStep === i ? 'text-gold' : 'text-white/20'
+                        activeStep === i ? 'text-accent' : 'text-white/20'
                       }`}
                     >
                       {step.number}
@@ -140,7 +140,7 @@ export function Process() {
                         <span
                           className={`text-[9px] uppercase tracking-widest font-medium px-2 py-0.5 rounded-full transition-colors ${
                             activeStep === i
-                              ? 'bg-gold/10 text-gold/80'
+                              ? 'bg-accent/10 text-accent/80'
                               : 'bg-white/5 text-white/20'
                           }`}
                         >
@@ -151,7 +151,7 @@ export function Process() {
                     <ChevronRight
                       className={`h-4 w-4 transition-all duration-300 ${
                         activeStep === i
-                          ? 'text-gold translate-x-0 opacity-100'
+                          ? 'text-accent translate-x-0 opacity-100'
                           : 'text-white/10 -translate-x-2 opacity-0'
                       }`}
                     />
@@ -169,7 +169,7 @@ export function Process() {
                   onClick={() => setActiveStep(i)}
                 >
                   <motion.div
-                    className="h-full rounded-full bg-gold"
+                    className="h-full rounded-full bg-accent"
                     initial={{ width: 0 }}
                     animate={{ width: i <= activeStep ? '100%' : '0%' }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -189,7 +189,7 @@ export function Process() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.35, ease: [0.25, 0.4, 0.25, 1] }}
-                  className="glass-strong rounded-2xl p-8 lg:p-10 border border-gold/[0.08]"
+                  className="glass-strong rounded-2xl p-8 lg:p-10 border border-accent/[0.08]"
                 >
                   {/* Icon + Title */}
                   <div className="flex items-center gap-4 mb-6">
@@ -203,7 +203,7 @@ export function Process() {
                       <h3 className="text-2xl font-bold text-white">
                         {steps[activeStep].title}
                       </h3>
-                      <span className="text-xs uppercase tracking-widest text-gold/50 font-medium">
+                      <span className="text-xs uppercase tracking-widest text-accent/50 font-medium">
                         Fase {steps[activeStep].number}
                       </span>
                     </div>
@@ -220,7 +220,7 @@ export function Process() {
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.08 }}
-                        className="flex items-start gap-3 rounded-xl bg-white/[0.025] border border-white/[0.04] p-4 hover:border-gold/10 transition-colors"
+                        className="flex items-start gap-3 rounded-xl bg-white/[0.025] border border-white/[0.04] p-4 hover:border-accent/10 transition-colors"
                       >
                         <div
                           className="mt-1.5 h-2 w-2 rounded-full flex-shrink-0"

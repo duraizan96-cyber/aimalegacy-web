@@ -23,11 +23,11 @@ export function SavingsCalculator() {
             Calculadora de ahorro
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
-            Cuanto tiempo{' '}
-            <span className="text-gradient-gold">estas perdiendo</span>?
+            \u00bfCu\u00e1nto tiempo{' '}
+            <span className="text-gradient-accent">est\u00e1s perdiendo</span>?
           </h2>
           <p className="mt-4 text-white-dim max-w-xl mx-auto">
-            Mueve el slider para ver cuanto ahorrarias automatizando las tareas
+            Mueve el slider para ver cu\u00e1nto ahorrar\u00edas automatizando las tareas
             repetitivas de tu negocio.
           </p>
         </ScrollReveal>
@@ -40,7 +40,7 @@ export function SavingsCalculator() {
                 <span className="text-sm text-white/60">
                   Horas/semana en tareas manuales
                 </span>
-                <span className="text-2xl font-bold text-gradient-gold-static">
+                <span className="text-2xl font-bold text-gradient-accent-static">
                   {hoursPerWeek}h
                 </span>
               </div>
@@ -52,10 +52,10 @@ export function SavingsCalculator() {
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(Number(e.target.value))}
                 className="w-full h-2 rounded-full appearance-none cursor-pointer bg-white/10
-                  [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gold [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(201,168,76,0.5)] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-gold-light
-                  [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gold [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-gold-light [&::-moz-range-thumb]:cursor-pointer"
+                  [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(6,182,212,0.5)] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-accent-light
+                  [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-accent [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-accent-light [&::-moz-range-thumb]:cursor-pointer"
                 style={{
-                  background: `linear-gradient(90deg, #c9a84c ${((hoursPerWeek - 2) / 38) * 100}%, rgba(255,255,255,0.1) ${((hoursPerWeek - 2) / 38) * 100}%)`,
+                  background: `linear-gradient(90deg, #06b6d4 ${((hoursPerWeek - 2) / 38) * 100}%, rgba(255,255,255,0.1) ${((hoursPerWeek - 2) / 38) * 100}%)`,
                 }}
               />
 
@@ -70,7 +70,7 @@ export function SavingsCalculator() {
               {[
                 {
                   icon: <Clock className="h-5 w-5" />,
-                  label: 'Horas al ano',
+                  label: 'Horas al a\u00f1o',
                   value: yearlyHours,
                   suffix: 'h',
                   color: 'text-cyan',
@@ -81,7 +81,7 @@ export function SavingsCalculator() {
                   value: Math.round(monthlySavings),
                   prefix: '',
                   suffix: '\u20AC',
-                  color: 'text-gold',
+                  color: 'text-accent',
                 },
                 {
                   icon: <TrendingUp className="h-5 w-5" />,
@@ -89,7 +89,7 @@ export function SavingsCalculator() {
                   value: Math.round(yearlySavings),
                   prefix: '',
                   suffix: '\u20AC',
-                  color: 'text-gold-light',
+                  color: 'text-accent-light',
                 },
                 {
                   icon: <Calculator className="h-5 w-5" />,
@@ -121,7 +121,7 @@ export function SavingsCalculator() {
 
             {/* Bottom note */}
             <p className="mt-8 text-center text-xs text-white/30">
-              * Estimacion basada en un coste medio de {HOURLY_COST}\u20AC/hora.
+              * Estimaci\u00f3n basada en un coste medio de {HOURLY_COST}\u20AC/hora.
               Los resultados reales dependen de tu negocio.
             </p>
           </div>

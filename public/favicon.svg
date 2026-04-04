@@ -3,8 +3,8 @@
   <text x="24" y="33" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="28" fill="#04040f">A</text>
   <defs>
     <linearGradient id="grad" x1="0" y1="0" x2="48" y2="48">
-      <stop offset="0%" stop-color="#c9a84c"/>
-      <stop offset="100%" stop-color="#e2c97e"/>
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
   </defs>
 </svg>

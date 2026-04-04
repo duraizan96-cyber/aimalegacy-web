@@ -57,13 +57,13 @@ export function Hero() {
 
       {/* Morphing gradient blob */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="morphing-blob w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-gold/[0.08] via-gold/[0.03] to-blue/[0.04] blur-[80px]" />
+        <div className="morphing-blob w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-accent/[0.08] via-accent/[0.03] to-blue/[0.04] blur-[80px]" />
       </div>
 
       {/* Ambient orbs */}
-      <div className="orb orb-gold w-64 h-64 -top-20 -left-20" />
+      <div className="orb orb-accent w-64 h-64 -top-20 -left-20" />
       <div className="orb orb-blue w-48 h-48 top-1/3 -right-10" style={{ animationDelay: '-4s' }} />
-      <div className="orb orb-gold w-32 h-32 bottom-20 left-1/4" style={{ animationDelay: '-2s' }} />
+      <div className="orb orb-accent w-32 h-32 bottom-20 left-1/4" style={{ animationDelay: '-2s' }} />
 
       {/* Content */}
       <motion.div
@@ -73,14 +73,14 @@ export function Hero() {
         <motion.div variants={stagger} initial="hidden" animate="visible">
           {/* Badge */}
           <motion.div variants={fadeUp} className="mb-10">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-gold/20 bg-gold/[0.06] px-5 py-2.5 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-accent/20 bg-accent/[0.06] px-5 py-2.5 backdrop-blur-md">
               <div className="relative">
-                <Sparkles className="h-3.5 w-3.5 text-gold" />
+                <Sparkles className="h-3.5 w-3.5 text-accent" />
                 <div className="absolute inset-0 animate-ping">
-                  <Sparkles className="h-3.5 w-3.5 text-gold opacity-40" />
+                  <Sparkles className="h-3.5 w-3.5 text-accent opacity-40" />
                 </div>
               </div>
-              <span className="text-[11px] font-semibold tracking-[0.2em] text-gold/90 uppercase">
+              <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/90 uppercase">
                 Inteligencia Artificial para negocios locales
               </span>
             </div>
@@ -101,7 +101,7 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   exit={{ opacity: 0, y: -30, rotateX: 40 }}
                   transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-                  className="text-gradient-gold absolute inset-0"
+                  className="text-gradient-accent absolute inset-0"
                 >
                   {rotatingWords[wordIndex]}
                 </motion.span>
@@ -118,7 +118,7 @@ export function Hero() {
           >
             Diagnosticamos, automatizamos y optimizamos los procesos de tu negocio.
             <span className="block mt-1 text-white/50">
-              Menos tareas manuales. Mas tiempo para lo que importa.
+              Menos tareas manuales. Más tiempo para lo que importa.
             </span>
           </motion.p>
 
@@ -128,7 +128,7 @@ export function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <GlowButton href="#contacto" variant="primary">
-              Solicitar Diagnostico
+              Solicitar Diagnóstico
               <ArrowRight className="h-4 w-4" />
             </GlowButton>
             <GlowButton href="#servicios" variant="secondary">
@@ -143,8 +143,8 @@ export function Hero() {
           >
             {[
               { value: '100%', label: 'Personalizado', sub: 'para tu negocio' },
-              { value: '4 Fases', label: 'Diagnostico', sub: 'metodologia propia' },
-              { value: '24/7', label: 'Sistemas activos', sub: 'sin intervencion' },
+              { value: '4 Fases', label: 'Diagnóstico', sub: 'metodología propia' },
+              { value: '24/7', label: 'Sistemas activos', sub: 'sin intervención' },
             ].map((stat, i) => (
               <div
                 key={stat.label}
@@ -152,7 +152,7 @@ export function Hero() {
                   i < 2 ? 'border-r border-white/[0.04]' : ''
                 }`}
               >
-                <span className="text-2xl sm:text-3xl font-bold text-gradient-gold-static">
+                <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static">
                   {stat.value}
                 </span>
                 <span className="mt-1 text-xs font-medium text-white/60 tracking-wider uppercase">
@@ -182,7 +182,7 @@ export function Hero() {
           <span className="text-[9px] tracking-[0.3em] uppercase text-white/30 font-medium">
             Descubrir
           </span>
-          <div className="h-10 w-px bg-gradient-to-b from-gold/40 to-transparent" />
+          <div className="h-10 w-px bg-gradient-to-b from-accent/40 to-transparent" />
         </motion.div>
       </motion.div>
 

@@ -18,7 +18,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
       <div
         className={`rounded-xl border transition-all duration-300 ${
           isOpen
-            ? 'border-gold/15 bg-gold/[0.02] shadow-[0_0_30px_rgba(201,168,76,0.04)]'
+            ? 'border-accent/15 bg-accent/[0.02] shadow-[0_0_30px_rgba(6,182,212,0.04)]'
             : 'border-white/[0.05] bg-white/[0.01] hover:border-white/[0.08]'
         }`}
       >
@@ -28,7 +28,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
         >
           <span
             className={`text-[15px] font-medium pr-6 transition-colors duration-200 ${
-              isOpen ? 'text-gold' : 'text-white/75 group-hover:text-white'
+              isOpen ? 'text-accent' : 'text-white/75 group-hover:text-white'
             }`}
           >
             {question}
@@ -37,7 +37,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
             animate={{ rotate: isOpen ? 45 : 0 }}
             transition={{ duration: 0.25 }}
             className={`flex-shrink-0 p-1 rounded-md transition-colors ${
-              isOpen ? 'text-gold bg-gold/10' : 'text-white/30'
+              isOpen ? 'text-accent bg-accent/10' : 'text-white/30'
             }`}
           >
             <Plus className="h-4 w-4" />
@@ -54,7 +54,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
               className="overflow-hidden"
             >
               <div className="px-6 pb-6">
-                <div className="h-px bg-gradient-to-r from-gold/10 via-gold/5 to-transparent mb-4" />
+                <div className="h-px bg-gradient-to-r from-accent/10 via-accent/5 to-transparent mb-4" />
                 <p className="text-sm text-white/45 leading-relaxed max-w-2xl">
                   {answer}
                 </p>
@@ -69,39 +69,39 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
 
 const faqs = [
   {
-    question: 'Que incluye el diagnostico inicial?',
+    question: '\u00bfQu\u00e9 incluye el diagn\u00f3stico inicial?',
     answer:
-      'El diagnostico es un producto cerrado de 4 fases: mapeo de procesos BPMN, deteccion de mejoras y oportunidades, revision de ciberseguridad, y un roadmap priorizado a medida. Recibes un documento profesional con todo analizado — no es una reunion ni una charla informal.',
+      'El diagn\u00f3stico es un producto cerrado de 4 fases: mapeo de procesos BPMN, detecci\u00f3n de mejoras y oportunidades, revisi\u00f3n de ciberseguridad, y un roadmap priorizado a medida. Recibes un documento profesional con todo analizado \u2014 no es una reuni\u00f3n ni una charla informal.',
   },
   {
-    question: 'Cuanto tiempo tarda en verse resultados?',
+    question: '\u00bfCu\u00e1nto tiempo tarda en verse resultados?',
     answer:
-      'El diagnostico se entrega en 5-7 dias laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Algunos clientes ven ahorro de tiempo desde la primera semana de implementacion.',
+      'El diagn\u00f3stico se entrega en 5-7 d\u00edas laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Algunos clientes ven ahorro de tiempo desde la primera semana de implementaci\u00f3n.',
   },
   {
-    question: 'Necesito conocimientos tecnicos?',
+    question: '\u00bfNecesito conocimientos t\u00e9cnicos?',
     answer:
-      'No. Nosotros nos encargamos de todo lo tecnico. Tu solo necesitas contarnos como funciona tu negocio y que problemas tienes. El diagnostico traduce la tecnologia en decisiones claras que puedes entender.',
+      'No. Nosotros nos encargamos de todo lo t\u00e9cnico. T\u00fa solo necesitas contarnos c\u00f3mo funciona tu negocio y qu\u00e9 problemas tienes. El diagn\u00f3stico traduce la tecnolog\u00eda en decisiones claras que puedes entender.',
   },
   {
-    question: 'Que tipo de negocios atendeis?',
+    question: '\u00bfQu\u00e9 tipo de negocios atend\u00e9is?',
     answer:
-      'Trabajamos con negocios locales en Espana: clinicas, restaurantes, peluquerias, tatuadores, tiendas, estudios de yoga, academias... Cualquier negocio que tenga procesos repetitivos y quiera optimizarlos con IA.',
+      'Trabajamos con negocios locales en Espa\u00f1a: cl\u00ednicas, restaurantes, peluquer\u00edas, tatuadores, tiendas, estudios de yoga, academias... Cualquier negocio que tenga procesos repetitivos y quiera optimizarlos con IA.',
   },
   {
-    question: 'Que pasa si algo falla despues de implementar?',
+    question: '\u00bfQu\u00e9 pasa si algo falla despu\u00e9s de implementar?',
     answer:
-      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automaticas. Tu negocio nunca se queda bloqueado. Ademas, monitorizamos todo con alertas en tiempo real.',
+      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas autom\u00e1ticas. Tu negocio nunca se queda bloqueado. Adem\u00e1s, monitorizamos todo con alertas en tiempo real.',
   },
   {
-    question: 'Puedo ver un ejemplo antes de contratar?',
+    question: '\u00bfPuedo ver un ejemplo antes de contratar?',
     answer:
-      'El diagnostico inicial es precisamente eso: nuestro primer producto donde demostramos que entendemos tu negocio. No implementamos sin diagnostico previo — asi aseguramos que cada propuesta tiene sentido real.',
+      'El diagn\u00f3stico inicial es precisamente eso: nuestro primer producto donde demostramos que entendemos tu negocio. No implementamos sin diagn\u00f3stico previo \u2014 as\u00ed aseguramos que cada propuesta tiene sentido real.',
   },
   {
-    question: 'Cuanto cuesta?',
+    question: '\u00bfCu\u00e1nto cuesta?',
     answer:
-      'Depende del tamano y complejidad de tu negocio. El diagnostico tiene un precio fijo que te comunicamos en la primera conversacion. La implementacion se presupuesta una vez tenemos el roadmap aprobado. Sin sorpresas ni costes ocultos.',
+      'Depende del tama\u00f1o y complejidad de tu negocio. El diagn\u00f3stico tiene un precio fijo que te comunicamos en la primera conversaci\u00f3n. La implementaci\u00f3n se presupuesta una vez tenemos el roadmap aprobado. Sin sorpresas ni costes ocultos.',
   },
 ]
 
@@ -116,7 +116,7 @@ export function FAQ() {
           <SectionBadge>FAQ</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Preguntas{' '}
-            <span className="text-gradient-gold">frecuentes</span>
+            <span className="text-gradient-accent">frecuentes</span>
           </h2>
         </ScrollReveal>
 

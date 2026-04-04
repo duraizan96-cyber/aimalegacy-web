@@ -93,10 +93,10 @@ function Particles() {
           linePosAttr[lineIdx * 6 + 4] = posArray[j * 3 + 1]
           linePosAttr[lineIdx * 6 + 5] = posArray[j * 3 + 2]
 
-          // Gold color with fade
-          const r = 0.79 * alpha
-          const g = 0.66 * alpha
-          const b = 0.30 * alpha
+          // Cyan color with fade
+          const r = 0.02 * alpha
+          const g = 0.71 * alpha
+          const b = 0.83 * alpha
           lineColAttr[lineIdx * 6] = r
           lineColAttr[lineIdx * 6 + 1] = g
           lineColAttr[lineIdx * 6 + 2] = b
@@ -136,7 +136,7 @@ function Particles() {
         </bufferGeometry>
         <pointsMaterial
           size={0.04}
-          color="#c9a84c"
+          color="#06b6d4"
           transparent
           opacity={0.8}
           sizeAttenuation

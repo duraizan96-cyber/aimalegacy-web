@@ -58,7 +58,7 @@ function ServiceCard({
           <div className="relative z-10 flex flex-col h-full">
             {/* Header */}
             <div className="flex items-start justify-between mb-5">
-              <div className="inline-flex items-center justify-center rounded-xl bg-gold/10 p-3 text-gold group-hover:bg-gold/15 group-hover:shadow-[0_0_16px_rgba(201,168,76,0.12)] transition-all duration-300">
+              <div className="inline-flex items-center justify-center rounded-xl bg-accent/10 p-3 text-accent group-hover:bg-accent/15 group-hover:shadow-[0_0_16px_rgba(6,182,212,0.12)] transition-all duration-300">
                 {icon}
               </div>
               <motion.div
@@ -66,12 +66,12 @@ function ServiceCard({
                 whileHover={{ opacity: 1, x: 0 }}
                 className="opacity-0 group-hover:opacity-100 transition-all duration-300"
               >
-                <ArrowUpRight className="h-5 w-5 text-gold" />
+                <ArrowUpRight className="h-5 w-5 text-accent" />
               </motion.div>
             </div>
 
             {/* Content */}
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient-gold-static transition-colors">
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient-accent-static transition-colors">
               {title}
             </h3>
             <p className="text-sm text-white/45 leading-relaxed mb-6 flex-grow">
@@ -82,7 +82,7 @@ function ServiceCard({
             <ul className="space-y-2.5 pt-5 border-t border-white/[0.05]">
               {features.map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm text-white/50 group-hover:text-white/60 transition-colors">
-                  <div className="h-1.5 w-1.5 rounded-full bg-gold/60 flex-shrink-0" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-accent/60 flex-shrink-0" />
                   {f}
                 </li>
               ))}
@@ -97,39 +97,39 @@ function ServiceCard({
 const services = [
   {
     icon: <Search className="h-6 w-6" />,
-    title: 'Diagnostico Inicial IA',
+    title: 'Diagn\u00f3stico Inicial IA',
     description:
-      'Analizamos tus procesos reales con metodologia BPMN. Detectamos oportunidades de automatizacion, revisamos ciberseguridad y te entregamos un roadmap a medida.',
+      'Analizamos tus procesos reales con metodolog\u00eda BPMN. Detectamos oportunidades de automatizaci\u00f3n, revisamos ciberseguridad y te entregamos un roadmap a medida.',
     features: [
       'Mapeo de procesos BPMN',
-      'Deteccion de cuellos de botella',
-      'Revision de ciberseguridad',
+      'Detecci\u00f3n de cuellos de botella',
+      'Revisi\u00f3n de ciberseguridad',
       'Roadmap priorizado por impacto',
     ],
-    accentColor: 'rgba(201, 168, 76, 0.15)',
+    accentColor: 'rgba(6, 182, 212, 0.15)',
     featured: true,
   },
   {
     icon: <Workflow className="h-6 w-6" />,
-    title: 'Automatizacion de Procesos',
+    title: 'Automatizaci\u00f3n de Procesos',
     description:
-      'Workflows inteligentes que eliminan tareas manuales. Gestion de citas, emails, facturacion, seguimiento — todo conectado y funcionando 24/7.',
+      'Workflows inteligentes que eliminan tareas manuales. Gesti\u00f3n de citas, emails, facturaci\u00f3n, seguimiento \u2014 todo conectado y funcionando 24/7.',
     features: [
       'Workflows personalizados',
-      'Integracion con tus herramientas',
-      'Funcionamiento 24/7 sin intervencion',
+      'Integraci\u00f3n con tus herramientas',
+      'Funcionamiento 24/7 sin intervenci\u00f3n',
     ],
-    accentColor: 'rgba(37, 99, 235, 0.12)',
+    accentColor: 'rgba(59, 130, 246, 0.12)',
   },
   {
     icon: <PenTool className="h-6 w-6" />,
     title: 'Contenido con IA',
     description:
-      'Estrategia de contenido y generacion automatizada para redes sociales adaptada a tu marca y tu audiencia.',
+      'Estrategia de contenido y generaci\u00f3n automatizada para redes sociales adaptada a tu marca y tu audiencia.',
     features: [
       'Estrategia de contenido',
-      'Generacion automatizada',
-      'Publicacion programada',
+      'Generaci\u00f3n automatizada',
+      'Publicaci\u00f3n programada',
     ],
     accentColor: 'rgba(6, 182, 212, 0.12)',
   },
@@ -137,25 +137,25 @@ const services = [
     icon: <Megaphone className="h-6 w-6" />,
     title: 'Publicidad Digital',
     description:
-      'Campanas en Meta, Google y TikTok optimizadas con IA. Segmentacion inteligente y creatividades que convierten.',
+      'Campa\u00f1as en Meta, Google y TikTok optimizadas con IA. Segmentaci\u00f3n inteligente y creatividades que convierten.',
     features: [
       'Meta & Google Ads',
       'Creatividades con IA',
-      'Optimizacion continua por datos',
+      'Optimizaci\u00f3n continua por datos',
     ],
-    accentColor: 'rgba(201, 168, 76, 0.12)',
+    accentColor: 'rgba(6, 182, 212, 0.12)',
   },
   {
     icon: <Database className="h-6 w-6" />,
     title: 'CRM Personalizado',
     description:
-      'Sistema de gestion de clientes a medida con pipeline visual, seguimiento automatico e informes en tiempo real.',
+      'Sistema de gesti\u00f3n de clientes a medida con pipeline visual, seguimiento autom\u00e1tico e informes en tiempo real.',
     features: [
       'Pipeline de ventas visual',
-      'Seguimiento automatico de leads',
-      'Informes y metricas en tiempo real',
+      'Seguimiento autom\u00e1tico de leads',
+      'Informes y m\u00e9tricas en tiempo real',
     ],
-    accentColor: 'rgba(37, 99, 235, 0.12)',
+    accentColor: 'rgba(59, 130, 246, 0.12)',
   },
 ]
 
@@ -168,10 +168,10 @@ export function Services() {
           <SectionBadge>Servicios</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Todo lo que tu negocio{' '}
-            <span className="text-gradient-gold">necesita</span>
+            <span className="text-gradient-accent">necesita</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Desde el diagnostico hasta la automatizacion completa.
+            Desde el diagn\u00f3stico hasta la automatizaci\u00f3n completa.
             Cada servicio resuelve problemas reales de negocios reales.
           </p>
         </ScrollReveal>

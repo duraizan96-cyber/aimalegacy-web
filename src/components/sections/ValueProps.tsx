@@ -40,16 +40,16 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
       >
         <div className="relative z-10 rounded-2xl bg-black-card p-8 h-full">
           {/* Hover glow */}
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
           <div className="relative z-10">
             {/* Icon */}
-            <div className="mb-6 inline-flex items-center justify-center rounded-xl bg-gold/10 p-3.5 text-gold group-hover:bg-gold/15 group-hover:shadow-[0_0_20px_rgba(201,168,76,0.15)] transition-all duration-300">
+            <div className="mb-6 inline-flex items-center justify-center rounded-xl bg-accent/10 p-3.5 text-accent group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300">
               {icon}
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient-gold-static transition-colors duration-300">
+            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient-accent-static transition-colors duration-300">
               {title}
             </h3>
 
@@ -63,7 +63,7 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
               <AnimatedCounter
                 target={metric.value}
                 suffix={metric.suffix}
-                className="text-3xl font-bold text-gradient-gold-static"
+                className="text-3xl font-bold text-gradient-accent-static"
               />
               <span className="block text-[10px] text-white/30 tracking-wider uppercase mt-1">
                 {metric.label}
@@ -81,7 +81,7 @@ const values = [
     icon: <Clock className="h-6 w-6" />,
     title: 'Ahorro de Tiempo Real',
     description:
-      'Automatizamos las tareas repetitivas que consumen horas de tu dia. Respuestas automaticas, gestion de citas, seguimiento de clientes — todo sin tu intervencion.',
+      'Automatizamos las tareas repetitivas que consumen horas de tu d\u00eda. Respuestas autom\u00e1ticas, gesti\u00f3n de citas, seguimiento de clientes \u2014 todo sin tu intervenci\u00f3n.',
     metric: { value: 10, suffix: 'h/sem', label: 'ahorro medio por cliente' },
   },
   {
@@ -95,7 +95,7 @@ const values = [
     icon: <BarChart3 className="h-6 w-6" />,
     title: 'Resultados Medibles',
     description:
-      'Cada automatizacion incluye metricas claras. Sabes exactamente cuanto tiempo ahorras, cuantos clientes gestionas y cual es tu retorno de inversion.',
+      'Cada automatizaci\u00f3n incluye m\u00e9tricas claras. Sabes exactamente cu\u00e1nto tiempo ahorras, cu\u00e1ntos clientes gestionas y cu\u00e1l es tu retorno de inversi\u00f3n.',
     metric: { value: 40, suffix: '%', label: 'mejora media en eficiencia' },
   },
 ]
@@ -106,13 +106,13 @@ export function ValueProps() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Por que elegirnos</SectionBadge>
+          <SectionBadge>Por qu\u00e9 elegirnos</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             IA que trabaja{' '}
-            <span className="text-gradient-gold">para ti</span>
+            <span className="text-gradient-accent">para ti</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            No solo implementamos tecnologia. Transformamos como funciona tu negocio.
+            No solo implementamos tecnolog\u00eda. Transformamos c\u00f3mo funciona tu negocio.
           </p>
         </ScrollReveal>
 

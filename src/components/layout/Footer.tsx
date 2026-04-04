@@ -4,8 +4,8 @@ const footerLinks = [
   {
     title: 'Servicios',
     links: [
-      { label: 'Diagnostico IA', href: '#servicios' },
-      { label: 'Automatizacion', href: '#servicios' },
+      { label: 'Diagnóstico IA', href: '#servicios' },
+      { label: 'Automatización', href: '#servicios' },
       { label: 'Contenido con IA', href: '#servicios' },
       { label: 'Publicidad Digital', href: '#servicios' },
     ],
@@ -22,7 +22,7 @@ const footerLinks = [
     title: 'Legal',
     links: [
       { label: 'Privacidad', href: '#' },
-      { label: 'Terminos', href: '#' },
+      { label: 'Términos', href: '#' },
       { label: 'Cookies', href: '#' },
     ],
   },
@@ -32,14 +32,14 @@ export function Footer() {
   return (
     <footer className="relative border-t border-white/[0.04] bg-black-soft">
       {/* Top glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand — wider column */}
           <ScrollReveal className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-gold to-gold-light shadow-[0_0_16px_rgba(201,168,76,0.2)]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-light shadow-[0_0_16px_rgba(6,182,212,0.2)]">
                 <span className="text-base font-extrabold text-black">A</span>
               </div>
               <div>
@@ -50,11 +50,11 @@ export function Footer() {
             </div>
             <p className="text-sm text-white/35 leading-relaxed max-w-xs mb-5">
               Automatizamos tu negocio local con inteligencia artificial.
-              Menos tareas manuales, mas tiempo para lo que importa.
+              Menos tareas manuales, más tiempo para lo que importa.
             </p>
             <a
               href="mailto:hola@aimalegacy.es"
-              className="inline-flex items-center gap-2 text-sm text-gold/70 hover:text-gold transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-accent/70 hover:text-accent transition-colors group"
             >
               <span>hola@aimalegacy.es</span>
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -72,7 +72,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/30 hover:text-gold/80 transition-colors duration-200"
+                      className="text-sm text-white/30 hover:text-accent/80 transition-colors duration-200"
                     >
                       {link.label}
                     </a>
@@ -94,7 +94,7 @@ export function Footer() {
               href="https://instagram.com/aimalegacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/20 hover:text-gold transition-colors duration-200"
+              className="text-white/20 hover:text-accent transition-colors duration-200"
               aria-label="Instagram"
             >
               <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ export function Footer() {
               href="https://linkedin.com/company/aimalegacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/20 hover:text-gold transition-colors duration-200"
+              className="text-white/20 hover:text-accent transition-colors duration-200"
               aria-label="LinkedIn"
             >
               <svg className="h-[18px] w-[18px]" fill="currentColor" viewBox="0 0 24 24">

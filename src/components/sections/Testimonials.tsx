@@ -15,26 +15,26 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: 'Maria Garcia',
+    name: 'Mar\u00eda Garc\u00eda',
     role: 'Propietaria',
-    business: 'Clinica Dental Sonrisa',
-    text: 'Antes perdiamos 2 horas al dia gestionando citas por telefono. Ahora los pacientes reservan solos y reciben recordatorios automaticos. Hemos reducido las faltas un 40%.',
+    business: 'Cl\u00ednica Dental Sonrisa',
+    text: 'Antes perd\u00edamos 2 horas al d\u00eda gestionando citas por tel\u00e9fono. Ahora los pacientes reservan solos y reciben recordatorios autom\u00e1ticos. Hemos reducido las faltas un 40%.',
     rating: 5,
-    result: '-2h/dia en gestion',
+    result: '-2h/d\u00eda en gesti\u00f3n',
   },
   {
     name: 'Carlos Ruiz',
     role: 'Chef & Fundador',
     business: 'Restaurante La Brasa',
-    text: 'No tenia ni redes sociales. AIMA Legacy nos monto la estrategia de contenido con IA y ahora publicamos Reels cada dia sin que yo toque nada. Las reservas online han subido un 60%.',
+    text: 'No ten\u00eda ni redes sociales. AIMA Legacy nos mont\u00f3 la estrategia de contenido con IA y ahora publicamos Reels cada d\u00eda sin que yo toque nada. Las reservas online han subido un 60%.',
     rating: 5,
     result: '+60% reservas online',
   },
   {
-    name: 'Laura Fernandez',
+    name: 'Laura Fern\u00e1ndez',
     role: 'Directora',
     business: 'Studio Pilates Zen',
-    text: 'El diagnostico fue un antes y un despues. Nos ensenaron exactamente donde perdiamos dinero y tiempo. En 3 semanas teniamos todo automatizado. Increible el nivel de profesionalidad.',
+    text: 'El diagn\u00f3stico fue un antes y un despu\u00e9s. Nos ense\u00f1aron exactamente d\u00f3nde perd\u00edamos dinero y tiempo. En 3 semanas ten\u00edamos todo automatizado. Incre\u00edble el nivel de profesionalidad.',
     rating: 5,
     result: '3 semanas hasta ROI',
   },
@@ -82,14 +82,14 @@ export function Testimonials() {
           <SectionBadge>Resultados reales</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
             Lo que dicen nuestros{' '}
-            <span className="text-gradient-gold">clientes</span>
+            <span className="text-gradient-accent">clientes</span>
           </h2>
         </ScrollReveal>
 
         <div className="relative">
           {/* Testimonial card */}
           <div className="glass-strong rounded-3xl p-8 lg:p-12 min-h-[320px] flex flex-col justify-center">
-            <Quote className="h-8 w-8 text-gold/20 mb-6" />
+            <Quote className="h-8 w-8 text-accent/20 mb-6" />
 
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
@@ -106,20 +106,20 @@ export function Testimonials() {
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="h-4 w-4 fill-gold text-gold"
+                      className="h-4 w-4 fill-accent text-accent"
                     />
                   ))}
                 </div>
 
                 {/* Quote */}
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed mb-8 max-w-2xl">
-                  "{t.text}"
+                  &ldquo;{t.text}&rdquo;
                 </p>
 
                 {/* Author + Result */}
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-gold to-gold-light flex items-center justify-center text-black font-bold text-lg">
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-black font-bold text-lg">
                       {t.name[0]}
                     </div>
                     <div>
@@ -129,8 +129,8 @@ export function Testimonials() {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-lg border border-gold/20 bg-gold/[0.06] px-4 py-2">
-                    <span className="text-sm font-semibold text-gold">
+                  <div className="rounded-lg border border-accent/20 bg-accent/[0.06] px-4 py-2">
+                    <span className="text-sm font-semibold text-accent">
                       {t.result}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="p-2 rounded-lg border border-white/10 text-white/40 hover:text-gold hover:border-gold/30 transition-colors cursor-pointer"
+              className="p-2 rounded-lg border border-white/10 text-white/40 hover:text-accent hover:border-accent/30 transition-colors cursor-pointer"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -155,7 +155,7 @@ export function Testimonials() {
                   onClick={() => goTo(i)}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     i === current
-                      ? 'w-8 bg-gold'
+                      ? 'w-8 bg-accent'
                       : 'w-2 bg-white/20 hover:bg-white/40'
                   }`}
                 />
@@ -164,7 +164,7 @@ export function Testimonials() {
 
             <button
               onClick={next}
-              className="p-2 rounded-lg border border-white/10 text-white/40 hover:text-gold hover:border-gold/30 transition-colors cursor-pointer"
+              className="p-2 rounded-lg border border-white/10 text-white/40 hover:text-accent hover:border-accent/30 transition-colors cursor-pointer"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
