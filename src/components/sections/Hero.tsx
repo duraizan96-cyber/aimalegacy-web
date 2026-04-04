@@ -121,7 +121,7 @@ export function Hero() {
           {/* Headline */}
           <motion.h1
             variants={fadeUp}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight font-[family-name:var(--font-display)]"
           >
             <span className="text-white">Tu negocio</span>
             <br />

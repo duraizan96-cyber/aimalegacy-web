@@ -48,7 +48,7 @@ function ServiceCard({
             </div>
 
             {/* Content */}
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300 font-[family-name:var(--font-display)]">
               {title}
             </h3>
             <p className="text-sm text-white/45 leading-relaxed mb-6 flex-grow">

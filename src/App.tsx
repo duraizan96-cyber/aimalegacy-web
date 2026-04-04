@@ -6,6 +6,7 @@ import { Services } from './components/sections/Services'
 import { Process } from './components/sections/Process'
 import { SavingsCalculator } from './components/sections/SavingsCalculator'
 import { PainPoints } from './components/sections/PainPoints'
+import { Testimonials } from './components/sections/Testimonials'
 import { FAQ } from './components/sections/FAQ'
 import { CTA } from './components/sections/CTA'
 import { Footer } from './components/layout/Footer'
@@ -28,6 +29,8 @@ export default function App() {
         <SavingsCalculator />
         <div className="section-divider mx-auto max-w-4xl" />
         <PainPoints />
+        <Testimonials />
+        <div className="section-divider mx-auto max-w-4xl" />
         <FAQ />
         <CTA />
       </main>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, Plus } from 'lucide-react'
+import { Plus, MessageCircleQuestion } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 
@@ -15,54 +15,66 @@ interface FAQItemProps {
 function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
   return (
     <ScrollReveal delay={index * 0.05}>
-      <div
-        className={`rounded-xl border transition-all duration-300 ${
+      <motion.div
+        whileHover={{ scale: isOpen ? 1 : 1.005 }}
+        transition={{ duration: 0.2 }}
+        className={`relative rounded-xl overflow-hidden transition-all duration-300 ${
           isOpen
-            ? 'border-accent/15 bg-accent/[0.02] shadow-[0_0_30px_rgba(6,182,212,0.04)]'
-            : 'border-white/[0.05] bg-white/[0.01] hover:border-white/[0.08]'
+            ? 'border-beam border-beam-slow'
+            : ''
         }`}
       >
-        <button
-          onClick={onToggle}
-          className="w-full flex items-center justify-between p-6 text-left cursor-pointer group"
+        <div
+          className={`relative rounded-xl border transition-all duration-300 ${
+            isOpen
+              ? 'border-accent/15 bg-accent/[0.02] shadow-[0_0_30px_rgba(6,182,212,0.04)]'
+              : 'border-white/[0.05] bg-white/[0.01] hover:border-white/[0.08] hover:bg-white/[0.015]'
+          }`}
         >
-          <span
-            className={`text-[15px] font-medium pr-6 transition-colors duration-200 ${
-              isOpen ? 'text-accent' : 'text-white/75 group-hover:text-white'
-            }`}
+          <button
+            onClick={onToggle}
+            className="w-full flex items-center justify-between p-6 text-left cursor-pointer group"
           >
-            {question}
-          </span>
-          <motion.div
-            animate={{ rotate: isOpen ? 45 : 0 }}
-            transition={{ duration: 0.25 }}
-            className={`flex-shrink-0 p-1 rounded-md transition-colors ${
-              isOpen ? 'text-accent bg-accent/10' : 'text-white/30'
-            }`}
-          >
-            <Plus className="h-4 w-4" />
-          </motion.div>
-        </button>
-
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-              className="overflow-hidden"
+            <span
+              className={`text-[15px] font-medium pr-6 transition-colors duration-200 font-[family-name:var(--font-display)] ${
+                isOpen ? 'text-accent' : 'text-white/75 group-hover:text-white'
+              }`}
             >
-              <div className="px-6 pb-6">
-                <div className="h-px bg-gradient-to-r from-accent/10 via-accent/5 to-transparent mb-4" />
-                <p className="text-sm text-white/45 leading-relaxed max-w-2xl">
-                  {answer}
-                </p>
-              </div>
+              {question}
+            </span>
+            <motion.div
+              animate={{ rotate: isOpen ? 45 : 0 }}
+              transition={{ duration: 0.25 }}
+              className={`flex-shrink-0 p-1.5 rounded-lg transition-all ${
+                isOpen
+                  ? 'text-accent bg-accent/10 shadow-[0_0_12px_rgba(6,182,212,0.15)]'
+                  : 'text-white/30 group-hover:text-white/50'
+              }`}
+            >
+              <Plus className="h-4 w-4" />
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+          </button>
+
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 pb-6">
+                  <div className="h-px bg-gradient-to-r from-accent/15 via-accent/5 to-transparent mb-4" />
+                  <p className="text-sm text-white/50 leading-relaxed max-w-2xl">
+                    {answer}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.div>
     </ScrollReveal>
   )
 }
@@ -110,14 +122,26 @@ export function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 lg:py-32 mesh-gradient-4">
-      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+      {/* Grid lines decoration */}
+      <div className="absolute inset-0 grid-lines opacity-30 pointer-events-none" />
+
+      {/* Floating orbs */}
+      <div className="absolute top-32 left-20 w-40 h-40 bg-accent/[0.04] rounded-full blur-[70px] float" />
+      <div className="absolute bottom-32 right-20 w-36 h-36 bg-blue/[0.03] rounded-full blur-[60px] float-delayed" />
+
+      <div className="mx-auto max-w-3xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-14">
-          <SectionBadge>FAQ</SectionBadge>
+          <SectionBadge icon={<MessageCircleQuestion className="h-3.5 w-3.5" />}>
+            FAQ
+          </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Preguntas{' '}
             <span className="text-gradient-accent">frecuentes</span>
           </h2>
+          <p className="mt-4 max-w-lg mx-auto text-white/45">
+            Todo lo que necesitas saber antes de empezar.
+          </p>
         </ScrollReveal>
 
         {/* Accordion */}
@@ -133,6 +157,21 @@ export function FAQ() {
             />
           ))}
         </div>
+
+        {/* Bottom CTA hint */}
+        <ScrollReveal delay={0.3}>
+          <div className="mt-12 text-center">
+            <p className="text-sm text-white/30">
+              ¿Tienes otra pregunta?{' '}
+              <a
+                href="mailto:izan@aimalegacy.es"
+                className="text-accent/60 hover:text-accent transition-colors underline underline-offset-4 decoration-accent/20 hover:decoration-accent/50"
+              >
+                Escríbenos directamente
+              </a>
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )

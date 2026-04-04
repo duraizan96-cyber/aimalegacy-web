@@ -28,7 +28,7 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
+            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300 font-[family-name:var(--font-display)]">
               {title}
             </h3>
 

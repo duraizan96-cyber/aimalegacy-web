@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, Lightbulb, Shield, Route, ChevronRight } from 'lucide-react'
+import { MapPin, Lightbulb, Shield, Route, ChevronRight, ArrowRight } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 import type { ReactNode } from 'react'
@@ -83,7 +83,14 @@ export function Process() {
 
   return (
     <section id="proceso" className="relative py-24 lg:py-32 mesh-gradient-1">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Decorative grid */}
+      <div className="absolute inset-0 grid-lines opacity-40 pointer-events-none" />
+
+      {/* Floating elements */}
+      <div className="absolute top-32 right-20 w-40 h-40 bg-accent/[0.04] rounded-full blur-[80px] float" />
+      <div className="absolute bottom-32 left-10 w-32 h-32 bg-blue/[0.03] rounded-full blur-[60px] float-delayed" />
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Nuestro proceso</SectionBadge>
@@ -102,9 +109,10 @@ export function Process() {
           <ScrollReveal direction="left" className="lg:col-span-5">
             <div className="flex flex-col gap-2">
               {steps.map((step, i) => (
-                <button
+                <motion.button
                   key={step.number}
                   onClick={() => setActiveStep(i)}
+                  whileHover={{ x: activeStep === i ? 0 : 4 }}
                   className={`group w-full text-left rounded-xl p-5 transition-all duration-300 cursor-pointer border relative overflow-hidden ${
                     activeStep === i
                       ? 'glass-strong border-accent/20 shadow-[0_0_30px_rgba(6,182,212,0.06)]'
@@ -115,19 +123,28 @@ export function Process() {
                   {activeStep === i && (
                     <motion.div
                       layoutId="activeStep"
-                      className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-accent"
+                      className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full"
+                      style={{ backgroundColor: step.color }}
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
 
-                  <div className="flex items-center gap-4 pl-2">
-                    <span
-                      className={`text-xs font-mono font-bold tracking-wider transition-colors ${
-                        activeStep === i ? 'text-accent' : 'text-white/20'
-                      }`}
-                    >
-                      {step.number}
-                    </span>
+                  {/* Shine effect on active */}
+                  {activeStep === i && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/[0.03] via-transparent to-transparent" />
+                  )}
+
+                  <div className="flex items-center gap-4 pl-2 relative z-10">
+                    {/* Step number with glow */}
+                    <div className="relative">
+                      <span
+                        className={`text-xs font-mono font-bold tracking-wider transition-all duration-300 ${
+                          activeStep === i ? 'text-accent drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]' : 'text-white/20'
+                        }`}
+                      >
+                        {step.number}
+                      </span>
+                    </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-3">
                         <span
@@ -138,9 +155,9 @@ export function Process() {
                           {step.title}
                         </span>
                         <span
-                          className={`text-[9px] uppercase tracking-widest font-medium px-2 py-0.5 rounded-full transition-colors ${
+                          className={`text-[9px] uppercase tracking-widest font-medium px-2 py-0.5 rounded-full transition-all ${
                             activeStep === i
-                              ? 'bg-accent/10 text-accent/80'
+                              ? 'bg-accent/10 text-accent/80 shadow-[0_0_12px_rgba(6,182,212,0.1)]'
                               : 'bg-white/5 text-white/20'
                           }`}
                         >
@@ -156,20 +173,21 @@ export function Process() {
                       }`}
                     />
                   </div>
-                </button>
+                </motion.button>
               ))}
             </div>
 
             {/* Progress bar */}
-            <div className="mt-6 flex gap-1">
-              {steps.map((_, i) => (
+            <div className="mt-6 flex gap-1.5">
+              {steps.map((step, i) => (
                 <div
                   key={i}
-                  className="h-1 flex-1 rounded-full overflow-hidden bg-white/[0.05] cursor-pointer"
+                  className="h-1.5 flex-1 rounded-full overflow-hidden bg-white/[0.05] cursor-pointer"
                   onClick={() => setActiveStep(i)}
                 >
                   <motion.div
-                    className="h-full rounded-full bg-accent"
+                    className="h-full rounded-full"
+                    style={{ backgroundColor: step.color }}
                     initial={{ width: 0 }}
                     animate={{ width: i <= activeStep ? '100%' : '0%' }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -185,50 +203,79 @@ export function Process() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -16 }}
-                  transition={{ duration: 0.35, ease: [0.25, 0.4, 0.25, 1] }}
-                  className="glass-strong rounded-2xl p-8 lg:p-10 border border-accent/[0.08]"
+                  initial={{ opacity: 0, y: 16, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -16, scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
+                  className="relative rounded-2xl overflow-hidden"
                 >
-                  {/* Icon + Title */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div
-                      className="inline-flex items-center justify-center rounded-xl p-3.5"
-                      style={{ backgroundColor: `${steps[activeStep].color}15`, color: steps[activeStep].color }}
-                    >
-                      {steps[activeStep].icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-white">
-                        {steps[activeStep].title}
-                      </h3>
-                      <span className="text-xs uppercase tracking-widest text-accent/50 font-medium">
-                        Fase {steps[activeStep].number}
-                      </span>
-                    </div>
-                  </div>
+                  {/* Border beam on active card */}
+                  <div className="absolute inset-0 rounded-2xl border-beam" />
 
-                  <p className="text-white/55 leading-relaxed mb-8">
-                    {steps[activeStep].description}
-                  </p>
+                  <div className="relative glass-strong rounded-2xl p-8 lg:p-10 border border-accent/[0.08]">
+                    {/* Floating orb inside */}
+                    <div className="absolute top-6 right-6 w-32 h-32 bg-accent/[0.04] rounded-full blur-[50px] float" />
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {steps[activeStep].details.map((detail, i) => (
+                    {/* Icon + Title */}
+                    <div className="flex items-center gap-4 mb-6 relative z-10">
                       <motion.div
-                        key={detail}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.08 }}
-                        className="flex items-start gap-3 rounded-xl bg-white/[0.025] border border-white/[0.04] p-4 hover:border-accent/10 transition-colors"
+                        initial={{ scale: 0, rotate: -90 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ type: 'spring', bounce: 0.4, delay: 0.1 }}
+                        className="inline-flex items-center justify-center rounded-xl p-3.5"
+                        style={{ backgroundColor: `${steps[activeStep].color}15`, color: steps[activeStep].color }}
                       >
-                        <div
-                          className="mt-1.5 h-2 w-2 rounded-full flex-shrink-0"
-                          style={{ backgroundColor: steps[activeStep].color }}
-                        />
-                        <span className="text-sm text-white/55">{detail}</span>
+                        {steps[activeStep].icon}
                       </motion.div>
-                    ))}
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">
+                          {steps[activeStep].title}
+                        </h3>
+                        <span className="text-xs uppercase tracking-widest text-accent/50 font-medium">
+                          Fase {steps[activeStep].number}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="text-white/55 leading-relaxed mb-8 relative z-10">
+                      {steps[activeStep].description}
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 relative z-10">
+                      {steps[activeStep].details.map((detail, i) => (
+                        <motion.div
+                          key={detail}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.08 + 0.15 }}
+                          className="group/detail flex items-start gap-3 rounded-xl bg-white/[0.025] border border-white/[0.04] p-4 hover:border-accent/15 hover:bg-accent/[0.02] transition-all duration-300"
+                        >
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: i * 0.08 + 0.2, type: 'spring', bounce: 0.5 }}
+                            className="mt-1.5 h-2 w-2 rounded-full flex-shrink-0"
+                            style={{ backgroundColor: steps[activeStep].color }}
+                          />
+                          <span className="text-sm text-white/55 group-hover/detail:text-white/70 transition-colors">
+                            {detail}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* Bottom CTA hint */}
+                    {activeStep === steps.length - 1 && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="mt-8 flex items-center gap-2 text-accent/60 text-sm"
+                      >
+                        <ArrowRight className="h-4 w-4" />
+                        <span>Solicita tu diagnóstico y empezamos</span>
+                      </motion.div>
+                    )}
                   </div>
                 </motion.div>
               </AnimatePresence>

@@ -6,7 +6,7 @@ import { GlowButton } from '../ui/GlowButton'
 const navLinks = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proceso', href: '#proceso' },
-  { label: 'Problemas', href: '#problemas' },
+  { label: 'Resultados', href: '#problemas' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -59,10 +59,10 @@ export function Navbar() {
                 <div className="absolute inset-0 rounded-xl border border-accent/20 group-hover:border-accent/40 transition-colors" />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-[0.2em] text-white uppercase">
+                <span className="text-sm font-bold tracking-[0.2em] text-white uppercase font-[family-name:var(--font-display)]">
                   AIMA
                 </span>
-                <span className="text-[9px] font-medium tracking-[0.35em] text-accent/60 uppercase">
+                <span className="text-[9px] font-medium tracking-[0.35em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
                   Legacy
                 </span>
               </div>
