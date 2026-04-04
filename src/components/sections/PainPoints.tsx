@@ -112,11 +112,11 @@ export function PainPoints() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Antes y despu\u00e9s</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            De perder tiempo a{' '}
-            <span className="text-gradient-accent">ganar clientes</span>
+            Tu negocio hoy{' '}
+            <span className="text-gradient-accent">vs con nosotros</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Problemas reales que resolvemos cada d\u00eda para negocios como el tuyo.
+            Estos problemas te est\u00e1n costando dinero cada d\u00eda. Aqu\u00ed est\u00e1 la diferencia.
           </p>
         </ScrollReveal>
 

@@ -37,15 +37,13 @@ export function CTA() {
               </motion.div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1]">
-                \u00bfListo para{' '}
-                <span className="text-gradient-accent">transformar</span>
-                <br />
-                tu negocio?
+                \u00bfQuieres gastar menos{' '}
+                <span className="text-gradient-accent">y facturar m\u00e1s</span>?
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empieza con un diagn\u00f3stico profesional. Analizamos tu negocio,
-                detectamos oportunidades reales y te damos un plan claro.
+                Empezamos analizando tu negocio gratis. Te decimos exactamente
+                d\u00f3nde pierdes dinero y c\u00f3mo solucionarlo.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -97,63 +97,63 @@ function ServiceCard({
 const services = [
   {
     icon: <Search className="h-6 w-6" />,
-    title: 'Diagn\u00f3stico Inicial IA',
+    title: 'Saber exactamente d\u00f3nde pierdes dinero',
     description:
-      'Analizamos tus procesos reales con metodolog\u00eda BPMN. Detectamos oportunidades de automatizaci\u00f3n, revisamos ciberseguridad y te entregamos un roadmap a medida.',
+      'Analizamos c\u00f3mo funciona tu negocio hoy, detectamos d\u00f3nde est\u00e1s perdiendo tiempo y dinero, y te damos un plan claro con oportunidades reales de mejora.',
     features: [
-      'Mapeo de procesos BPMN',
-      'Detecci\u00f3n de cuellos de botella',
-      'Revisi\u00f3n de ciberseguridad',
-      'Roadmap priorizado por impacto',
+      'Ves d\u00f3nde se van tus horas y tu dinero',
+      'Oportunidades ordenadas por impacto',
+      'Plan de acci\u00f3n claro y realista',
+      'Todo revisado desde la seguridad',
     ],
     accentColor: 'rgba(6, 182, 212, 0.15)',
     featured: true,
   },
   {
     icon: <Workflow className="h-6 w-6" />,
-    title: 'Automatizaci\u00f3n de Procesos',
+    title: 'Eliminar tareas que te roban el d\u00eda',
     description:
-      'Workflows inteligentes que eliminan tareas manuales. Gesti\u00f3n de citas, emails, facturaci\u00f3n, seguimiento \u2014 todo conectado y funcionando 24/7.',
+      'Citas, emails, facturas, seguimientos... Todo lo que hoy haces a mano, funcionando solo. T\u00fa te dedicas a lo importante, el sistema trabaja 24/7.',
     features: [
-      'Workflows personalizados',
-      'Integraci\u00f3n con tus herramientas',
-      'Funcionamiento 24/7 sin intervenci\u00f3n',
+      'Ahorra +10 horas a la semana',
+      'Funciona mientras t\u00fa duermes',
+      'Cero errores humanos',
     ],
     accentColor: 'rgba(59, 130, 246, 0.12)',
   },
   {
     icon: <PenTool className="h-6 w-6" />,
-    title: 'Contenido con IA',
+    title: 'Atraer clientes sin estar pendiente',
     description:
-      'Estrategia de contenido y generaci\u00f3n automatizada para redes sociales adaptada a tu marca y tu audiencia.',
+      'Contenido profesional para tus redes que se genera y publica solo. Tu negocio visible todos los d\u00edas sin que t\u00fa toques nada.',
     features: [
-      'Estrategia de contenido',
-      'Generaci\u00f3n automatizada',
-      'Publicaci\u00f3n programada',
+      'Presencia online constante',
+      'Contenido adaptado a tu marca',
+      'M\u00e1s visibilidad, m\u00e1s clientes',
     ],
     accentColor: 'rgba(6, 182, 212, 0.12)',
   },
   {
     icon: <Megaphone className="h-6 w-6" />,
-    title: 'Publicidad Digital',
+    title: 'Que cada euro en publicidad rinda',
     description:
-      'Campa\u00f1as en Meta, Google y TikTok optimizadas con IA. Segmentaci\u00f3n inteligente y creatividades que convierten.',
+      'Campa\u00f1as que sabes exactamente cu\u00e1nto te cuestan y cu\u00e1nto te generan. Cada euro invertido, controlado y optimizado.',
     features: [
-      'Meta & Google Ads',
-      'Creatividades con IA',
+      'ROI visible desde el d\u00eda uno',
+      'Sin tirar dinero a ciegas',
       'Optimizaci\u00f3n continua por datos',
     ],
     accentColor: 'rgba(6, 182, 212, 0.12)',
   },
   {
     icon: <Database className="h-6 w-6" />,
-    title: 'CRM Personalizado',
+    title: 'No perder ni un cliente por desorden',
     description:
-      'Sistema de gesti\u00f3n de clientes a medida con pipeline visual, seguimiento autom\u00e1tico e informes en tiempo real.',
+      'Todos tus clientes organizados, con seguimiento autom\u00e1tico para que ninguno se te escape. Sabes qui\u00e9n te debe, qui\u00e9n vuelve y qui\u00e9n necesita atenci\u00f3n.',
     features: [
-      'Pipeline de ventas visual',
-      'Seguimiento autom\u00e1tico de leads',
-      'Informes y m\u00e9tricas en tiempo real',
+      'Ning\u00fan cliente se te olvida',
+      'Seguimiento autom\u00e1tico de cada uno',
+      'Datos claros para tomar decisiones',
     ],
     accentColor: 'rgba(59, 130, 246, 0.12)',
   },
@@ -167,12 +167,12 @@ export function Services() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Servicios</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Todo lo que tu negocio{' '}
-            <span className="text-gradient-accent">necesita</span>
+            Problemas reales,{' '}
+            <span className="text-gradient-accent">soluciones reales</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Desde el diagn\u00f3stico hasta la automatizaci\u00f3n completa.
-            Cada servicio resuelve problemas reales de negocios reales.
+            No vendemos tecnolog\u00eda. Resolvemos lo que te frena cada d\u00eda
+            para que tu negocio facture m\u00e1s con menos esfuerzo.
           </p>
         </ScrollReveal>
 

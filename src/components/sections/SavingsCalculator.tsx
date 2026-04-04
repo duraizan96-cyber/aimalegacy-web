@@ -23,12 +23,12 @@ export function SavingsCalculator() {
             Calculadora de ahorro
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">
-            \u00bfCu\u00e1nto tiempo{' '}
-            <span className="text-gradient-accent">est\u00e1s perdiendo</span>?
+            \u00bfCu\u00e1nto dinero{' '}
+            <span className="text-gradient-accent">est\u00e1s tirando</span>?
           </h2>
           <p className="mt-4 text-white-dim max-w-xl mx-auto">
-            Mueve el slider para ver cu\u00e1nto ahorrar\u00edas automatizando las tareas
-            repetitivas de tu negocio.
+            Mueve el slider y mira cu\u00e1nto podr\u00edas ahorrar cada mes
+            eliminando las tareas que hoy haces a mano.
           </p>
         </ScrollReveal>
 

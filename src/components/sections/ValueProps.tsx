@@ -79,23 +79,23 @@ function ValueCard({ icon, title, description, metric, delay }: ValueCardProps) 
 const values = [
   {
     icon: <Clock className="h-6 w-6" />,
-    title: 'Ahorro de Tiempo Real',
+    title: 'Recupera tu Tiempo',
     description:
-      'Automatizamos las tareas repetitivas que consumen horas de tu d\u00eda. Respuestas autom\u00e1ticas, gesti\u00f3n de citas, seguimiento de clientes \u2014 todo sin tu intervenci\u00f3n.',
-    metric: { value: 10, suffix: 'h/sem', label: 'ahorro medio por cliente' },
+      'Las horas que hoy pierdes contestando mensajes, gestionando citas y haciendo tareas repetitivas vuelven a ser tuyas. Dedica ese tiempo a hacer crecer tu negocio.',
+    metric: { value: 10, suffix: 'h/sem', label: 'ahorro medio por negocio' },
   },
   {
     icon: <ShieldCheck className="h-6 w-6" />,
-    title: 'Cero Errores, Siempre Activo',
+    title: 'Tu Negocio No Para Nunca',
     description:
-      'Los sistemas de IA no olvidan, no se cansan y no cometen errores humanos. Tu negocio funciona 24/7 con la misma calidad, con planes de respaldo activos.',
-    metric: { value: 99, suffix: '%', label: 'uptime garantizado' },
+      'Mientras duermes, tu negocio sigue atendiendo clientes, enviando recordatorios y cerrando citas. Sin errores, sin olvidos, sin depender de nadie.',
+    metric: { value: 99, suffix: '%', label: 'disponibilidad garantizada' },
   },
   {
     icon: <BarChart3 className="h-6 w-6" />,
-    title: 'Resultados Medibles',
+    title: 'Sabes Lo Que Ganas',
     description:
-      'Cada automatizaci\u00f3n incluye m\u00e9tricas claras. Sabes exactamente cu\u00e1nto tiempo ahorras, cu\u00e1ntos clientes gestionas y cu\u00e1l es tu retorno de inversi\u00f3n.',
+      'Nada de intuiciones. Ves exactamente cu\u00e1nto tiempo ahorras, cu\u00e1ntos clientes gestionas y cu\u00e1nto dinero te est\u00e1s ahorrando cada mes. Datos reales, decisiones claras.',
     metric: { value: 40, suffix: '%', label: 'mejora media en eficiencia' },
   },
 ]
@@ -108,11 +108,11 @@ export function ValueProps() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Por qu\u00e9 elegirnos</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            IA que trabaja{' '}
-            <span className="text-gradient-accent">para ti</span>
+            Menos esfuerzo,{' '}
+            <span className="text-gradient-accent">m\u00e1s beneficio</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            No solo implementamos tecnolog\u00eda. Transformamos c\u00f3mo funciona tu negocio.
+            Tu negocio funciona mejor, gasta menos y factura m\u00e1s. As\u00ed de simple.
           </p>
         </ScrollReveal>
 

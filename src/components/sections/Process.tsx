@@ -19,60 +19,60 @@ const steps: Step[] = [
   {
     number: '01',
     icon: <MapPin className="h-6 w-6" />,
-    title: 'Mapeo de Procesos',
-    subtitle: 'BPMN',
+    title: 'Entendemos tu negocio',
+    subtitle: 'An\u00e1lisis',
     description:
-      'Analizamos cada \u00e1rea de tu negocio: marketing, ventas, delivery y admin. Dibujamos tus procesos reales y detectamos d\u00f3nde hay caos y fricci\u00f3n.',
+      'Nos sentamos contigo y analizamos c\u00f3mo funciona tu negocio hoy: d\u00f3nde pierdes tiempo, d\u00f3nde se te escapan clientes y qu\u00e9 tareas te est\u00e1n costando dinero.',
     details: [
-      'An\u00e1lisis de las 4 \u00e1reas clave',
-      'Diagrama BPMN profesional',
-      'Identificaci\u00f3n de pasos innecesarios',
-      'Sin hablar de IA todav\u00eda \u2014 primero entender',
+      'Revisamos marketing, ventas, gesti\u00f3n y admin',
+      'Identificamos tareas que te roban horas',
+      'Detectamos d\u00f3nde se pierde dinero',
+      'Primero entendemos, luego proponemos',
     ],
     color: '#06b6d4',
   },
   {
     number: '02',
     icon: <Lightbulb className="h-6 w-6" />,
-    title: 'Mejoras y Oportunidades',
-    subtitle: 'Optimizaci\u00f3n',
+    title: 'Detectamos oportunidades',
+    subtitle: 'Mejoras',
     description:
-      'Primero optimizamos procesos ineficientes. Luego detectamos d\u00f3nde la automatizaci\u00f3n e IA tienen sentido real \u2014 no por moda, por resultados.',
+      'Te mostramos exactamente d\u00f3nde puedes reducir costes, ahorrar tiempo y ganar m\u00e1s clientes. Solo proponemos lo que tiene impacto real en tu facturaci\u00f3n.',
     details: [
-      'Optimizar antes de automatizar',
-      'Detecci\u00f3n de cuellos de botella',
-      'Oportunidades reales de IA',
-      'Priorizaci\u00f3n por impacto vs esfuerzo',
+      'Primero simplificar, luego automatizar',
+      'Cada mejora tiene un impacto medible',
+      'Solo lo que tiene sentido para tu negocio',
+      'Priorizamos lo que m\u00e1s dinero te ahorra',
     ],
     color: '#3b82f6',
   },
   {
     number: '03',
     icon: <Shield className="h-6 w-6" />,
-    title: 'Ciberseguridad',
-    subtitle: 'Revisi\u00f3n',
+    title: 'Protegemos tu negocio',
+    subtitle: 'Seguridad',
     description:
-      'Cada oportunidad se revisa desde accesos, datos, dependencias y riesgos. Si no es seguro, no se propone. Tu negocio protegido desde el d\u00eda uno.',
+      'Antes de implementar nada, nos aseguramos de que tus datos, tus clientes y tu negocio est\u00e1n protegidos. Si no es seguro, no se hace.',
     details: [
-      'Revisi\u00f3n de accesos y permisos',
-      'Protecci\u00f3n de datos sensibles',
-      'An\u00e1lisis de dependencias',
-      'Si no es seguro, no se implementa',
+      'Tus datos de clientes protegidos',
+      'Sin riesgos ni dependencias peligrosas',
+      'Cumplimiento de normativa',
+      'Si no es seguro, no se propone',
     ],
     color: '#06b6d4',
   },
   {
     number: '04',
     icon: <Route className="h-6 w-6" />,
-    title: 'Roadmap a Medida',
-    subtitle: 'Plan de Acci\u00f3n',
+    title: 'Tu plan de acci\u00f3n claro',
+    subtitle: 'Roadmap',
     description:
-      'Ordenamos todas las oportunidades, priorizamos por impacto vs riesgo, y te explicamos el porqu\u00e9 de cada fase. Un plan claro y accionable.',
+      'Recibes un documento con todo: qu\u00e9 mejorar, en qu\u00e9 orden, cu\u00e1nto te va a ahorrar cada paso y plazos realistas. Sin sorpresas, sin letra peque\u00f1a.',
     details: [
-      'Oportunidades ordenadas por prioridad',
-      'Fases claras con plazos realistas',
-      'Explicaci\u00f3n del porqu\u00e9 de cada paso',
-      'Listo para implementar',
+      'Cada paso con su ahorro estimado',
+      'Plazos realistas y claros',
+      'Sabes exactamente qu\u00e9 esperar',
+      'Listo para empezar cuando t\u00fa digas',
     ],
     color: '#06b6d4',
   },
@@ -88,12 +88,12 @@ export function Process() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Nuestro proceso</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Diagn\u00f3stico en{' '}
-            <span className="text-gradient-accent">4 fases</span>
+            C\u00f3mo pasamos de problema{' '}
+            <span className="text-gradient-accent">a resultado</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Un producto cerrado que te da claridad total. Analizamos, optimizamos,
-            aseguramos y planificamos \u2014 antes de tocar nada.
+            Antes de hacer nada, entendemos tu negocio a fondo.
+            As\u00ed cada mejora tiene un impacto real en tu d\u00eda a d\u00eda y en tu facturaci\u00f3n.
           </p>
         </ScrollReveal>
 

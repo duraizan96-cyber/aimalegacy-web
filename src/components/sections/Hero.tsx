@@ -116,9 +116,9 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white-dim leading-relaxed"
           >
-            Diagnosticamos, automatizamos y optimizamos los procesos de tu negocio.
+            Reduce costes, ahorra horas cada semana y haz crecer tu facturación.
             <span className="block mt-1 text-white/50">
-              Menos tareas manuales. Más tiempo para lo que importa.
+              Sin complicaciones técnicas. Solo resultados para tu negocio.
             </span>
           </motion.p>
 
