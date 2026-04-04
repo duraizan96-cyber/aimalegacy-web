@@ -61,7 +61,7 @@ export function CTA() {
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <GlowButton href="mailto:izan@aimalegacy.es" variant="primary">
+                <GlowButton href="mailto:hola@aimalegacy.es" variant="primary">
                   <Mail className="h-4 w-4" />
                   Solicitar Diagnóstico
                   <ArrowRight className="h-4 w-4" />

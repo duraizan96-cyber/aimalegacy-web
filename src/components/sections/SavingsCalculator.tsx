@@ -173,7 +173,7 @@ export function SavingsCalculator() {
 
               {/* Bottom note */}
               <p className="mt-8 text-center text-xs text-white/25">
-                * Estimación basada en un coste medio de {HOURLY_COST}\u20AC/hora.
+                * Estimación basada en un coste medio de {HOURLY_COST}€/hora.
                 Los resultados reales dependen de tu negocio.
               </p>
             </div>

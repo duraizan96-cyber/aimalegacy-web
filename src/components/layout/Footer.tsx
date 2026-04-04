@@ -55,10 +55,10 @@ export function Footer() {
               Resultados reales con inteligencia artificial.
             </p>
             <a
-              href="mailto:izan@aimalegacy.es"
+              href="mailto:hola@aimalegacy.es"
               className="inline-flex items-center gap-2 text-sm text-accent/70 hover:text-accent transition-colors group"
             >
-              <span>izan@aimalegacy.es</span>
+              <span>hola@aimalegacy.es</span>
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </a>
           </ScrollReveal>
