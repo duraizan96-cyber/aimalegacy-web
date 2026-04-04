@@ -150,7 +150,7 @@ export function Hero() {
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <GlowButton href="#contacto" variant="primary">
-              Solicitar Diagnóstico Gratis
+              Solicitar Diagnóstico
               <ArrowRight className="h-4 w-4" />
             </GlowButton>
             <GlowButton href="#servicios" variant="secondary">
