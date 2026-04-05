@@ -164,7 +164,7 @@ export function FAQ() {
             <p className="text-sm text-white/30">
               ¿Tienes otra pregunta?{' '}
               <a
-                href="mailto:hola@aimalegacy.es"
+                href="mailto:izan@aimalegacy.es"
                 className="text-accent/60 hover:text-accent transition-colors underline underline-offset-4 decoration-accent/20 hover:decoration-accent/50"
               >
                 Escríbenos directamente
