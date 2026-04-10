@@ -25,42 +25,42 @@ const guarantees: Guarantee[] = [
     title: 'Plan A, B, C y D',
     description:
       'Cada sistema que entregamos tiene alternativas activas. Si algo falla, hay respaldo automático. Nunca te quedas bloqueado.',
-    accent: '#06b6d4',
+    accent: '#D4AF37',
   },
   {
     icon: <Eye className="h-6 w-6" />,
     title: '100% Transparente',
     description:
       'Sabes qué hacemos, cómo lo hacemos y por qué. Sin letra pequeña. Sin costes ocultos. Sin sorpresas.',
-    accent: '#22d3ee',
+    accent: '#F4D03F',
   },
   {
     icon: <Lock className="h-6 w-6" />,
     title: 'Seguridad Primero',
     description:
       'Revisión de ciberseguridad antes de entregar. Tus datos y los de tus clientes protegidos. Si no es seguro, no se propone.',
-    accent: '#06b6d4',
+    accent: '#D4AF37',
   },
   {
     icon: <BadgeCheck className="h-6 w-6" />,
     title: 'Calidad Garantizada',
     description:
       'Todo se audita antes de entregar. Workflow probado, documentado y funcionando. Solo entregamos lo que nosotros usaríamos.',
-    accent: '#22d3ee',
+    accent: '#F4D03F',
   },
   {
     icon: <RefreshCw className="h-6 w-6" />,
     title: 'Soporte Continuo',
     description:
       'Monitorizamos tus sistemas. Si algo falla, te avisamos antes que tu cliente. Respuestas rápidas cuando las necesitas.',
-    accent: '#06b6d4',
+    accent: '#D4AF37',
   },
   {
     icon: <ShieldCheck className="h-6 w-6" />,
     title: 'Sin Compromiso Inicial',
     description:
       'El diagnóstico es un producto cerrado. Si no ves valor, no avanzas. Sin ataduras, sin letra pequeña.',
-    accent: '#22d3ee',
+    accent: '#F4D03F',
   },
 ]
 
@@ -152,14 +152,14 @@ export function Guarantees() {
                 </div>
                 <div className="hidden sm:block h-4 w-px bg-white/10" />
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                  <div className="h-2 w-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
                   <span className="text-sm font-semibold text-white/80">
                     Soporte técnico continuo
                   </span>
                 </div>
                 <div className="hidden sm:block h-4 w-px bg-white/10" />
                 <div className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.6)]" />
+                  <div className="h-2 w-2 rounded-full bg-accent-light animate-pulse shadow-[0_0_8px_rgba(244,208,63,0.6)]" />
                   <span className="text-sm font-semibold text-white/80">
                     Garantía de entrega
                   </span>

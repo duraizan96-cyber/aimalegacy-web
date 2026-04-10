@@ -29,7 +29,7 @@ const steps: Step[] = [
       'Detectamos dónde se pierde dinero',
       'Primero entendemos, luego proponemos',
     ],
-    color: '#06b6d4',
+    color: '#D4AF37',
   },
   {
     number: '02',
@@ -44,7 +44,7 @@ const steps: Step[] = [
       'Solo lo que tiene sentido para tu negocio',
       'Priorizamos lo que más dinero te ahorra',
     ],
-    color: '#3b82f6',
+    color: '#D4AF37',
   },
   {
     number: '03',
@@ -59,7 +59,7 @@ const steps: Step[] = [
       'Cumplimiento de normativa',
       'Si no es seguro, no se propone',
     ],
-    color: '#06b6d4',
+    color: '#D4AF37',
   },
   {
     number: '04',
@@ -74,7 +74,7 @@ const steps: Step[] = [
       'Sabes exactamente qué esperar',
       'Listo para empezar cuando tú digas',
     ],
-    color: '#06b6d4',
+    color: '#D4AF37',
   },
 ]
 
@@ -115,7 +115,7 @@ export function Process() {
                   whileHover={{ x: activeStep === i ? 0 : 4 }}
                   className={`group w-full text-left rounded-xl p-5 transition-all duration-300 cursor-pointer border relative overflow-hidden ${
                     activeStep === i
-                      ? 'glass-strong border-accent/20 shadow-[0_0_30px_rgba(6,182,212,0.06)]'
+                      ? 'glass-strong border-accent/20 shadow-[0_0_30px_rgba(212,175,55,0.06)]'
                       : 'border-transparent hover:bg-white/[0.02] hover:border-white/[0.05]'
                   }`}
                 >
@@ -139,7 +139,7 @@ export function Process() {
                     <div className="relative">
                       <span
                         className={`text-xs font-mono font-bold tracking-wider transition-all duration-300 ${
-                          activeStep === i ? 'text-accent drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]' : 'text-white/20'
+                          activeStep === i ? 'text-accent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]' : 'text-white/20'
                         }`}
                       >
                         {step.number}
@@ -157,7 +157,7 @@ export function Process() {
                         <span
                           className={`text-[9px] uppercase tracking-widest font-medium px-2 py-0.5 rounded-full transition-all ${
                             activeStep === i
-                              ? 'bg-accent/10 text-accent/80 shadow-[0_0_12px_rgba(6,182,212,0.1)]'
+                              ? 'bg-accent/10 text-accent/80 shadow-[0_0_12px_rgba(212,175,55,0.1)]'
                               : 'bg-white/5 text-white/20'
                           }`}
                         >

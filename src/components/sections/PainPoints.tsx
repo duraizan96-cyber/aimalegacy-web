@@ -46,7 +46,7 @@ function PainCard({ pain, solution, index }: PainCardProps) {
 
             {/* Solution */}
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 mt-0.5 h-7 w-7 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/15 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.2)] transition-all duration-300">
+              <div className="flex-shrink-0 mt-0.5 h-7 w-7 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/15 group-hover:shadow-[0_0_12px_rgba(212,175,55,0.2)] transition-all duration-300">
                 <Check className="h-3.5 w-3.5 text-accent" />
               </div>
               <div>

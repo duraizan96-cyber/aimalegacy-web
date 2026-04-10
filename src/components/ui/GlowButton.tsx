@@ -17,13 +17,13 @@ export function GlowButton({
   onClick,
 }: GlowButtonProps) {
   const baseClasses =
-    'relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 cursor-pointer overflow-hidden group'
+    'relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 cursor-pointer overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black'
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-accent to-accent-light text-white shadow-[0_4px_20px_rgba(6,182,212,0.25)] hover:shadow-[0_4px_40px_rgba(6,182,212,0.4)] active:shadow-[0_2px_20px_rgba(6,182,212,0.5)]',
+      'bg-gradient-to-r from-accent via-accent-light to-accent text-black shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_4px_50px_rgba(212,175,55,0.5)] active:shadow-[0_2px_20px_rgba(212,175,55,0.6)]',
     secondary:
-      'border border-white/[0.12] text-white/70 hover:text-accent hover:border-accent/30 hover:bg-accent/[0.04] hover:shadow-[0_0_30px_rgba(6,182,212,0.08)]',
+      'border border-white/[0.12] text-white/70 hover:text-accent hover:border-accent/30 hover:bg-accent/[0.04] hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]',
   }
 
   const Component = href ? motion.a : motion.button

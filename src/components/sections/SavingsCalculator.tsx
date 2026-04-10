@@ -31,9 +31,9 @@ export function SavingsCalculator() {
       value: yearlyHours,
       suffix: 'h',
       prefix: '',
-      color: 'from-cyan-400/20 to-cyan-400/5',
-      iconColor: 'text-cyan-400',
-      glowColor: 'group-hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]',
+      color: 'from-accent-light/20 to-accent-light/5',
+      iconColor: 'text-accent-light',
+      glowColor: 'group-hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]',
     },
     {
       icon: <Euro className="h-5 w-5" />,
@@ -43,7 +43,7 @@ export function SavingsCalculator() {
       prefix: '',
       color: 'from-accent/20 to-accent/5',
       iconColor: 'text-accent',
-      glowColor: 'group-hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]',
+      glowColor: 'group-hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]',
     },
     {
       icon: <TrendingUp className="h-5 w-5" />,
@@ -53,7 +53,7 @@ export function SavingsCalculator() {
       prefix: '',
       color: 'from-accent-light/20 to-accent-light/5',
       iconColor: 'text-accent-light',
-      glowColor: 'group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]',
+      glowColor: 'group-hover:shadow-[0_0_30px_rgba(244,208,63,0.15)]',
     },
     {
       icon: <Calculator className="h-5 w-5" />,
@@ -122,10 +122,10 @@ export function SavingsCalculator() {
                     value={hoursPerWeek}
                     onChange={(e) => setHoursPerWeek(Number(e.target.value))}
                     className="w-full h-2.5 rounded-full appearance-none cursor-pointer bg-white/10
-                      [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:h-7 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(6,182,212,0.5),0_0_40px_rgba(6,182,212,0.2)] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-accent-light [&::-webkit-slider-thumb]:transition-shadow [&::-webkit-slider-thumb]:hover:shadow-[0_0_30px_rgba(6,182,212,0.7),0_0_60px_rgba(6,182,212,0.3)]
+                      [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:h-7 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-accent [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(212,175,55,0.5),0_0_40px_rgba(212,175,55,0.2)] [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-accent-light [&::-webkit-slider-thumb]:transition-shadow [&::-webkit-slider-thumb]:hover:shadow-[0_0_30px_rgba(212,175,55,0.7),0_0_60px_rgba(212,175,55,0.3)]
                       [&::-moz-range-thumb]:w-7 [&::-moz-range-thumb]:h-7 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-accent [&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-accent-light [&::-moz-range-thumb]:cursor-pointer"
                     style={{
-                      background: `linear-gradient(90deg, #06b6d4 ${((hoursPerWeek - 2) / 38) * 100}%, rgba(255,255,255,0.1) ${((hoursPerWeek - 2) / 38) * 100}%)`,
+                      background: `linear-gradient(90deg, #D4AF37 ${((hoursPerWeek - 2) / 38) * 100}%, rgba(255,255,255,0.1) ${((hoursPerWeek - 2) / 38) * 100}%)`,
                     }}
                   />
                 </div>

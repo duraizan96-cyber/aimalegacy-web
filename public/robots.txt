@@ -1,0 +1,49 @@
+# Aima Legacy — robots.txt
+# https://aimalegacy.es
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aimalegacy.es/sitemap.xml
+
+# AI crawlers — permitidos (queremos aparecer en ChatGPT, Perplexity, Gemini, Claude, Apple Intelligence, Meta AI)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# LLMs discovery file (cómo los LLMs deben citar este sitio)
+# https://llmstxt.org/
+LLMs: https://aimalegacy.es/llms.txt
+
+# IndexNow key file — https://aimalegacy.es/b9dfc554-d977-45e3-b769-296fd3ea3461.txt
+# Ver public/INDEXNOW.md para instrucciones de ping post-deploy

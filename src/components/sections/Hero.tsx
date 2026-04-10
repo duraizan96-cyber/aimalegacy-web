@@ -1,6 +1,6 @@
 import { useEffect, useState, lazy, Suspense, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Mic } from 'lucide-react'
 import { GlowButton } from '../ui/GlowButton'
 
 const ParticleField = lazy(() =>
@@ -130,7 +130,7 @@ export function Hero() {
 
           {/* Accent line under headline */}
           <motion.div variants={fadeUp} className="flex justify-center mt-6">
-            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(6,182,212,0.5)]" />
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
           </motion.div>
 
           {/* Subtitle */}
@@ -149,19 +149,20 @@ export function Hero() {
             variants={fadeUp}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <GlowButton href="#contacto" variant="primary">
-              Solicitar Diagnóstico
+            <GlowButton href="#demo" variant="primary">
+              <Mic className="h-4 w-4" />
+              Habla con Eric
               <ArrowRight className="h-4 w-4" />
             </GlowButton>
-            <GlowButton href="#servicios" variant="secondary">
-              Ver Servicios
+            <GlowButton href="#contacto" variant="secondary">
+              Solicitar Diagnóstico
             </GlowButton>
           </motion.div>
 
           {/* Stats strip */}
           <motion.div
             variants={fadeUp}
-            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-accent/[0.12] bg-accent/[0.03] backdrop-blur-sm shadow-[0_0_40px_rgba(6,182,212,0.06),inset_0_-20px_60px_-20px_rgba(6,182,212,0.05)]"
+            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-accent/[0.12] bg-accent/[0.03] backdrop-blur-sm shadow-[0_0_40px_rgba(212,175,55,0.06),inset_0_-20px_60px_-20px_rgba(212,175,55,0.05)]"
           >
             <div className="border-r border-accent/[0.1]">
               <AnimatedStat value="-40%" label="Costes" sub="en tareas repetitivas" />

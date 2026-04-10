@@ -32,8 +32,8 @@ const metrics: ResultMetric[] = [
     prefix: '+',
     label: 'Tiempo recuperado',
     sublabel: 'de media por negocio',
-    color: 'text-cyan',
-    bgColor: 'from-cyan/10 to-cyan/[0.02]',
+    color: 'text-accent-light',
+    bgColor: 'from-accent-light/10 to-accent-light/[0.02]',
   },
   {
     icon: <TrendingUp className="h-6 w-6" />,
@@ -67,10 +67,10 @@ export function TechStack() {
           <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
             Resultados reales
           </span>
-          <h3 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
+          <h2 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
             Lo que consiguen los negocios{' '}
             <span className="text-gradient-accent-static">que trabajan con nosotros</span>
-          </h3>
+          </h2>
         </ScrollReveal>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
@@ -78,7 +78,7 @@ export function TechStack() {
             <ScrollReveal key={m.label} delay={i * 0.1}>
               <motion.div
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className={`group relative rounded-2xl border border-white/[0.08] bg-gradient-to-b ${m.bgColor} p-6 text-center hover:border-accent/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)] overflow-hidden`}
+                className={`group relative rounded-2xl border border-white/[0.08] bg-gradient-to-b ${m.bgColor} p-6 text-center hover:border-accent/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)] overflow-hidden`}
               >
                 {/* Subtle top line per card */}
                 <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

@@ -42,8 +42,12 @@ export function CTA() {
               {/* Logo */}
               <motion.img
                 src="/logo-aima.jpg"
-                alt="AIMA Legacy"
-                className="h-16 w-16 rounded-2xl object-cover mx-auto mb-8 shadow-[0_0_40px_rgba(6,182,212,0.25)] border border-accent/15"
+                alt="Aima Legacy — Logo"
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async"
+                className="h-16 w-16 rounded-2xl object-cover mx-auto mb-8 shadow-[0_0_40px_rgba(212,175,55,0.25)] border border-accent/15"
                 initial={{ scale: 0, rotate: -180 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}

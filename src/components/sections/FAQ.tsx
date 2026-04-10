@@ -27,7 +27,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
         <div
           className={`relative rounded-xl border transition-all duration-300 ${
             isOpen
-              ? 'border-accent/15 bg-accent/[0.02] shadow-[0_0_30px_rgba(6,182,212,0.04)]'
+              ? 'border-accent/15 bg-accent/[0.02] shadow-[0_0_30px_rgba(212,175,55,0.04)]'
               : 'border-white/[0.05] bg-white/[0.01] hover:border-white/[0.08] hover:bg-white/[0.015]'
           }`}
         >
@@ -47,7 +47,7 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
               transition={{ duration: 0.25 }}
               className={`flex-shrink-0 p-1.5 rounded-lg transition-all ${
                 isOpen
-                  ? 'text-accent bg-accent/10 shadow-[0_0_12px_rgba(6,182,212,0.15)]'
+                  ? 'text-accent bg-accent/10 shadow-[0_0_12px_rgba(212,175,55,0.15)]'
                   : 'text-white/30 group-hover:text-white/50'
               }`}
             >

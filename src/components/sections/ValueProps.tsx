@@ -31,7 +31,7 @@ function ValueCard({ icon, title, description, metric, delay, accentColor }: Val
           <div className="relative z-10">
             {/* Icon — bigger and more visible */}
             <div
-              className="mb-6 inline-flex items-center justify-center rounded-2xl p-4 text-accent shadow-[0_0_20px_rgba(6,182,212,0.1)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300"
+              className="mb-6 inline-flex items-center justify-center rounded-2xl p-4 text-accent shadow-[0_0_20px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-300"
               style={{ backgroundColor: `${accentColor}15` }}
             >
               {icon}
@@ -72,7 +72,7 @@ const values = [
     description:
       'Las horas que hoy pierdes contestando mensajes, gestionando citas y haciendo tareas repetitivas vuelven a ser tuyas. Dedica ese tiempo a hacer crecer tu negocio.',
     metric: { value: 10, suffix: 'h/sem', label: 'ahorro medio por negocio' },
-    accentColor: '#06b6d4',
+    accentColor: '#D4AF37',
   },
   {
     icon: <ShieldCheck className="h-7 w-7" />,
@@ -80,7 +80,7 @@ const values = [
     description:
       'Mientras duermes, tu negocio sigue atendiendo clientes, enviando recordatorios y cerrando citas. Sin errores, sin olvidos, sin depender de nadie.',
     metric: { value: 99, suffix: '%', label: 'disponibilidad garantizada' },
-    accentColor: '#22d3ee',
+    accentColor: '#F4D03F',
   },
   {
     icon: <BarChart3 className="h-7 w-7" />,
@@ -88,7 +88,7 @@ const values = [
     description:
       'Nada de intuiciones. Ves exactamente cuánto tiempo ahorras, cuántos clientes gestionas y cuánto dinero te estás ahorrando cada mes. Datos reales, decisiones claras.',
     metric: { value: 40, suffix: '%', label: 'mejora media en eficiencia' },
-    accentColor: '#06b6d4',
+    accentColor: '#D4AF37',
   },
 ]
 

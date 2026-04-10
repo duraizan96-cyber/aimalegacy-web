@@ -1,140 +1,137 @@
 import { useState, useEffect, useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { MessageCircle, Calendar, Mail, Bot, CheckCircle2, Zap } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+import {
+  Mic,
+  Calendar,
+  Mail,
+  Bot,
+  CheckCircle2,
+  Zap,
+  Phone,
+  Clock,
+  ArrowRight,
+  Sparkles,
+} from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 
-interface Message {
-  from: 'user' | 'bot'
-  text: string
-  delay: number
-}
-
-const conversation: Message[] = [
-  { from: 'user', text: 'Hola, quiero reservar una cita', delay: 0 },
-  { from: 'bot', text: '¡Hola! Claro, puedo ayudarte. ¿Qué día te viene bien?', delay: 1200 },
-  { from: 'user', text: 'El jueves por la tarde', delay: 2600 },
-  { from: 'bot', text: 'Tengo libre el jueves a las 17:00 o 18:30. ¿Cuál prefieres?', delay: 4200 },
-  { from: 'user', text: 'Las 17:00', delay: 5800 },
-  { from: 'bot', text: 'Reservado. Te envío confirmación por email y te recordaré 1h antes.', delay: 7400 },
+const ericCapabilities = [
+  { icon: Phone, text: 'Atiende llamadas 24/7 sin descanso' },
+  { icon: Calendar, text: 'Reserva citas directamente en tu calendario' },
+  { icon: Mail, text: 'Envía confirmaciones por email automáticamente' },
+  { icon: Clock, text: 'Gestiona tu disponibilidad en tiempo real' },
 ]
 
 const automationSteps = [
-  { icon: <Mail className="h-4 w-4" />, text: 'Email recibido', status: 'done' },
-  { icon: <Bot className="h-4 w-4" />, text: 'IA clasifica intención', status: 'done' },
-  { icon: <Calendar className="h-4 w-4" />, text: 'Cita creada en calendario', status: 'done' },
-  { icon: <MessageCircle className="h-4 w-4" />, text: 'Recordatorio programado', status: 'active' },
-  { icon: <CheckCircle2 className="h-4 w-4" />, text: 'Cliente confirmado', status: 'pending' },
+  { icon: <Mic className="h-4 w-4" />, text: 'Cliente habla con Eric' },
+  { icon: <Bot className="h-4 w-4" />, text: 'IA entiende la intención' },
+  { icon: <Calendar className="h-4 w-4" />, text: 'Cita creada en calendario' },
+  { icon: <Mail className="h-4 w-4" />, text: 'Confirmación enviada' },
+  { icon: <CheckCircle2 className="h-4 w-4" />, text: 'Cliente notificado' },
 ]
 
-function ChatDemo() {
-  const [visibleCount, setVisibleCount] = useState(0)
-  const [isTyping, setIsTyping] = useState(false)
-  const [cycleKey, setCycleKey] = useState(0)
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: false, margin: '-100px' })
-
-  useEffect(() => {
-    if (!inView) return
-
-    let timeouts: ReturnType<typeof setTimeout>[] = []
-
-    const runCycle = () => {
-      // Clear previous timeouts
-      timeouts.forEach(clearTimeout)
-      timeouts = []
-
-      // Reset UI
-      setVisibleCount(0)
-      setIsTyping(false)
-      setCycleKey((k) => k + 1)
-
-      // Schedule messages
-      conversation.forEach((msg, i) => {
-        if (msg.from === 'bot') {
-          timeouts.push(setTimeout(() => setIsTyping(true), msg.delay - 600))
-          timeouts.push(setTimeout(() => setIsTyping(false), msg.delay))
-        }
-        timeouts.push(setTimeout(() => setVisibleCount(i + 1), msg.delay))
-      })
+function openEricWidget() {
+  const widget = document.querySelector('elevenlabs-convai') as HTMLElement | null
+  if (!widget) return
+  widget.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  setTimeout(() => {
+    const shadow = (widget as unknown as { shadowRoot?: ShadowRoot }).shadowRoot
+    const innerButton = shadow?.querySelector('button') as HTMLButtonElement | null
+    if (innerButton) {
+      innerButton.click()
+      return
     }
+    widget.click?.()
+  }, 600)
+}
 
-    runCycle()
-    // Total conversation takes ~8s, pause 2s, repeat
-    const interval = setInterval(runCycle, 10000)
-
-    return () => {
-      clearInterval(interval)
-      timeouts.forEach(clearTimeout)
-    }
-  }, [inView])
-
+function EricShowcase() {
   return (
-    <div ref={ref} className="relative rounded-2xl bg-black-card border border-white/[0.08] overflow-hidden h-full">
-      {/* Header */}
-      <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.06] bg-white/[0.015]">
-        <div className="flex gap-1.5">
-          <div className="h-3 w-3 rounded-full bg-red-500/60" />
-          <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
-          <div className="h-3 w-3 rounded-full bg-green-500/60" />
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center border border-accent/20">
-            <Bot className="h-3 w-3 text-accent" />
-          </div>
-          <span className="text-xs font-semibold text-white/70">IA Automática</span>
-          <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_6px_rgba(74,222,128,0.6)]" />
-          <span className="text-[10px] text-green-400/70 font-medium">Activo</span>
-        </div>
-      </div>
+    <div className="relative rounded-2xl overflow-hidden h-full group">
+      <div className="absolute inset-0 rounded-2xl border border-accent/[0.2]" />
+      <div className="absolute inset-0 bg-black-card" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.08] via-transparent to-accent/[0.04]" />
+      <div className="absolute -top-20 -right-20 w-72 h-72 bg-accent/[0.12] rounded-full blur-[90px] group-hover:bg-accent/[0.18] transition-colors duration-700" />
+      <div className="absolute -bottom-20 -left-20 w-56 h-56 bg-accent/[0.06] rounded-full blur-[70px]" />
+      <div className="absolute inset-0 dot-grid opacity-30" />
 
-      {/* Messages */}
-      <div className="p-5 space-y-3 min-h-[340px] flex flex-col">
-        <AnimatePresence mode="popLayout">
-          {conversation.slice(0, visibleCount).map((msg, i) => (
-            <motion.div
-              key={`${cycleKey}-${i}`}
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-              className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
-              <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${
-                  msg.from === 'user'
-                    ? 'bg-white/[0.06] text-white/80 border border-white/[0.08]'
-                    : 'bg-accent/10 text-white/90 border border-accent/20 shadow-[0_0_15px_rgba(6,182,212,0.08)]'
-                }`}
-              >
-                {msg.text}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-
-        {/* Typing indicator */}
-        {isTyping && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex justify-start"
-          >
-            <div className="rounded-2xl px-4 py-3 bg-accent/10 border border-accent/20">
-              <div className="flex gap-1">
-                {[0, 1, 2].map(i => (
-                  <motion.div
-                    key={i}
-                    animate={{ y: [0, -4, 0] }}
-                    transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.15 }}
-                    className="h-1.5 w-1.5 rounded-full bg-accent/60"
-                  />
-                ))}
-              </div>
+      <div className="relative z-10 p-7 lg:p-9 h-full flex flex-col">
+        <div className="flex items-center justify-between mb-7">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+            <div className="relative h-2 w-2">
+              <div className="absolute inset-0 rounded-full bg-green-400 animate-pulse" />
+              <div className="absolute inset-0 rounded-full bg-green-400 blur-[4px]" />
             </div>
-          </motion.div>
-        )}
+            <span className="text-[10px] font-bold text-green-400/90 tracking-[0.15em] uppercase">
+              En vivo
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] text-white/30 uppercase tracking-wider">
+            <Sparkles className="h-3 w-3 text-accent/60" />
+            Agente real
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4 mb-6">
+          <div className="relative flex-shrink-0">
+            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.4)] border border-accent/30">
+              <Mic className="h-7 w-7 text-black" strokeWidth={2.5} />
+            </div>
+            <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full bg-green-400 border-[3px] border-black-card shadow-[0_0_10px_rgba(74,222,128,0.5)]" />
+          </div>
+          <div className="min-w-0">
+            <p className="text-2xl font-bold text-white font-[family-name:var(--font-display)] leading-tight">
+              Eric
+            </p>
+            <p className="text-xs text-accent/70 font-medium tracking-wider uppercase mt-1">
+              Agente de citas · Aima Legacy
+            </p>
+          </div>
+        </div>
+
+        <p className="text-sm text-white/60 leading-relaxed mb-7">
+          Atiende a tus clientes por voz, reserva citas en tu calendario
+          y envía confirmaciones automáticas.{' '}
+          <span className="text-white/85 font-medium">
+            No es una demo falsa — puedes hablarle ahora mismo.
+          </span>
+        </p>
+
+        <div className="space-y-2.5 mb-8">
+          {ericCapabilities.map((cap, i) => {
+            const Icon = cap.icon
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -12 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.08, duration: 0.4 }}
+                className="flex items-center gap-3"
+              >
+                <div className="flex-shrink-0 h-8 w-8 rounded-lg bg-accent/[0.08] border border-accent/[0.15] flex items-center justify-center">
+                  <Icon className="h-3.5 w-3.5 text-accent" />
+                </div>
+                <span className="text-sm text-white/70">{cap.text}</span>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        <div className="mt-auto space-y-3">
+          <button
+            onClick={openEricWidget}
+            className="relative w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-gradient-to-r from-accent via-accent-light to-accent text-black font-bold text-sm tracking-wide shadow-[0_0_40px_rgba(212,175,55,0.35)] hover:shadow-[0_0_60px_rgba(212,175,55,0.55)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] group/btn overflow-hidden cursor-pointer"
+          >
+            <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            <Mic className="h-4 w-4 relative z-10" strokeWidth={2.5} />
+            <span className="relative z-10">Hablar con Eric ahora</span>
+            <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/btn:translate-x-1" />
+          </button>
+          <p className="text-[11px] text-center text-white/35 leading-relaxed">
+            Gratis · Sin registro · Conversación real con IA
+          </p>
+        </div>
       </div>
     </div>
   )
@@ -147,28 +144,31 @@ function WorkflowDemo() {
 
   useEffect(() => {
     if (!inView) return
-
     const interval = setInterval(() => {
-      setActiveStep(prev => (prev + 1) % (automationSteps.length + 1))
+      setActiveStep((prev) => (prev + 1) % (automationSteps.length + 1))
     }, 1400)
-
     return () => clearInterval(interval)
   }, [inView])
 
   return (
-    <div ref={ref} className="relative rounded-2xl bg-black-card border border-white/[0.08] overflow-hidden h-full">
-      {/* Header */}
+    <div
+      ref={ref}
+      className="relative rounded-2xl bg-black-card border border-white/[0.08] overflow-hidden h-full"
+    >
       <div className="flex items-center gap-3 px-5 py-4 border-b border-white/[0.06] bg-white/[0.015]">
         <Zap className="h-4 w-4 text-accent" />
-        <span className="text-xs font-semibold text-white/70">Automatización en vivo</span>
+        <span className="text-xs font-semibold text-white/70">
+          Lo que pasa por detrás
+        </span>
         <div className="ml-auto flex items-center gap-1.5">
           <div className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_6px_rgba(74,222,128,0.6)]" />
-          <span className="text-[10px] text-green-400/70 font-medium">Corriendo</span>
+          <span className="text-[10px] text-green-400/70 font-medium">
+            Corriendo
+          </span>
         </div>
       </div>
 
-      {/* Steps */}
-      <div className="p-6 space-y-3 min-h-[340px]">
+      <div className="p-6 space-y-3 min-h-[400px]">
         {automationSteps.map((step, i) => {
           const isActive = i === activeStep
           const isDone = i < activeStep
@@ -182,7 +182,6 @@ function WorkflowDemo() {
               transition={{ delay: i * 0.1 }}
               className="relative"
             >
-              {/* Connecting line */}
               {i < automationSteps.length - 1 && (
                 <div className="absolute left-[17px] top-9 w-px h-8 overflow-hidden">
                   <motion.div
@@ -199,7 +198,7 @@ function WorkflowDemo() {
               <div
                 className={`flex items-center gap-3 rounded-xl p-3 transition-all duration-300 ${
                   isActive
-                    ? 'bg-accent/10 border border-accent/25 shadow-[0_0_20px_rgba(6,182,212,0.1)]'
+                    ? 'bg-accent/10 border border-accent/25 shadow-[0_0_20px_rgba(212,175,55,0.15)]'
                     : isDone
                       ? 'bg-white/[0.02] border border-white/[0.06]'
                       : 'bg-white/[0.01] border border-white/[0.04] opacity-40'
@@ -208,7 +207,7 @@ function WorkflowDemo() {
                 <div
                   className={`flex-shrink-0 h-9 w-9 rounded-lg flex items-center justify-center transition-all ${
                     isActive
-                      ? 'bg-accent text-white shadow-[0_0_12px_rgba(6,182,212,0.4)]'
+                      ? 'bg-accent text-black shadow-[0_0_15px_rgba(212,175,55,0.5)]'
                       : isDone
                         ? 'bg-green-500/15 text-green-400'
                         : 'bg-white/5 text-white/20'
@@ -216,9 +215,15 @@ function WorkflowDemo() {
                 >
                   {isDone ? <CheckCircle2 className="h-4 w-4" /> : step.icon}
                 </div>
-                <span className={`text-sm font-medium ${
-                  isActive ? 'text-white' : isDone ? 'text-white/60' : 'text-white/30'
-                }`}>
+                <span
+                  className={`text-sm font-medium ${
+                    isActive
+                      ? 'text-white'
+                      : isDone
+                        ? 'text-white/60'
+                        : 'text-white/30'
+                  }`}
+                >
                   {step.text}
                 </span>
                 {isActive && (
@@ -251,45 +256,39 @@ function WorkflowDemo() {
 
 export function LiveDemo() {
   return (
-    <section className="relative py-24 lg:py-32 mesh-gradient-5">
-      {/* Decorative grid lines */}
+    <section id="demo" className="relative py-24 lg:py-32 mesh-gradient-5">
       <div className="absolute inset-0 grid-lines opacity-30 pointer-events-none" />
-
-      {/* Floating orbs */}
       <div className="absolute top-20 left-10 w-48 h-48 bg-accent/[0.04] rounded-full blur-[80px] float" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue/[0.03] rounded-full blur-[70px] float-delayed" />
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent/[0.03] rounded-full blur-[70px] float-delayed" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-        {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge icon={<Zap className="h-3.5 w-3.5" />}>
-            Así funciona
+          <SectionBadge icon={<Sparkles className="h-3.5 w-3.5" />}>
+            Prueba en vivo
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Tu negocio trabajando{' '}
-            <span className="text-gradient-accent">solo</span>
+            Habla con <span className="text-gradient-accent">Eric</span>
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Mientras tú haces lo importante, la IA atiende a tus clientes
-            y gestiona tus procesos en tiempo real.
+          <p className="mt-4 max-w-2xl mx-auto text-white/50">
+            Un agente de voz real construido para reservar citas. No es una
+            animación ni una maqueta — puedes llamarle ahora mismo y reservar
+            una demo. Así trabajan las automatizaciones que construimos.
           </p>
         </ScrollReveal>
 
-        {/* Demos grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ScrollReveal direction="left" delay={0.1}>
-            <ChatDemo />
+            <EricShowcase />
           </ScrollReveal>
           <ScrollReveal direction="right" delay={0.2}>
             <WorkflowDemo />
           </ScrollReveal>
         </div>
 
-        {/* Bottom note */}
         <ScrollReveal delay={0.3}>
-          <p className="mt-10 text-center text-sm text-white/35">
-            <span className="text-accent/60">Esto es solo un ejemplo.</span>{' '}
-            Cada automatización se adapta a tu negocio y a tus procesos reales.
+          <p className="mt-10 text-center text-sm text-white/40">
+            <span className="text-accent/70 font-medium">Eric es un ejemplo real.</span>{' '}
+            Cada automatización que construimos se adapta a tu negocio y a tus procesos.
           </p>
         </ScrollReveal>
       </div>

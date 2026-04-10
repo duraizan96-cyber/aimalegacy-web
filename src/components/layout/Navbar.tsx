@@ -4,9 +4,9 @@ import { Menu, X } from 'lucide-react'
 import { GlowButton } from '../ui/GlowButton'
 
 const navLinks = [
+  { label: 'Prueba Eric', href: '#demo' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proceso', href: '#proceso' },
-  { label: 'Resultados', href: '#problemas' },
   { label: 'FAQ', href: '#faq' },
 ]
 
@@ -42,19 +42,24 @@ export function Navbar() {
             backgroundColor: `rgba(4, 4, 15, ${bgOpacity})`,
             backdropFilter: `blur(${blurAmount}px)`,
             WebkitBackdropFilter: `blur(${blurAmount}px)`,
-            borderBottom: `1px solid rgba(6, 182, 212, ${borderOpacity})`,
+            borderBottom: `1px solid rgba(212, 175, 55, ${borderOpacity})`,
           }}
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3 group relative z-10">
+            <a href="#" aria-label="Aima Legacy — Inicio" className="flex items-center gap-3 group relative z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black">
               <div className="relative">
                 <img
                   src="/logo-aima.jpg"
-                  alt="AIMA Legacy"
-                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.45)] transition-all duration-300 group-hover:scale-105"
+                  alt="Aima Legacy — Logo"
+                  width="40"
+                  height="40"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(212,175,55,0.2)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.45)] transition-all duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 rounded-xl border border-accent/20 group-hover:border-accent/40 transition-colors" />
               </div>
@@ -74,7 +79,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="relative px-4 py-2 text-sm text-white/50 hover:text-white transition-colors duration-200 tracking-wide group"
+                  className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -92,7 +97,10 @@ export function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden relative z-10 p-2 text-white/60 hover:text-accent transition-colors cursor-pointer"
+              aria-label={mobileOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+              className="md:hidden relative z-10 p-3 -m-1 text-white/60 hover:text-accent transition-colors cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
               <AnimatePresence mode="wait">
                 {mobileOpen ? (
@@ -114,6 +122,10 @@ export function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menú de navegación"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -123,10 +135,12 @@ export function Navbar() {
             {/* Logo in mobile menu */}
             <motion.img
               src="/logo-aima.jpg"
-              alt="AIMA Legacy"
+              alt="Aima Legacy — Logo"
+              width="64"
+              height="64"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(6,182,212,0.3)]"
+              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(212,175,55,0.3)]"
             />
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => (

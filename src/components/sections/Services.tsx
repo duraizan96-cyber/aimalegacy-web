@@ -34,7 +34,7 @@ function ServiceCard({
         {/* Card body */}
         <div className={`relative rounded-2xl border p-7 lg:p-8 h-full flex flex-col transition-all duration-500 overflow-hidden ${
           featured
-            ? 'bg-gradient-to-br from-accent/[0.06] to-black-card border-accent/[0.15] shadow-[0_0_40px_rgba(6,182,212,0.06)] group-hover:border-accent/25 group-hover:shadow-[0_0_60px_rgba(6,182,212,0.1)]'
+            ? 'bg-gradient-to-br from-accent/[0.06] to-black-card border-accent/[0.15] shadow-[0_0_40px_rgba(212,175,55,0.06)] group-hover:border-accent/25 group-hover:shadow-[0_0_60px_rgba(212,175,55,0.1)]'
             : 'bg-black-card border-white/[0.08] group-hover:border-accent/15'
         }`}>
           {/* Top accent line on featured */}
@@ -43,15 +43,15 @@ function ServiceCard({
           )}
 
           {/* Inset glow */}
-          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.06)]" />
+          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(212,175,55,0.06)]" />
 
           <div className="relative z-10 flex flex-col h-full">
             {/* Header */}
             <div className="flex items-start justify-between mb-5">
               <div className={`inline-flex items-center justify-center rounded-2xl p-3.5 text-accent transition-all duration-300 ${
                 featured
-                  ? 'bg-accent/15 shadow-[0_0_20px_rgba(6,182,212,0.15)] group-hover:shadow-[0_0_30px_rgba(6,182,212,0.25)]'
-                  : 'bg-accent/10 group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(6,182,212,0.12)]'
+                  ? 'bg-accent/15 shadow-[0_0_20px_rgba(212,175,55,0.15)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.25)]'
+                  : 'bg-accent/10 group-hover:bg-accent/15 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.12)]'
               }`}>
                 {icon}
               </div>
@@ -72,7 +72,7 @@ function ServiceCard({
             <ul className="space-y-2.5 pt-5 border-t border-white/[0.06]">
               {features.map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm text-white/50 group-hover:text-white/65 transition-colors">
-                  <div className="h-1.5 w-1.5 rounded-full bg-accent/70 flex-shrink-0 shadow-[0_0_6px_rgba(6,182,212,0.4)]" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-accent/70 flex-shrink-0 shadow-[0_0_6px_rgba(212,175,55,0.4)]" />
                   {f}
                 </li>
               ))}

@@ -92,7 +92,7 @@ export function Sectors() {
             <ScrollReveal key={sector.name} delay={i * 0.05}>
               <motion.div
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="group relative rounded-2xl bg-black-card border border-white/[0.06] p-5 lg:p-6 text-center hover:border-accent/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(6,182,212,0.08)] overflow-hidden cursor-default"
+                className="group relative rounded-2xl bg-black-card border border-white/[0.06] p-5 lg:p-6 text-center hover:border-accent/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.08)] overflow-hidden cursor-default"
               >
                 {/* Top line */}
                 <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -101,7 +101,7 @@ export function Sectors() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.04] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative z-10">
-                  <div className="inline-flex mb-3 p-3 rounded-xl bg-accent/5 border border-accent/10 text-accent/80 group-hover:bg-accent/10 group-hover:border-accent/20 group-hover:text-accent group-hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300">
+                  <div className="inline-flex mb-3 p-3 rounded-xl bg-accent/5 border border-accent/10 text-accent/80 group-hover:bg-accent/10 group-hover:border-accent/20 group-hover:text-accent group-hover:shadow-[0_0_20px_rgba(212,175,55,0.15)] transition-all duration-300">
                     {sector.icon}
                   </div>
                   <h3 className="text-base font-bold text-white/90 mb-1.5 font-[family-name:var(--font-display)]">

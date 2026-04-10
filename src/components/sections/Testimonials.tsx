@@ -31,7 +31,7 @@ function TestimonialCard({
       <SpotlightCard className="h-full">
         <div className="relative rounded-2xl bg-black-card border border-white/[0.06] p-7 lg:p-8 h-full flex flex-col group-hover:border-accent/15 transition-colors duration-500">
           {/* Inset glow */}
-          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(6,182,212,0.05)]" />
+          <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(212,175,55,0.05)]" />
 
           <div className="relative z-10 flex flex-col h-full">
             {/* Quote icon */}
@@ -63,7 +63,7 @@ function TestimonialCard({
 
             {/* Author */}
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center border border-accent/20 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center border border-accent/20 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
                 <span className="text-xs font-bold text-accent">{initials}</span>
               </div>
               <div>

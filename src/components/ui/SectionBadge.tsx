@@ -18,7 +18,7 @@ export function SectionBadge({ children, icon }: SectionBadgeProps) {
     >
       {/* Pulse dot */}
       <div className="relative flex items-center">
-        <div className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_6px_rgba(6,182,212,0.6)]" />
+        <div className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_6px_rgba(212,175,55,0.6)]" />
         <div className="absolute h-1.5 w-1.5 rounded-full bg-accent animate-ping opacity-60" />
       </div>
       {icon && <span className="text-accent relative z-10">{icon}</span>}
