@@ -87,22 +87,22 @@ function ServiceCard({
 const services = [
   {
     icon: <Search className="h-6 w-6" />,
-    title: 'Saber exactamente dónde pierdes dinero',
+    title: 'Diagnóstico IA: saber dónde pierdes dinero',
     description:
-      'Analizamos cómo funciona tu negocio hoy, detectamos dónde estás perdiendo tiempo y dinero, y te damos un plan claro con oportunidades reales de mejora.',
+      'Nuestro diagnóstico inicial mapea cómo funciona tu negocio hoy con BPMN profesional, detecta dónde pierdes tiempo y dinero, y entrega un roadmap de automatización con IA ordenado por impacto real.',
     features: [
-      'Ves dónde se van tus horas y tu dinero',
+      'Mapeo BPMN de todos tus procesos',
       'Oportunidades ordenadas por impacto',
-      'Plan de acción claro y realista',
-      'Todo revisado desde la seguridad',
+      'Roadmap claro con ROI estimado',
+      'Todo revisado desde la ciberseguridad',
     ],
     featured: true,
   },
   {
     icon: <Workflow className="h-6 w-6" />,
-    title: 'Eliminar tareas que te roban el día',
+    title: 'Automatización de tareas repetitivas 24/7',
     description:
-      'Citas, emails, facturas, seguimientos... Todo lo que hoy haces a mano, funcionando solo. Tú te dedicas a lo importante, el sistema trabaja 24/7.',
+      'Citas, emails, facturas, seguimientos... Todo lo que hoy haces a mano, funcionando solo con inteligencia artificial. Tú te dedicas a lo importante, el sistema trabaja 24/7.',
     features: [
       'Ahorra +10 horas a la semana',
       'Funciona mientras tú duermes',
@@ -133,9 +133,9 @@ const services = [
   },
   {
     icon: <Database className="h-6 w-6" />,
-    title: 'No perder ni un cliente por desorden',
+    title: 'CRM automatizado con IA',
     description:
-      'Todos tus clientes organizados, con seguimiento automático para que ninguno se te escape. Sabes quién te debe, quién vuelve y quién necesita atención.',
+      'Todos tus clientes organizados en un CRM automatizado con IA, con seguimiento de cada uno para que ninguno se te escape. Sabes quién te debe, quién vuelve y quién necesita atención.',
     features: [
       'Ningún cliente se te olvida',
       'Seguimiento automático de cada uno',

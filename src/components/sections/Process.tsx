@@ -19,14 +19,14 @@ const steps: Step[] = [
   {
     number: '01',
     icon: <MapPin className="h-6 w-6" />,
-    title: 'Entendemos tu negocio',
-    subtitle: 'Análisis',
+    title: 'Mapeamos tus procesos con BPMN',
+    subtitle: 'BPMN',
     description:
-      'Nos sentamos contigo y analizamos cómo funciona tu negocio hoy: dónde pierdes tiempo, dónde se te escapan clientes y qué tareas te están costando dinero.',
+      'Mapeamos todos tus procesos con diagramas BPMN profesionales: marketing, ventas, delivery y admin. Detectamos el caos real antes de hablar de automatización o IA.',
     details: [
-      'Revisamos marketing, ventas, gestión y admin',
-      'Identificamos tareas que te roban horas',
-      'Detectamos dónde se pierde dinero',
+      'Diagramas BPMN profesionales',
+      'Revisamos marketing, ventas y admin',
+      'Identificamos cuellos de botella reales',
       'Primero entendemos, luego proponemos',
     ],
     color: '#D4AF37',
@@ -34,14 +34,14 @@ const steps: Step[] = [
   {
     number: '02',
     icon: <Lightbulb className="h-6 w-6" />,
-    title: 'Detectamos oportunidades',
+    title: 'Detectamos mejoras y oportunidades IA',
     subtitle: 'Mejoras',
     description:
-      'Te mostramos exactamente dónde puedes reducir costes, ahorrar tiempo y ganar más clientes. Solo proponemos lo que tiene impacto real en tu facturación.',
+      'Primero optimizamos procesos, luego proponemos automatización con IA donde tenga sentido real. Si automatizas un proceso ineficiente, la IA devuelve super-ineficiencia.',
     details: [
       'Primero simplificar, luego automatizar',
       'Cada mejora tiene un impacto medible',
-      'Solo lo que tiene sentido para tu negocio',
+      'Solo IA donde realmente aporta valor',
       'Priorizamos lo que más dinero te ahorra',
     ],
     color: '#D4AF37',
@@ -93,13 +93,13 @@ export function Process() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Proceso del diagnóstico estratégico IA</SectionBadge>
+          <SectionBadge>Proceso del diagnóstico IA en 4 fases</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Cómo automatizamos un negocio local{' '}
-            <span className="text-gradient-accent">con IA, paso a paso</span>
+            Nuestro diagnóstico IA en{' '}
+            <span className="text-gradient-accent">4 fases</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Antes de implementar ninguna automatización, entendemos tu negocio a fondo. Así cada mejora con inteligencia artificial tiene impacto real en tu día a día y en tu facturación.
+            Antes de automatizar, <span className="text-white/75 font-semibold">Izan Dura</span> y el equipo de Aima Legacy mapean tu negocio local con BPMN profesional. Así cada propuesta de inteligencia artificial tiene impacto real en facturación.
           </p>
         </ScrollReveal>
 

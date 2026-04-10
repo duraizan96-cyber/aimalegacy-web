@@ -26,7 +26,7 @@ function PainCard({ pain, solution, index }: PainCardProps) {
               </div>
               <div>
                 <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-red-400/50 block mb-1.5">
-                  Sin AIMA
+                  Sin Aima Legacy
                 </span>
                 <p className="text-sm text-white/50 leading-relaxed">{pain}</p>
               </div>
@@ -51,7 +51,7 @@ function PainCard({ pain, solution, index }: PainCardProps) {
               </div>
               <div>
                 <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-accent/50 block mb-1.5">
-                  Con AIMA
+                  Con Aima Legacy
                 </span>
                 <p className="text-sm text-white/50 leading-relaxed group-hover:text-white/65 transition-colors">
                   {solution}
@@ -84,7 +84,7 @@ const painPoints = [
   {
     pain: 'Quieres usar IA pero no sabes por dónde empezar ni en quién confiar.',
     solution:
-      'Diagnóstico profesional: entendemos tu negocio, proponemos mejoras seguras con un plan claro.',
+      'Diagnóstico IA de 4 fases: BPMN, mejoras, ciberseguridad, roadmap. No implementamos nada hasta tener el plan validado.',
   },
   {
     pain: 'Los errores humanos te cuestan clientes: citas olvidadas, mensajes sin responder.',

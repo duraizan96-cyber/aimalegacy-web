@@ -78,12 +78,11 @@ export function SavingsCalculator() {
             Calculadora de ahorro
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            ¿Cuánto dinero{' '}
-            <span className="text-gradient-accent">estás tirando</span>?
+            Calcula tu ahorro con{' '}
+            <span className="text-gradient-accent">automatización IA</span>
           </h2>
           <p className="mt-4 text-white/45 max-w-xl mx-auto">
-            Mueve el slider y mira cuánto podrías ahorrar cada mes
-            eliminando las tareas que hoy haces a mano.
+            Mueve el slider y descubre cuánto ahorra un negocio local al eliminar tareas manuales con automatización e inteligencia artificial. Datos reales, no humo.
           </p>
         </ScrollReveal>
 
@@ -173,8 +172,7 @@ export function SavingsCalculator() {
 
               {/* Bottom note */}
               <p className="mt-8 text-center text-xs text-white/25">
-                * Estimación basada en un coste medio de {HOURLY_COST}€/hora.
-                Los resultados reales dependen de tu negocio.
+                * Estimación basada en un coste medio de {HOURLY_COST}€/hora por empleado en España (salario bruto + cotización). Los resultados reales dependen del negocio y se validan en el diagnóstico IA con Izan Dura.
               </p>
             </div>
           </div>

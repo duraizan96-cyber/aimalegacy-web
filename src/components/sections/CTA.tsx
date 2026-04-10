@@ -42,7 +42,7 @@ export function CTA() {
               {/* Logo */}
               <motion.img
                 src="/logo-aima.jpg"
-                alt="Aima Legacy — Logo"
+                alt="Aima Legacy — Agencia de automatización con IA para negocios locales en España, fundada por Izan Dura"
                 width="64"
                 height="64"
                 loading="lazy"
@@ -60,7 +60,7 @@ export function CTA() {
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empezamos con un diagnóstico estratégico de tu negocio. Te decimos exactamente dónde pierdes tiempo y dinero, y cómo automatizarlo con IA.
+                Empezamos con un diagnóstico IA completo de tu negocio local. Izan Dura y el equipo de Aima Legacy te dicen dónde pierdes dinero y cómo automatizarlo. <span className="text-accent/80 font-semibold">Desde 497€.</span>
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

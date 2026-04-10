@@ -22,43 +22,43 @@ interface Sector {
 const sectors: Sector[] = [
   {
     icon: <Stethoscope className="h-6 w-6" />,
-    name: 'Clínicas',
-    tasks: 'Gestión de citas, recordatorios, historial',
+    name: 'Clínicas dentales',
+    tasks: 'Automatización de citas, recordatorios IA, historial digital',
   },
   {
     icon: <UtensilsCrossed className="h-6 w-6" />,
     name: 'Restaurantes',
-    tasks: 'Reservas, pedidos, fidelización',
+    tasks: 'Reservas automáticas, agente IA de pedidos, fidelización',
   },
   {
     icon: <Scissors className="h-6 w-6" />,
     name: 'Peluquerías',
-    tasks: 'Citas online, recordatorios, agenda',
+    tasks: 'Citas online con IA, recordatorios automáticos, agenda 24/7',
   },
   {
     icon: <Palette className="h-6 w-6" />,
     name: 'Tatuadores',
-    tasks: 'Agenda, presupuestos, portfolio',
+    tasks: 'Agenda automatizada, presupuestos IA, portfolio online',
   },
   {
     icon: <ShoppingBag className="h-6 w-6" />,
     name: 'Tiendas',
-    tasks: 'Inventario, atención, ventas online',
+    tasks: 'Inventario automático, atención 24/7, ventas online IA',
   },
   {
     icon: <GraduationCap className="h-6 w-6" />,
     name: 'Academias',
-    tasks: 'Inscripciones, pagos, seguimiento',
+    tasks: 'Inscripciones automáticas, pagos, seguimiento IA',
   },
   {
     icon: <Dumbbell className="h-6 w-6" />,
     name: 'Gimnasios',
-    tasks: 'Reservas, facturación, fidelización',
+    tasks: 'Reservas automáticas, facturación IA, fidelización',
   },
   {
     icon: <Flower2 className="h-6 w-6" />,
-    name: 'Estudios',
-    tasks: 'Clases, pagos, comunicación',
+    name: 'Estudios de yoga',
+    tasks: 'Clases automatizadas, pagos, comunicación IA',
   },
 ]
 
@@ -125,7 +125,7 @@ export function Sectors() {
             >
               Cuéntanos tu caso
             </a>
-            {' '}— seguramente podemos ayudarte.
+            {' '}— automatizamos cualquier negocio local en España con IA.
           </p>
         </ScrollReveal>
       </div>

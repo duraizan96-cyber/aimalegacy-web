@@ -85,7 +85,7 @@ export function Guarantees() {
             <span className="text-gradient-accent">garantía real</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Lo que prometemos, lo cumplimos. Cada sistema automatizado con IA entregado a un negocio local incluye Plan A/B/C/D, revisión de ciberseguridad y soporte continuo.
+            <span className="text-white/75 font-semibold">Izan Dura</span> firma personalmente cada diagnóstico y cada automatización entregada. Plan A/B/C/D en cada sistema, revisión de ciberseguridad previa y soporte continuo. Sin humo, sin excusas.
           </p>
         </ScrollReveal>
 
