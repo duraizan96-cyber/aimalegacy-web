@@ -153,14 +153,13 @@ export function Services() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Servicios</SectionBadge>
+          <SectionBadge>Servicios de automatización IA</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Problemas reales,{' '}
-            <span className="text-gradient-accent">soluciones reales</span>
+            Automatización con IA para{' '}
+            <span className="text-gradient-accent">negocios locales en España</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            No vendemos tecnología. Resolvemos lo que te frena cada día
-            para que tu negocio facture más con menos esfuerzo.
+            No vendemos tecnología. Resolvemos lo que frena cada día a restaurantes, clínicas, peluquerías y pymes españolas — para que facturen más con menos esfuerzo.
           </p>
         </ScrollReveal>
 

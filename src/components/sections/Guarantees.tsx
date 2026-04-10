@@ -78,14 +78,14 @@ export function Guarantees() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge icon={<ShieldCheck className="h-3.5 w-3.5" />}>
-            Nuestras garantías
+            Garantías de Aima Legacy
           </SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Compromisos reales,{' '}
-            <span className="text-gradient-accent">no promesas vacías</span>
+            Automatización IA con{' '}
+            <span className="text-gradient-accent">garantía real</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Lo que te prometemos, lo cumplimos. Sin humo, sin excusas, sin trucos.
+            Lo que prometemos, lo cumplimos. Cada sistema automatizado con IA entregado a un negocio local incluye Plan A/B/C/D, revisión de ciberseguridad y soporte continuo.
           </p>
         </ScrollReveal>
 

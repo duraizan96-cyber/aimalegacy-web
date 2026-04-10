@@ -138,10 +138,18 @@ export function Hero() {
             variants={fadeUp}
             className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
           >
-            Reduce costes, ahorra horas cada semana y haz crecer tu facturación.
+            Automatización con inteligencia artificial para <strong className="text-white/90 font-semibold">negocios locales en España</strong>. Restaurantes, clínicas, peluquerías y pymes que ahorran horas cada semana y aumentan su facturación.
             <span className="block mt-2 text-white/45">
-              Sin complicaciones técnicas. Solo resultados para tu negocio.
+              Sin complicaciones técnicas. Solo resultados reales.
             </span>
+          </motion.p>
+
+          {/* Founder credit — visible E-E-A-T signal */}
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 text-xs uppercase tracking-[0.2em] text-white/40"
+          >
+            Por <span className="text-accent/80 font-semibold">Izan Dura</span> · Fundador de Aima Legacy
           </motion.p>
 
           {/* CTAs */}

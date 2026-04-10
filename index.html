@@ -2,90 +2,273 @@
 <html lang="es-ES">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/logo-aima.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="/logo-aima.jpg" />
-    <link rel="apple-touch-icon" href="/logo-aima.jpg" />
+
+    <!-- Favicons modernos -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="/logo-aima.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo-aima.jpg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#04040f" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#04040f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#04040f" media="(prefers-color-scheme: light)" />
 
     <!-- Primary Meta Tags -->
-    <title>Aima Legacy — Automatización con IA para negocios en España</title>
-    <meta name="description" content="Ayudamos a negocios locales en España a reducir costes, ahorrar horas cada semana y aumentar su facturación con inteligencia artificial. Diagnóstico sin compromiso." />
-    <meta name="author" content="Aima Legacy" />
+    <title>Aima Legacy — Automatización con IA para Negocios Locales en España</title>
+    <meta name="description" content="Automatizo negocios locales en España (restaurantes, clínicas, peluquerías) con IA. Ahorro +10h/semana a mis clientes. Diagnóstico sin compromiso." />
+    <meta name="author" content="Izan Dura — Aima Legacy" />
+    <meta name="keywords" content="automatización con IA, negocios locales España, agencia automatización IA, automatizar negocio, agentes conversacionales, diagnóstico IA, n8n, Izan Dura, Aima Legacy" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="rating" content="general" />
+    <meta name="geo.region" content="ES" />
+    <meta name="geo.placename" content="España" />
     <link rel="canonical" href="https://aimalegacy.es/" />
 
-    <!-- Preload critical assets -->
+    <!-- Preload critical assets (LCP) -->
     <link rel="preload" as="image" href="/logo-aima.jpg" fetchpriority="high" />
+
+    <!-- Preconnect to third-party origins (perf) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aimalegacy.es/" />
-    <meta property="og:title" content="Aima Legacy — Automatización con IA para negocios en España" />
-    <meta property="og:description" content="Reduce costes, ahorra horas cada semana y haz crecer tu facturación con IA. Sin complicaciones técnicas, solo resultados." />
+    <meta property="og:title" content="Aima Legacy — Automatización con IA para Negocios Locales en España" />
+    <meta property="og:description" content="Automatizo negocios locales en España con IA. Ahorro +10h/semana a mis clientes. Diagnóstico estratégico sin compromiso." />
     <meta property="og:image" content="https://aimalegacy.es/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Aima Legacy — Automatización con IA" />
+    <meta property="og:image:alt" content="Aima Legacy — Automatización con IA para negocios locales en España" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="Aima Legacy" />
+    <meta property="article:author" content="Izan Dura" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aimalegacy" />
+    <meta name="twitter:creator" content="@izanduratech" />
     <meta name="twitter:url" content="https://aimalegacy.es/" />
-    <meta name="twitter:title" content="Aima Legacy — Automatización con IA para negocios en España" />
-    <meta name="twitter:description" content="Reduce costes, ahorra horas cada semana y haz crecer tu facturación con IA. Sin complicaciones técnicas, solo resultados." />
+    <meta name="twitter:title" content="Aima Legacy — Automatización con IA para Negocios Locales en España" />
+    <meta name="twitter:description" content="Automatizo negocios locales en España con IA. Ahorro +10h/semana. Diagnóstico sin compromiso." />
     <meta name="twitter:image" content="https://aimalegacy.es/og-image.jpg" />
-    <meta name="twitter:image:alt" content="Aima Legacy — Automatización con IA" />
+    <meta name="twitter:image:alt" content="Aima Legacy — Automatización con IA para negocios locales" />
 
-    <!-- Schema.org — LocalBusiness -->
+    <!-- Schema.org — ProfessionalService (unified with Organization via @id) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
+      "@id": "https://aimalegacy.es/#organization",
       "name": "Aima Legacy",
-      "description": "Consultoría de automatización con inteligencia artificial para negocios locales en España. Reduce costes, ahorra tiempo y aumenta tu facturación.",
+      "alternateName": "Aima Legacy — Automatización con IA",
+      "description": "Agencia española de automatización con inteligencia artificial para negocios locales. Ayudamos a restaurantes, clínicas, peluquerías y pymes a reducir costes, ahorrar horas cada semana y aumentar su facturación.",
       "url": "https://aimalegacy.es",
-      "logo": "https://aimalegacy.es/logo-aima.jpg",
-      "image": "https://aimalegacy.es/og-image.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://aimalegacy.es/#logo",
+        "url": "https://aimalegacy.es/logo-aima.jpg",
+        "contentUrl": "https://aimalegacy.es/logo-aima.jpg",
+        "width": 800,
+        "height": 800,
+        "caption": "Aima Legacy"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://aimalegacy.es/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
       "email": "izan@aimalegacy.es",
-      "priceRange": "€€",
+      "priceRange": "€497 - €997",
       "foundingDate": "2025",
+      "slogan": "IA bien aplicada, no herramientas genéricas",
       "knowsLanguage": ["es", "en"],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "ES",
         "addressRegion": "España"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "España"
-      },
+      "areaServed": [
+        { "@type": "Country", "name": "España" },
+        { "@type": "AdministrativeArea", "name": "España" }
+      ],
       "serviceType": [
         "Automatización con IA",
-        "Agentes conversacionales",
-        "Consultoría de procesos",
-        "Integración de sistemas"
+        "Agentes conversacionales IA",
+        "Consultoría de automatización",
+        "Optimización de procesos",
+        "Integración de sistemas",
+        "Diagnóstico estratégico IA"
+      ],
+      "knowsAbout": [
+        "Automatización con inteligencia artificial",
+        "n8n workflows",
+        "ElevenLabs agentes de voz",
+        "OpenAI",
+        "Anthropic Claude",
+        "Automatización para negocios locales",
+        "Optimización de procesos BPMN",
+        "Integración de WhatsApp Business",
+        "Google Calendar automation"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios Aima Legacy",
         "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico inicial", "description": "Mapeo BPMN de procesos, detección de oportunidades, revisión de ciberseguridad y roadmap priorizado." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización con IA", "description": "Implementación de workflows automatizados end-to-end con n8n, APIs y agentes IA." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agentes conversacionales", "description": "Chatbots y agentes de voz con IA que atienden clientes 24/7 y reservan citas." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integración de sistemas", "description": "Conectamos tus herramientas (CRM, Gmail, Calendar, Sheets, WhatsApp) para eliminar tareas manuales." } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoría de procesos", "description": "Optimización de procesos antes de automatizar. Primero se ordena, luego se automatiza." } }
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diagnóstico Estratégico IA",
+              "description": "Producto cerrado de 4 fases: mapeo BPMN de procesos, detección de oportunidades y mejoras, revisión de ciberseguridad, y roadmap priorizado con ROI estimado. Entregable profesional en 5-7 días laborables.",
+              "provider": { "@id": "https://aimalegacy.es/#organization" },
+              "areaServed": "ES"
+            },
+            "price": "497",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización con IA",
+              "description": "Implementación de workflows automatizados end-to-end con n8n, APIs, agentes IA, integraciones con WhatsApp, Google Calendar, CRM y más.",
+              "provider": { "@id": "https://aimalegacy.es/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agentes Conversacionales IA",
+              "description": "Chatbots y agentes de voz con inteligencia artificial que atienden clientes 24/7, cualifican leads y reservan citas automáticamente.",
+              "provider": { "@id": "https://aimalegacy.es/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Integración de Sistemas",
+              "description": "Conectamos las herramientas que ya usas (WhatsApp, Gmail, Google Calendar, Sheets, CRM) para eliminar tareas manuales.",
+              "provider": { "@id": "https://aimalegacy.es/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Optimización de Procesos",
+              "description": "Rediseño operativo antes de automatizar. Primero se ordena, luego se automatiza — para que la IA no multiplique la ineficiencia.",
+              "provider": { "@id": "https://aimalegacy.es/#organization" }
+            }
+          }
         ]
       },
       "sameAs": [
-        "https://instagram.com/aimalegacy"
+        "https://instagram.com/aimalegacy",
+        "https://www.linkedin.com/in/izandura/",
+        "https://instagram.com/izan.legacy"
       ],
-      "founder": {
-        "@type": "Person",
-        "name": "Izan Dura",
-        "jobTitle": "Fundador"
+      "founder": { "@id": "https://aimalegacy.es/#founder" },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "izan@aimalegacy.es",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish", "es"],
+        "areaServed": "ES"
       }
+    }
+    </script>
+
+    <!-- Schema.org — Person (Izan Dura, founder) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://aimalegacy.es/#founder",
+      "name": "Izan Dura",
+      "givenName": "Izan",
+      "familyName": "Dura",
+      "jobTitle": "Fundador y CEO",
+      "description": "Fundador de Aima Legacy. Consultor especializado en automatización con inteligencia artificial para negocios locales en España.",
+      "worksFor": { "@id": "https://aimalegacy.es/#organization" },
+      "url": "https://aimalegacy.es",
+      "email": "izan@aimalegacy.es",
+      "nationality": { "@type": "Country", "name": "España" },
+      "sameAs": [
+        "https://www.linkedin.com/in/izandura/",
+        "https://instagram.com/izan.legacy"
+      ],
+      "knowsAbout": [
+        "Automatización con inteligencia artificial",
+        "n8n workflows",
+        "Agentes conversacionales",
+        "Optimización de procesos para pymes",
+        "Integración de sistemas empresariales",
+        "IA aplicada a negocios locales"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org — WebSite (linked to organization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://aimalegacy.es/#website",
+      "name": "Aima Legacy",
+      "url": "https://aimalegacy.es",
+      "inLanguage": "es-ES",
+      "publisher": { "@id": "https://aimalegacy.es/#organization" }
+    }
+    </script>
+
+    <!-- Schema.org — WebPage (homepage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://aimalegacy.es/#webpage",
+      "url": "https://aimalegacy.es/",
+      "name": "Aima Legacy — Automatización con IA para Negocios Locales en España",
+      "description": "Automatizo negocios locales en España con IA. Restaurantes, clínicas, peluquerías y pymes que ahorran +10h/semana con automatización e inteligencia artificial.",
+      "isPartOf": { "@id": "https://aimalegacy.es/#website" },
+      "about": { "@id": "https://aimalegacy.es/#organization" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://aimalegacy.es/og-image.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "inLanguage": "es-ES",
+      "datePublished": "2025-11-01",
+      "dateModified": "2026-04-11",
+      "author": { "@id": "https://aimalegacy.es/#founder" },
+      "publisher": { "@id": "https://aimalegacy.es/#organization" },
+      "breadcrumb": { "@id": "https://aimalegacy.es/#breadcrumb" }
+    }
+    </script>
+
+    <!-- Schema.org — BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://aimalegacy.es/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://aimalegacy.es/"
+        }
+      ]
     }
     </script>
 
@@ -94,45 +277,48 @@
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      "@id": "https://aimalegacy.es/#faq",
+      "inLanguage": "es-ES",
+      "isPartOf": { "@id": "https://aimalegacy.es/#webpage" },
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué incluye el diagnóstico inicial?",
+          "name": "¿Qué incluye el diagnóstico estratégico de Aima Legacy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El diagnóstico es un producto cerrado de 4 fases: mapeo de procesos BPMN, detección de mejoras y oportunidades, revisión de ciberseguridad, y un roadmap priorizado a medida. Recibes un documento profesional con todo analizado — no es una reunión ni una charla informal."
+            "text": "El diagnóstico es un producto cerrado de 4 fases: mapeo de procesos BPMN, detección de mejoras y oportunidades de automatización, revisión de ciberseguridad, y un roadmap priorizado a medida con ROI estimado. Recibes un documento profesional con todo analizado — no es una reunión ni una charla informal."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto tiempo tarda en verse resultados?",
+          "name": "¿Cuánto tiempo tarda en verse resultados con la automatización?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El diagnóstico se entrega en 5-7 días laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Algunos clientes ven ahorro de tiempo desde la primera semana de implementación."
+            "text": "El diagnóstico se entrega en 5-7 días laborables. Una vez aprobado el roadmap, las primeras automatizaciones pueden estar activas en 2-4 semanas. Muchos clientes ven ahorro de tiempo desde la primera semana de implementación."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Necesito conocimientos técnicos?",
+          "name": "¿Necesito conocimientos técnicos para automatizar mi negocio con IA?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Nosotros nos encargamos de todo lo técnico. Tú solo necesitas contarnos cómo funciona tu negocio y qué problemas tienes. El diagnóstico traduce la tecnología en decisiones claras que puedes entender."
+            "text": "No. Nosotros nos encargamos de todo lo técnico. Tú solo cuentas cómo funciona tu negocio y qué problemas tienes. Integramos la IA en las herramientas que ya usas (WhatsApp, Google Calendar, tu web) sin que tengas que cambiar cómo trabajas."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué tipo de negocios atendéis?",
+          "name": "¿Qué tipo de negocios locales atendéis en España?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trabajamos con negocios locales en España: clínicas, restaurantes, peluquerías, tatuadores, tiendas, estudios de yoga, academias... Cualquier negocio que tenga procesos repetitivos y quiera optimizarlos con IA."
+            "text": "Trabajamos con negocios locales en toda España: clínicas dentales, restaurantes, peluquerías, tatuadores, estudios de yoga, academias, tiendas y cualquier pyme con procesos repetitivos que quiera optimizarlos con automatización e inteligencia artificial."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué pasa si algo falla después de implementar?",
+          "name": "¿Qué pasa si algo falla después de implementar la automatización?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automáticas. Tu negocio nunca se queda bloqueado. Además, monitorizamos todo con alertas en tiempo real."
+            "text": "Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automáticas. Tu negocio nunca se queda bloqueado. Además, monitorizamos todo con alertas en tiempo real vía Telegram."
           }
         },
         {
@@ -140,56 +326,25 @@
           "name": "¿Puedo ver un ejemplo antes de contratar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El diagnóstico inicial es precisamente eso: nuestro primer producto donde demostramos que entendemos tu negocio. No implementamos sin diagnóstico previo — así aseguramos que cada propuesta tiene sentido real."
+            "text": "Puedes hablar con Eric, nuestro agente de voz IA en vivo, directamente en la web — es un ejemplo real, no una demo falsa. Y el diagnóstico inicial es precisamente nuestro primer producto donde demostramos que entendemos tu negocio. Nunca implementamos sin diagnóstico previo."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cuánto cuesta?",
+          "name": "¿Cuánto cuesta automatizar un negocio local con Aima Legacy?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Depende del tamaño y complejidad de tu negocio. El diagnóstico tiene un precio fijo que te comunicamos en la primera conversación. La implementación se presupuesta una vez tenemos el roadmap aprobado. Sin sorpresas ni costes ocultos."
+            "text": "El diagnóstico estratégico tiene un precio fijo de 497€ — te lo comunicamos en la primera conversación. La implementación se presupuesta una vez tenemos el roadmap aprobado y depende del alcance (típicamente entre 797€ y 997€). Sin sorpresas ni costes ocultos."
           }
         }
       ]
     }
     </script>
 
-    <!-- Schema.org — Organization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Aima Legacy",
-      "url": "https://aimalegacy.es",
-      "logo": "https://aimalegacy.es/logo-aima.jpg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "izan@aimalegacy.es",
-        "contactType": "Customer Service",
-        "availableLanguage": ["Spanish", "es"]
-      },
-      "sameAs": [
-        "https://instagram.com/aimalegacy"
-      ]
-    }
-    </script>
-
-    <!-- Schema.org — WebSite with SearchAction -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Aima Legacy",
-      "url": "https://aimalegacy.es",
-      "inLanguage": "es-ES"
-    }
-    </script>
-
-    <!-- Meta Pixel — pendiente de ID real. Cuando lo tengas:
-         1) Reemplaza META_PIXEL_ID por el ID numérico
-         2) Descomenta el bloque de script y el noscript del body
-         3) Asegúrate de tener consent banner (GDPR) antes de activarlo
+    <!-- Meta Pixel — DESACTIVADO hasta activar consent banner GDPR
+         Cuando tengas consent banner:
+         1) Descomenta el bloque de script y el noscript del body
+         2) Asegúrate de respetar el opt-in del usuario
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -199,20 +354,53 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'META_PIXEL_ID');
+      fbq('init', '1746175833055742');
       fbq('track', 'PageView');
     </script>
     -->
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Fonts (non-blocking, async) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    </noscript>
+
+    <!-- Critical SEO content (visible to crawlers even if JS fails) -->
+    <style>
+      .seo-noscript-fallback { display: none; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
   <body>
-    <!-- Meta Pixel noscript fallback — descomenta cuando haya ID real
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
-    -->
+    <!-- SEO fallback content — visible to crawlers if JS fails or delays -->
+    <noscript>
+      <div style="background:#04040f;color:#fff;padding:40px;font-family:sans-serif;min-height:100vh">
+        <h1>Aima Legacy — Automatización con IA para Negocios Locales en España</h1>
+        <p>Fundada por <strong>Izan Dura</strong>, Aima Legacy es una agencia española especializada en automatización con inteligencia artificial para negocios locales: restaurantes, clínicas dentales, peluquerías, tatuadores y pymes en toda España.</p>
+        <h2>Nuestros servicios</h2>
+        <ul>
+          <li><strong>Diagnóstico Estratégico IA</strong> — Mapeo BPMN de procesos, detección de oportunidades, revisión de ciberseguridad y roadmap priorizado. Entregable profesional en 5-7 días.</li>
+          <li><strong>Automatización con IA</strong> — Workflows end-to-end con n8n, APIs y agentes IA personalizados.</li>
+          <li><strong>Agentes Conversacionales</strong> — Chatbots y agentes de voz que atienden clientes 24/7.</li>
+          <li><strong>Integración de Sistemas</strong> — Conectamos WhatsApp, Gmail, Calendar, Sheets, CRM.</li>
+          <li><strong>Optimización de Procesos</strong> — Primero se ordena, luego se automatiza.</li>
+        </ul>
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:izan@aimalegacy.es">izan@aimalegacy.es</a></p>
+        <p>Este sitio requiere JavaScript para la experiencia completa. Si no puedes activarlo, escríbenos por email.</p>
+      </div>
+    </noscript>
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

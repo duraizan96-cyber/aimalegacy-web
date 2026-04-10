@@ -111,13 +111,13 @@ export function PainPoints() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Antes y después</SectionBadge>
+          <SectionBadge>Antes y después de automatizar con IA</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Tu negocio hoy{' '}
-            <span className="text-gradient-accent">vs con nosotros</span>
+            Tu negocio local hoy{' '}
+            <span className="text-gradient-accent">vs con automatización IA</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Estos problemas te están costando dinero cada día. Aquí está la diferencia.
+            Estos problemas están costando dinero cada día a miles de negocios locales en España. Aquí está la diferencia con Aima Legacy.
           </p>
         </ScrollReveal>
 

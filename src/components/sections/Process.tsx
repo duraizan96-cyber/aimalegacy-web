@@ -93,14 +93,13 @@ export function Process() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Nuestro proceso</SectionBadge>
+          <SectionBadge>Proceso del diagnóstico estratégico IA</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Cómo pasamos de problema{' '}
-            <span className="text-gradient-accent">a resultado</span>
+            Cómo automatizamos un negocio local{' '}
+            <span className="text-gradient-accent">con IA, paso a paso</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Antes de hacer nada, entendemos tu negocio a fondo.
-            Así cada mejora tiene un impacto real en tu día a día y en tu facturación.
+            Antes de implementar ninguna automatización, entendemos tu negocio a fondo. Así cada mejora con inteligencia artificial tiene impacto real en tu día a día y en tu facturación.
           </p>
         </ScrollReveal>
 

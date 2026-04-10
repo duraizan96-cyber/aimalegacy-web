@@ -101,13 +101,13 @@ export function ValueProps() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Por qué elegirnos</SectionBadge>
+          <SectionBadge>Por qué automatizar con Aima Legacy</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Menos esfuerzo,{' '}
-            <span className="text-gradient-accent">más beneficio</span>
+            <span className="text-gradient-accent">más beneficio con IA</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Tu negocio funciona mejor, gasta menos y factura más. Así de simple.
+            Tu negocio local funciona mejor, gasta menos y factura más con automatización e inteligencia artificial. Así de simple.
           </p>
         </ScrollReveal>
 

@@ -65,11 +65,11 @@ export function TechStack() {
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <ScrollReveal className="text-center mb-12">
           <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
-            Resultados reales
+            Resultados reales con IA
           </span>
           <h2 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
-            Lo que consiguen los negocios{' '}
-            <span className="text-gradient-accent-static">que trabajan con nosotros</span>
+            Lo que consiguen los negocios locales en España{' '}
+            <span className="text-gradient-accent-static">que automatizan con Aima Legacy</span>
           </h2>
         </ScrollReveal>
 

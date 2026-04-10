@@ -55,26 +55,25 @@ export function CTA() {
               />
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1]">
-                ¿Quieres gastar menos{' '}
-                <span className="text-gradient-accent">y facturar más</span>?
+                ¿Quieres automatizar tu negocio local{' '}
+                <span className="text-gradient-accent">con inteligencia artificial</span>?
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empezamos analizando tu negocio. Te decimos exactamente
-                dónde pierdes dinero y cómo solucionarlo.
+                Empezamos con un diagnóstico estratégico de tu negocio. Te decimos exactamente dónde pierdes tiempo y dinero, y cómo automatizarlo con IA.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <GlowButton href="mailto:izan@aimalegacy.es" variant="primary">
+                <GlowButton href="mailto:izan@aimalegacy.es?subject=Solicitud%20de%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20IA" variant="primary">
                   <Mail className="h-4 w-4" />
                   Solicitar Diagnóstico
                   <ArrowRight className="h-4 w-4" />
                 </GlowButton>
                 <GlowButton
-                  href="https://instagram.com/aimalegacy"
+                  href="https://www.linkedin.com/in/izandura/"
                   variant="secondary"
                 >
-                  Hablemos por Instagram
+                  Hablar con Izan en LinkedIn
                 </GlowButton>
               </div>
 
@@ -85,13 +84,16 @@ export function CTA() {
                 </div>
                 <div className="flex items-center gap-2 text-xs">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400/60 shadow-[0_0_6px_rgba(74,222,128,0.4)]" />
-                  Sin letra pequeña
+                  Respuesta en 24h
                 </div>
                 <div className="flex items-center gap-2 text-xs">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400/60 shadow-[0_0_6px_rgba(74,222,128,0.4)]" />
-                  Solo resultados
+                  Plazas limitadas
                 </div>
               </div>
+              <p className="mt-6 text-[11px] text-white/30 uppercase tracking-[0.2em]">
+                Atendido personalmente por <span className="text-accent/70 font-semibold">Izan Dura</span>, fundador de Aima Legacy
+              </p>
             </div>
           </div>
         </ScrollReveal>

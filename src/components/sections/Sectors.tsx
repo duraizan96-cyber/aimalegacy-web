@@ -75,14 +75,13 @@ export function Sectors() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-12">
-          <SectionBadge>Para quién trabajamos</SectionBadge>
+          <SectionBadge>Automatización IA por sector</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Tu sector,{' '}
-            <span className="text-gradient-accent">tu solución</span>
+            Negocios locales en España que{' '}
+            <span className="text-gradient-accent">automatizan con IA</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Cada negocio tiene sus propios retos. Nos adaptamos al tuyo
-            con soluciones concretas, no plantillas genéricas.
+            Cada sector tiene sus propios retos. Nos adaptamos al tuyo con automatización e inteligencia artificial concreta — no plantillas genéricas.
           </p>
         </ScrollReveal>
 
