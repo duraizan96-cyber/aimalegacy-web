@@ -218,7 +218,13 @@
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- ElevenLabs Conversational AI — Eric (Agente de Citas Aima Legacy) -->
-    <elevenlabs-convai agent-id="agent_2101knfqm14gf83r14ts3pbh9g5m"></elevenlabs-convai>
+    <elevenlabs-convai
+      agent-id="agent_2101knfqm14gf83r14ts3pbh9g5m"
+      avatar-image-url="https://aimalegacy.es/logo-aima.jpg"
+      show-avatar-when-collapsed
+      override-first-message="Hola, soy Eric, el agente de Aima Legacy. ¿En qué puedo ayudarte?"
+      override-stability="0.7"
+    ></elevenlabs-convai>
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   </body>
 </html>
