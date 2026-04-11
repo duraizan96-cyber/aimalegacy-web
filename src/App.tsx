@@ -1,6 +1,7 @@
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { TechStack } from './components/sections/TechStack'
+import { ToolsMarquee } from './components/sections/ToolsMarquee'
 import { ValueProps } from './components/sections/ValueProps'
 import { Services } from './components/sections/Services'
 import { LiveDemo } from './components/sections/LiveDemo'
@@ -26,6 +27,7 @@ export default function App() {
       <main>
         <Hero />
         <TechStack />
+        <ToolsMarquee />
         <div className="section-divider mx-auto max-w-4xl" />
         <ValueProps />
         <Services />

@@ -19,7 +19,7 @@ export function Marquee({
       style={{ maskImage: 'linear-gradient(90deg, transparent, black 10%, black 90%, transparent)' }}
     >
       <div
-        className={`marquee-track ${pauseOnHover ? '' : ''}`}
+        className={`marquee-track ${pauseOnHover ? 'hover:[animation-play-state:paused]' : ''}`}
         style={{ animationDuration: `${speed}s` }}
       >
         {/* Original */}

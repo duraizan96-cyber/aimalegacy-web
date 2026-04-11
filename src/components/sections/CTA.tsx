@@ -60,8 +60,26 @@ export function CTA() {
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empezamos con un diagnóstico IA completo de tu negocio local. Izan Dura y el equipo de Aima Legacy te dicen dónde pierdes dinero y cómo automatizarlo.
+                Empezamos con un diagnóstico IA completo. Izan Dura y el equipo de Aima Legacy mapean tu negocio, detectan dónde pierdes dinero y te entregan un roadmap de automatización con impacto real.
               </p>
+
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/35">
+                <span className="flex items-center gap-2">
+                  <span className="text-accent font-bold">01</span> Mapeo BPMN de tus procesos
+                </span>
+                <span className="text-white/10">·</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-accent font-bold">02</span> Oportunidades con IA
+                </span>
+                <span className="text-white/10">·</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-accent font-bold">03</span> Revisión ciberseguridad
+                </span>
+                <span className="text-white/10">·</span>
+                <span className="flex items-center gap-2">
+                  <span className="text-accent font-bold">04</span> Roadmap priorizado
+                </span>
+              </div>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <GlowButton href="mailto:izan@aimalegacy.es?subject=Solicitud%20de%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20IA" variant="primary">

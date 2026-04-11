@@ -23,6 +23,7 @@ export function SavingsCalculator() {
   const monthlySavings = weeklySavings * 4.33
   const yearlySavings = monthlySavings * 12
   const yearlyHours = hoursPerWeek * 52
+  const monthlyHours = Math.round(hoursPerWeek * 4.33)
 
   const cards = [
     {
@@ -57,9 +58,9 @@ export function SavingsCalculator() {
     },
     {
       icon: <Calculator className="h-5 w-5" />,
-      label: 'ROI estimado',
-      value: Math.round((yearlySavings / 2000) * 100),
-      suffix: '%',
+      label: 'Horas libres al mes',
+      value: monthlyHours,
+      suffix: 'h',
       prefix: '',
       color: 'from-green-400/20 to-green-400/5',
       iconColor: 'text-green-400',

@@ -463,6 +463,16 @@ input[type="range"]::-moz-range-track {
   animation: marquee 30s linear infinite;
 }
 
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
 /* ============================
    CARD SHINE EFFECT
    ============================ */

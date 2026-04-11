@@ -114,7 +114,7 @@ const trustMetrics = [
   { value: '100%', label: 'Clientes satisfechos' },
   { value: '48h', label: 'Propuesta en menos de' },
   { value: '24/7', label: 'Sistemas activos' },
-  { value: 'Eric', label: 'Agente IA en vivo' },
+  { value: '4', label: 'Fases del diagnóstico' },
 ]
 
 export function Testimonials() {
