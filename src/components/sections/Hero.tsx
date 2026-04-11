@@ -111,6 +111,8 @@ export function Hero() {
             <span className="text-white">Tu negocio</span>
             <br />
             <span className="relative inline-block w-full h-[1.15em]">
+              {/* Static keyword always in DOM for crawlers/SEO */}
+              <span className="sr-only">automatizado</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={wordIndex}
@@ -118,6 +120,7 @@ export function Hero() {
                   animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   exit={{ opacity: 0, y: -30, rotateX: 40 }}
                   transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+                  aria-hidden="true"
                   className="text-gradient-accent absolute inset-0"
                 >
                   {rotatingWords[wordIndex]}

@@ -26,8 +26,8 @@
     <meta name="geo.placename" content="España" />
     <link rel="canonical" href="https://aimalegacy.es/" />
 
-    <!-- Preload critical assets (LCP) -->
-    <link rel="preload" as="image" href="/logo-aima.jpg" fetchpriority="high" />
+    <!-- Logo preload (navbar icon, low priority — not the LCP element) -->
+    <link rel="preload" as="image" href="/logo-aima.jpg" fetchpriority="low" />
 
     <!-- Preconnect to third-party origins (perf) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,7 +51,7 @@
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@aimalegacy" />
-    <meta name="twitter:creator" content="@izanduratech" />
+    <meta name="twitter:creator" content="@izan.legacy" />
     <meta name="twitter:url" content="https://aimalegacy.es/" />
     <meta name="twitter:title" content="Aima Legacy — Automatización con IA para Negocios Locales en España" />
     <meta name="twitter:description" content="Automatizo negocios locales en España con IA. Ahorro +10h/semana. Diagnóstico sin compromiso." />
@@ -359,8 +359,7 @@
     </script>
     -->
 
-    <!-- Fonts (non-blocking, async) -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <!-- Fonts (non-blocking, async) — preconnect covers the origin hint -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" />

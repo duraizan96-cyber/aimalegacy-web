@@ -1,78 +1,37 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { Mic, ClipboardList, ShieldCheck } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 import { SpotlightCard } from '../ui/SpotlightCard'
 
-interface TestimonialProps {
-  name: string
-  role: string
-  location: string
-  text: string
-  metric: string
-  metricLabel: string
-  initials: string
+interface ProofCardProps {
+  icon: React.ElementType
+  tag: string
+  title: string
+  description: string
   delay: number
 }
 
-function TestimonialCard({
-  name,
-  role,
-  location,
-  text,
-  metric,
-  metricLabel,
-  initials,
-  delay,
-}: TestimonialProps) {
+function ProofCard({ icon: Icon, tag, title, description, delay }: ProofCardProps) {
   return (
     <ScrollReveal delay={delay}>
       <SpotlightCard className="h-full">
         <div className="relative rounded-2xl bg-black-card border border-white/[0.06] p-7 lg:p-8 h-full flex flex-col group-hover:border-accent/15 transition-colors duration-500">
-          {/* Inset glow */}
           <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 shadow-[inset_0_-20px_60px_-20px_rgba(212,175,55,0.05)]" />
 
           <div className="relative z-10 flex flex-col h-full">
-            {/* Quote icon */}
-            <div className="mb-5">
-              <Quote className="h-8 w-8 text-accent/15" />
+            <div className="mb-5 h-12 w-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+              <Icon className="h-6 w-6 text-accent" />
             </div>
 
-            {/* Stars */}
-            <div className="flex gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-accent/80 text-accent/80" />
-              ))}
-            </div>
+            <span className="text-xs uppercase tracking-wider text-accent/70 font-semibold mb-3">
+              {tag}
+            </span>
 
-            {/* Text */}
-            <p className="text-sm text-white/55 leading-relaxed mb-6 flex-grow italic">
-              &ldquo;{text}&rdquo;
-            </p>
+            <h3 className="text-lg font-bold text-white mb-3 leading-snug">{title}</h3>
 
-            {/* Metric */}
-            <div className="pt-5 mb-6 border-t border-white/[0.06]">
-              <span className="text-2xl font-bold text-gradient-accent-static font-[family-name:var(--font-display)]">
-                {metric}
-              </span>
-              <span className="block text-[10px] text-white/30 tracking-wider uppercase mt-1">
-                {metricLabel}
-              </span>
-            </div>
-
-            {/* Author */}
-            <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center border border-accent/20 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
-                <span className="text-xs font-bold text-accent">{initials}</span>
-              </div>
-              <div>
-                <span className="text-sm font-semibold text-white block">{name}</span>
-                <span className="text-xs text-white/35">
-                  {role} &middot; {location}
-                </span>
-              </div>
-            </div>
+            <p className="text-sm text-white/55 leading-relaxed flex-grow">{description}</p>
           </div>
         </div>
       </SpotlightCard>
@@ -80,38 +39,32 @@ function TestimonialCard({
   )
 }
 
-const testimonials = [
+const proofPoints: Omit<ProofCardProps, 'delay'>[] = [
   {
-    name: 'Dra. Laura M.',
-    role: 'Directora',
-    location: 'Valencia',
-    text: 'Pasamos de perder 3 horas diarias en gestionar citas a que todo funcione solo. Los pacientes reciben recordatorios, las cancelaciones se reubican y yo me dedico a lo importante: atender pacientes.',
-    metric: '-15h/sem',
-    metricLabel: 'tiempo en tareas manuales',
-    initials: 'LM',
+    icon: Mic,
+    tag: 'Prueba ahora mismo',
+    title: 'Eric funciona en vivo — no es una demo grabada',
+    description:
+      'Puedes hablar con Eric ahora mismo en esta web. Es un agente de voz IA real, activo 24/7, construido con las mismas herramientas que usamos para los clientes. Si funciona aquí, funciona en tu negocio.',
   },
   {
-    name: 'Carlos R.',
-    role: 'Propietario restaurante',
-    location: 'Madrid',
-    text: 'No entiendo de tecnología, pero AIMA me lo hizo todo fácil. Ahora mis redes se gestionan solas, las reservas entran automáticas y sé exactamente cuánto me cuesta cada cliente que entra por publicidad.',
-    metric: '+40%',
-    metricLabel: 'más reservas online',
-    initials: 'CR',
+    icon: ClipboardList,
+    tag: 'Metodología real',
+    title: 'Primero diagnóstico, luego implementación — siempre',
+    description:
+      'Nunca automatizamos sin entender tu negocio. El diagnóstico BPMN detecta qué optimizar antes de tocar tecnología. Si automatizas un proceso ineficiente, la IA solo devuelve super-ineficiencia.',
   },
   {
-    name: 'Marina S.',
-    role: 'Studio de tatuajes',
-    location: 'Barcelona',
-    text: 'Antes perdía clientes porque tardaba en contestar DMs. Ahora la IA responde al instante, agenda citas y manda el aftercare automático. Mis clientes flipan y yo facturo más sin hacer nada extra.',
-    metric: '24/7',
-    metricLabel: 'atención automatizada',
-    initials: 'MS',
+    icon: ShieldCheck,
+    tag: 'Garantía documentada',
+    title: 'Cada sistema entregado con Plan A, B, C y D',
+    description:
+      'Si algo falla, hay alternativas activas de forma automática. Tu negocio nunca se queda bloqueado. Todo workflow se entrega probado, documentado y con monitorización en tiempo real vía Telegram.',
   },
 ]
 
 const trustMetrics = [
-  { value: '100%', label: 'Clientes satisfechos' },
+  { value: '1er', label: 'Cliente piloto sin coste' },
   { value: '48h', label: 'Propuesta en menos de' },
   { value: '24/7', label: 'Sistemas activos' },
   { value: '4', label: 'Fases del diagnóstico' },
@@ -130,20 +83,21 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Testimonios</SectionBadge>
+          <SectionBadge>Por qué confiar</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Lo que dicen{' '}
-            <span className="text-gradient-accent">nuestros clientes</span>
+            Prueba real antes de{' '}
+            <span className="text-gradient-accent">comprometerte</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Negocios reales en España que ya trabajan mejor gracias a nosotros.
+            Estamos abriendo los primeros proyectos de diagnóstico en 2026. Contacto directo
+            con Izan Dura — sin intermediarios, sin burocracia.
           </p>
         </ScrollReveal>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={t.name} {...t} delay={i * 0.12} />
+          {proofPoints.map((p, i) => (
+            <ProofCard key={p.title} {...p} delay={i * 0.12} />
           ))}
         </div>
 
