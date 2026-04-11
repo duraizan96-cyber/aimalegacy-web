@@ -60,7 +60,7 @@ export function CTA() {
               </h2>
 
               <p className="mt-6 text-lg text-white/45 max-w-xl mx-auto leading-relaxed">
-                Empezamos con un diagnóstico IA completo de tu negocio local. Izan Dura y el equipo de Aima Legacy te dicen dónde pierdes dinero y cómo automatizarlo. <span className="text-accent/80 font-semibold">Desde 497€.</span>
+                Empezamos con un diagnóstico IA completo de tu negocio local. Izan Dura y el equipo de Aima Legacy te dicen dónde pierdes dinero y cómo automatizarlo.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

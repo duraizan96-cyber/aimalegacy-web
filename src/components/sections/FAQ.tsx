@@ -113,7 +113,7 @@ const faqs = [
   {
     question: '¿Cuánto cuesta automatizar un negocio local con Aima Legacy?',
     answer:
-      'El diagnóstico IA tiene un precio fijo desde 497€. Incluye las 4 fases completas (BPMN, mejoras, ciberseguridad, roadmap) y el entregable profesional firmado por Izan Dura. La implementación se presupuesta sobre el roadmap aprobado (rango típico: 797€-997€ para negocios locales, escalable según complejidad). Sin sorpresas ni costes ocultos.',
+      'El diagnóstico IA incluye las 4 fases completas (BPMN, mejoras, ciberseguridad, roadmap) y el entregable profesional firmado por Izan Dura. La implementación se presupuesta sobre el roadmap aprobado, adaptado a cada negocio. Contáctanos para recibir una propuesta personalizada sin compromiso.',
   },
 ]
 

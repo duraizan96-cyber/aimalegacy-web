@@ -172,7 +172,7 @@ export function SavingsCalculator() {
 
               {/* Bottom note */}
               <p className="mt-8 text-center text-xs text-white/25">
-                * Estimación basada en un coste medio de {HOURLY_COST}€/hora por empleado en España (salario bruto + cotización). Los resultados reales dependen del negocio y se validan en el diagnóstico IA con Izan Dura.
+                * Estimación basada en costes medios de empleados en España. Los resultados reales dependen del negocio y se validan en el diagnóstico IA con Izan Dura.
               </p>
             </div>
           </div>
