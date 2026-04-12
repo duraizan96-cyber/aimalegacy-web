@@ -16,34 +16,52 @@ import { CTA } from './components/sections/CTA'
 import { Footer } from './components/layout/Footer'
 import { CursorGlow } from './components/ui/CursorGlow'
 import { ScrollProgress } from './components/ui/ScrollProgress'
+import { BlogList } from './pages/BlogList'
+import { BlogPost } from './pages/BlogPost'
 
-export default function App() {
+interface AppProps {
+  page?: 'blog' | 'blogPost'
+}
+
+export default function App({ page }: AppProps) {
+  const isLanding = !page
+
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <div className="noise-overlay" />
       <ScrollProgress />
       <CursorGlow />
       <Navbar />
-      <main>
-        <Hero />
-        <TechStack />
-        <ToolsMarquee />
-        <div className="section-divider mx-auto max-w-4xl" />
-        <ValueProps />
-        <Services />
-        <LiveDemo />
-        <Sectors />
-        <div className="section-divider mx-auto max-w-4xl" />
-        <Process />
-        <SavingsCalculator />
-        <div className="section-divider mx-auto max-w-4xl" />
-        <PainPoints />
-        <Testimonials />
-        <Guarantees />
-        <div className="section-divider mx-auto max-w-4xl" />
-        <FAQ />
-        <CTA />
-      </main>
+      {isLanding ? (
+        <main>
+          <Hero />
+          <TechStack />
+          <ToolsMarquee />
+          <div className="section-divider mx-auto max-w-4xl" />
+          <ValueProps />
+          <Services />
+          <LiveDemo />
+          <Sectors />
+          <div className="section-divider mx-auto max-w-4xl" />
+          <Process />
+          <SavingsCalculator />
+          <div className="section-divider mx-auto max-w-4xl" />
+          <PainPoints />
+          <Testimonials />
+          <Guarantees />
+          <div className="section-divider mx-auto max-w-4xl" />
+          <FAQ />
+          <CTA />
+        </main>
+      ) : page === 'blog' ? (
+        <main>
+          <BlogList />
+        </main>
+      ) : (
+        <main>
+          <BlogPost />
+        </main>
+      )}
       <Footer />
     </div>
   )

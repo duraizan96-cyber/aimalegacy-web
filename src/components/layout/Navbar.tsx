@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 import { GlowButton } from '../ui/GlowButton'
 
 const navLinks = [
   { label: 'Prueba Eric', href: '#demo' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Proceso', href: '#proceso' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '#faq' },
 ]
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const location = useLocation()
+  const isLanding = location.pathname === '/'
   const { scrollY } = useScroll()
   const bgOpacity = useTransform(scrollY, [0, 80], [0, 0.95])
   const blurAmount = useTransform(scrollY, [0, 80], [0, 20])
@@ -49,7 +52,7 @@ export function Navbar() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="#" aria-label="Aima Legacy — Inicio" className="flex items-center gap-3 group relative z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <Link to="/" aria-label="Aima Legacy — Inicio" className="flex items-center gap-3 group relative z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black">
               <div className="relative">
                 <img
                   src="/logo-aima.jpg"
@@ -71,20 +74,35 @@ export function Navbar() {
                   Legacy
                 </span>
               </div>
-            </a>
+            </Link>
 
             {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isRoute = link.href.startsWith('/')
+                const isAnchor = link.href.startsWith('#')
+                const anchorHref = isAnchor && !isLanding ? `/${link.href}` : link.href
+
+                return isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  >
+                    {link.label}
+                    <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={anchorHref}
+                    className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                  >
+                    {link.label}
+                    <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  </a>
+                )
+              })}
             </div>
 
             {/* CTA */}
@@ -143,20 +161,30 @@ export function Navbar() {
               className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(212,175,55,0.3)]"
             />
             <div className="flex flex-col items-center gap-6">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ delay: i * 0.08, duration: 0.3 }}
-                  className="text-2xl font-semibold text-white/60 hover:text-accent transition-colors"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {navLinks.map((link, i) => {
+                const isRoute = link.href.startsWith('/')
+                const isAnchor = link.href.startsWith('#')
+                const anchorHref = isAnchor && !isLanding ? `/${link.href}` : link.href
+                const motionProps = {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  exit: { opacity: 0, y: 10 },
+                  transition: { delay: i * 0.08, duration: 0.3 },
+                  className: "text-2xl font-semibold text-white/60 hover:text-accent transition-colors",
+                }
+
+                return isRoute ? (
+                  <motion.div key={link.href} {...motionProps}>
+                    <Link to={link.href} onClick={() => setMobileOpen(false)} className={motionProps.className}>
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a key={link.href} href={anchorHref} onClick={() => setMobileOpen(false)} {...motionProps}>
+                    {link.label}
+                  </motion.a>
+                )
+              })}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
