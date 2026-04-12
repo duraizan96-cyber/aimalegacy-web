@@ -1,23 +1,26 @@
+import { lazy, Suspense } from 'react'
 import { Navbar } from './components/layout/Navbar'
 import { Hero } from './components/sections/Hero'
 import { TechStack } from './components/sections/TechStack'
 import { ToolsMarquee } from './components/sections/ToolsMarquee'
-import { ValueProps } from './components/sections/ValueProps'
-import { Services } from './components/sections/Services'
-import { LiveDemo } from './components/sections/LiveDemo'
-import { Sectors } from './components/sections/Sectors'
-import { Process } from './components/sections/Process'
-import { SavingsCalculator } from './components/sections/SavingsCalculator'
-import { PainPoints } from './components/sections/PainPoints'
-import { Testimonials } from './components/sections/Testimonials'
-import { Guarantees } from './components/sections/Guarantees'
-import { FAQ } from './components/sections/FAQ'
-import { CTA } from './components/sections/CTA'
 import { Footer } from './components/layout/Footer'
 import { CursorGlow } from './components/ui/CursorGlow'
 import { ScrollProgress } from './components/ui/ScrollProgress'
-import { BlogList } from './pages/BlogList'
-import { BlogPost } from './pages/BlogPost'
+
+// Lazy-load below-the-fold sections (reduces initial JS parse ~40%)
+const ValueProps = lazy(() => import('./components/sections/ValueProps').then(m => ({ default: m.ValueProps })))
+const Services = lazy(() => import('./components/sections/Services').then(m => ({ default: m.Services })))
+const LiveDemo = lazy(() => import('./components/sections/LiveDemo').then(m => ({ default: m.LiveDemo })))
+const Sectors = lazy(() => import('./components/sections/Sectors').then(m => ({ default: m.Sectors })))
+const Process = lazy(() => import('./components/sections/Process').then(m => ({ default: m.Process })))
+const SavingsCalculator = lazy(() => import('./components/sections/SavingsCalculator').then(m => ({ default: m.SavingsCalculator })))
+const PainPoints = lazy(() => import('./components/sections/PainPoints').then(m => ({ default: m.PainPoints })))
+const Testimonials = lazy(() => import('./components/sections/Testimonials').then(m => ({ default: m.Testimonials })))
+const Guarantees = lazy(() => import('./components/sections/Guarantees').then(m => ({ default: m.Guarantees })))
+const FAQ = lazy(() => import('./components/sections/FAQ').then(m => ({ default: m.FAQ })))
+const CTA = lazy(() => import('./components/sections/CTA').then(m => ({ default: m.CTA })))
+const BlogList = lazy(() => import('./pages/BlogList').then(m => ({ default: m.BlogList })))
+const BlogPost = lazy(() => import('./pages/BlogPost').then(m => ({ default: m.BlogPost })))
 
 interface AppProps {
   page?: 'blog' | 'blogPost'
@@ -37,29 +40,29 @@ export default function App({ page }: AppProps) {
           <Hero />
           <TechStack />
           <ToolsMarquee />
-          <div className="section-divider mx-auto max-w-4xl" />
-          <ValueProps />
-          <Services />
-          <LiveDemo />
-          <Sectors />
-          <div className="section-divider mx-auto max-w-4xl" />
-          <Process />
-          <SavingsCalculator />
-          <div className="section-divider mx-auto max-w-4xl" />
-          <PainPoints />
-          <Testimonials />
-          <Guarantees />
-          <div className="section-divider mx-auto max-w-4xl" />
-          <FAQ />
-          <CTA />
-        </main>
-      ) : page === 'blog' ? (
-        <main>
-          <BlogList />
+          <Suspense>
+            <div className="section-divider mx-auto max-w-4xl" />
+            <ValueProps />
+            <Services />
+            <LiveDemo />
+            <Sectors />
+            <div className="section-divider mx-auto max-w-4xl" />
+            <Process />
+            <SavingsCalculator />
+            <div className="section-divider mx-auto max-w-4xl" />
+            <PainPoints />
+            <Testimonials />
+            <Guarantees />
+            <div className="section-divider mx-auto max-w-4xl" />
+            <FAQ />
+            <CTA />
+          </Suspense>
         </main>
       ) : (
         <main>
-          <BlogPost />
+          <Suspense>
+            {page === 'blog' ? <BlogList /> : <BlogPost />}
+          </Suspense>
         </main>
       )}
       <Footer />

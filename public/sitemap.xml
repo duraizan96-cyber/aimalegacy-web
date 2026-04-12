@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
   <url>
     <loc>https://aimalegacy.es/</loc>
-    <lastmod>2026-04-11</lastmod>
+    <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/" />
@@ -18,23 +18,5 @@
       <image:loc>https://aimalegacy.es/og-image.jpg</image:loc>
       <image:title>Aima Legacy — Automatización con IA</image:title>
     </image:image>
-  </url>
-  <url>
-    <loc>https://aimalegacy.es/privacidad.html</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aimalegacy.es/aviso-legal.html</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aimalegacy.es/cookies.html</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
