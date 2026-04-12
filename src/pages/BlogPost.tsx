@@ -167,7 +167,7 @@ export function BlogPost() {
             Quieres automatizar tu negocio?
           </h2>
           <p className="text-white-dim mb-6">
-            Solicita un diagnostico estrategico gratuito y descubre como la IA
+            Solicita un diagnóstico estratégico y descubre cómo la IA
             puede ahorrarte +10h a la semana.
           </p>
           <a

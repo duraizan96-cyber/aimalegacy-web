@@ -129,7 +129,7 @@ function EricShowcase() {
             <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/btn:translate-x-1" />
           </button>
           <p className="text-[11px] text-center text-white/35 leading-relaxed">
-            Gratis · Sin registro · Conversación real con IA
+            Sin registro · Conversación real con IA
           </p>
         </div>
       </div>
