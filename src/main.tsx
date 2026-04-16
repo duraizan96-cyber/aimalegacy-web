@@ -5,6 +5,10 @@ import App from './App'
 import { BlogList } from './pages/BlogList'
 import { BlogPost } from './pages/BlogPost'
 import './index.css'
+import { initLenis } from './lib/lenis'
+
+// Start smooth scroll immediately — before React mounts
+initLenis()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

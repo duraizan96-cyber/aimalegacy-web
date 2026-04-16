@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "slug": "automatizar-citas-clinica-dental-whatsapp-ia",
+    "title": "Cómo automatizar las citas de tu clínica dental con WhatsApp e IA",
+    "metaDescription": "Descubre cómo una clínica dental puede automatizar reservas, confirmaciones y recordatorios de citas por WhatsApp usando inteligencia artificial. Ahorra +8h/semana sin cambiar cómo trabajas.",
+    "coverImage": "",
+    "publishedAt": "2026-04-10T08:00:00Z",
+    "readingTime": 7,
+    "tags": ["Clínicas Dentales", "WhatsApp Automatico", "Automatización IA"]
+  },
+  {
+    "slug": "automatizacion-ia-restaurantes-ahorro-tiempo",
+    "title": "Automatización con IA para restaurantes: cómo ahorrar 12 horas a la semana",
+    "metaDescription": "Cómo los restaurantes en España están usando inteligencia artificial para automatizar reservas, pedidos, comunicación con clientes y gestión de proveedores. Guía práctica con ejemplos reales.",
+    "coverImage": "",
+    "publishedAt": "2026-04-07T08:00:00Z",
+    "readingTime": 8,
+    "tags": ["Restaurantes", "Hostelería", "Automatización IA"]
+  },
+  {
+    "slug": "que-es-n8n-automatizacion-pymes-espana",
+    "title": "Qué es n8n y por qué es la mejor herramienta para automatizar tu pyme en España",
+    "metaDescription": "n8n es la herramienta de automatización open source que usan las empresas más eficientes de España. Aprende qué es, cómo funciona y por qué es mejor que Zapier o Make para negocios locales.",
+    "coverImage": "",
+    "publishedAt": "2026-04-03T08:00:00Z",
+    "readingTime": 6,
+    "tags": ["n8n", "Automatización", "Herramientas IA"]
+  },
+  {
+    "slug": "whatsapp-business-automatico-atencion-clientes-24-7",
+    "title": "WhatsApp Business automatizado: atiende a tus clientes 24/7 sin contratar personal extra",
+    "metaDescription": "Aprende a automatizar WhatsApp Business con IA para responder clientes a cualquier hora, gestionar consultas frecuentes y convertir más leads sin aumentar tu equipo. Guía para negocios locales en España.",
+    "coverImage": "",
+    "publishedAt": "2026-03-28T08:00:00Z",
+    "readingTime": 7,
+    "tags": ["WhatsApp Business", "Atención al Cliente", "Automatización IA"]
+  }
+]

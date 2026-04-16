@@ -2,9 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+
+  <!-- Homepage -->
   <url>
     <loc>https://aimalegacy.es/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/" />
@@ -19,4 +21,47 @@
       <image:title>Aima Legacy — Automatización con IA</image:title>
     </image:image>
   </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://aimalegacy.es/blog</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog" />
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://aimalegacy.es/blog/automatizar-citas-clinica-dental-whatsapp-ia</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog/automatizar-citas-clinica-dental-whatsapp-ia" />
+  </url>
+
+  <url>
+    <loc>https://aimalegacy.es/blog/automatizacion-ia-restaurantes-ahorro-tiempo</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog/automatizacion-ia-restaurantes-ahorro-tiempo" />
+  </url>
+
+  <url>
+    <loc>https://aimalegacy.es/blog/que-es-n8n-automatizacion-pymes-espana</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog/que-es-n8n-automatizacion-pymes-espana" />
+  </url>
+
+  <url>
+    <loc>https://aimalegacy.es/blog/whatsapp-business-automatico-atencion-clientes-24-7</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog/whatsapp-business-automatico-atencion-clientes-24-7" />
+  </url>
+
 </urlset>

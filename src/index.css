@@ -19,6 +19,7 @@
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
@@ -412,6 +413,25 @@ h1, h2, h3 {
   z-index: 0;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s;
+}
+
+/* ============================
+   SECTOR MARQUEE
+   ============================ */
+
+.animate-sector-marquee {
+  display: flex;
+  width: max-content;
+  animation: sector-marquee 28s linear infinite;
+}
+
+.animate-sector-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes sector-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ============================

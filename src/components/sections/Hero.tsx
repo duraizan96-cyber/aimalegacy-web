@@ -80,6 +80,18 @@ export function Hero() {
         <div className="absolute top-[60%] left-[15%] w-[400px] h-[400px] bg-gradient-to-r from-accent/[0.04] to-transparent blur-[80px] rounded-full" />
       </div>
 
+      {/* Cinematic background — editorial gold light rays */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/hero-bg.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.12,
+          mixBlendMode: 'luminosity',
+        }}
+      />
+
       {/* Particle background with parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0">
         <Suspense fallback={null}>
@@ -106,9 +118,10 @@ export function Hero() {
           {/* Headline — no badge, clean and big */}
           <motion.h1
             variants={fadeUp}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-extrabold leading-[0.92] tracking-tight font-[family-name:var(--font-display)]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-light leading-[0.9] tracking-tight"
+            style={{ fontFamily: 'var(--font-editorial)' }}
           >
-            <span className="text-white">Tu negocio</span>
+            <span className="text-white/90 font-light">Tu negocio</span>
             <br />
             <span className="relative inline-block w-full h-[1.15em]">
               {/* Static keyword always in DOM for crawlers/SEO */}
@@ -121,14 +134,14 @@ export function Hero() {
                   exit={{ opacity: 0, y: -30, rotateX: 40 }}
                   transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
                   aria-hidden="true"
-                  className="text-gradient-accent absolute inset-0"
+                  className="text-gradient-accent italic absolute inset-0"
                 >
                   {rotatingWords[wordIndex]}
                 </motion.span>
               </AnimatePresence>
             </span>
             <br />
-            <span className="text-white">con IA</span>
+            <span className="text-white/90 font-light">con IA</span>
           </motion.h1>
 
           {/* Accent line under headline */}

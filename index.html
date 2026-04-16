@@ -342,28 +342,13 @@
     }
     </script>
 
-    <!-- Meta Pixel — DESACTIVADO hasta activar consent banner GDPR
-         Cuando tengas consent banner:
-         1) Descomenta el bloque de script y el noscript del body
-         2) Asegúrate de respetar el opt-in del usuario
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1746175833055742');
-      fbq('track', 'PageView');
-    </script>
-    -->
+    <!-- Meta Pixel: activar cuando haya consent banner GDPR -->
+    <!-- Pixel ID guardado en variable de entorno, no en HTML -->
 
     <!-- Fonts (non-blocking, async) — preconnect covers the origin hint -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" />
     </noscript>
 
     <!-- Critical SEO content (visible to crawlers even if JS fails) -->
@@ -406,6 +391,6 @@
 
     <!-- ElevenLabs Conversational AI — Eric (Agente de Citas Aima Legacy) -->
     <elevenlabs-convai agent-id="agent_2101knfqm14gf83r14ts3pbh9g5m"></elevenlabs-convai>
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed@0.11.3/dist/index.js" async type="text/javascript" integrity="sha384-cAB0pGXWC5FYd/RMaaC9ZPlVvnx4l6lPGNijyrfcah8anBcjqDmqlX2NuNZqnMcc" crossorigin="anonymous"></script>
   </body>
 </html>

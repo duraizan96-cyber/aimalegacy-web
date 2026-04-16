@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useMagneticEffect } from '../../hooks/useMagneticEffect'
 import type { ReactNode } from 'react'
 
 interface GlowButtonProps {
@@ -16,6 +17,10 @@ export function GlowButton({
   className = '',
   onClick,
 }: GlowButtonProps) {
+  // Magnetic effect: primary buttons pull slightly toward cursor (more noticeable)
+  // Secondary buttons have subtler pull
+  const magneticRef = useMagneticEffect<HTMLElement>(variant === 'primary' ? 0.35 : 0.2)
+
   const baseClasses =
     'relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm tracking-wide transition-all duration-300 cursor-pointer overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black'
 
@@ -30,6 +35,7 @@ export function GlowButton({
 
   return (
     <Component
+      ref={magneticRef as React.RefObject<HTMLAnchorElement & HTMLButtonElement>}
       href={href}
       onClick={onClick}
       className={`${baseClasses} ${variants[variant]} ${className}`}

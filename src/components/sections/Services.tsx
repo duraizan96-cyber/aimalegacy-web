@@ -9,6 +9,7 @@ import {
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 import { SpotlightCard } from '../ui/SpotlightCard'
+import { useGsapScrollReveal } from '../../hooks/useGsapScrollReveal'
 import type { ReactNode } from 'react'
 
 interface ServiceProps {
@@ -145,6 +146,7 @@ const services = [
 ]
 
 export function Services() {
+  const h2Ref = useGsapScrollReveal<HTMLHeadingElement>({ type: 'slide' })
   return (
     <section id="servicios" className="relative py-24 lg:py-32 mesh-gradient-4">
       {/* Top accent line */}
@@ -154,7 +156,7 @@ export function Services() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Servicios de automatización IA</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Automatización con IA para{' '}
             <span className="text-gradient-accent">negocios locales en España</span>
           </h2>

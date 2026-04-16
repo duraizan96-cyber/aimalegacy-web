@@ -3,6 +3,7 @@ import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
 import { AnimatedCounter } from '../ui/AnimatedCounter'
 import { SpotlightCard } from '../ui/SpotlightCard'
+import { useGsapScrollReveal } from '../../hooks/useGsapScrollReveal'
 import type { ReactNode } from 'react'
 
 interface ValueCardProps {
@@ -93,6 +94,7 @@ const values = [
 ]
 
 export function ValueProps() {
+  const h2Ref = useGsapScrollReveal<HTMLHeadingElement>({ type: 'slide' })
   return (
     <section className="relative py-24 lg:py-32 mesh-gradient-3">
       {/* Floating accent lines */}
@@ -102,7 +104,7 @@ export function ValueProps() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Por qué automatizar con Aima Legacy</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Menos esfuerzo,{' '}
             <span className="text-gradient-accent">más beneficio con IA</span>
           </h2>

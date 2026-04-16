@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MapPin, Lightbulb, Shield, Route, ChevronRight, ArrowRight } from 'lucide-react'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionBadge } from '../ui/SectionBadge'
+import { useGsapScrollReveal } from '../../hooks/useGsapScrollReveal'
 import type { ReactNode } from 'react'
 
 interface Step {
@@ -80,6 +81,7 @@ const steps: Step[] = [
 
 export function Process() {
   const [activeStep, setActiveStep] = useState(0)
+  const h2Ref = useGsapScrollReveal<HTMLHeadingElement>({ type: 'slide', delay: 0.1 })
 
   return (
     <section id="proceso" className="relative py-24 lg:py-32 mesh-gradient-1">
@@ -94,7 +96,7 @@ export function Process() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Proceso del diagnóstico IA en 4 fases</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Nuestro diagnóstico IA en{' '}
             <span className="text-gradient-accent">4 fases</span>
           </h2>
