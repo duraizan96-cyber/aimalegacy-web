@@ -6,7 +6,11 @@
     "coverImage": "",
     "publishedAt": "2026-04-10T08:00:00Z",
     "readingTime": 7,
-    "tags": ["Clínicas Dentales", "WhatsApp Automatico", "Automatización IA"]
+    "tags": [
+      "Clínicas Dentales",
+      "WhatsApp Automático",
+      "Automatización IA"
+    ]
   },
   {
     "slug": "automatizacion-ia-restaurantes-ahorro-tiempo",
@@ -15,7 +19,11 @@
     "coverImage": "",
     "publishedAt": "2026-04-07T08:00:00Z",
     "readingTime": 8,
-    "tags": ["Restaurantes", "Hostelería", "Automatización IA"]
+    "tags": [
+      "Restaurantes",
+      "Hostelería",
+      "Automatización IA"
+    ]
   },
   {
     "slug": "que-es-n8n-automatizacion-pymes-espana",
@@ -24,15 +32,23 @@
     "coverImage": "",
     "publishedAt": "2026-04-03T08:00:00Z",
     "readingTime": 6,
-    "tags": ["n8n", "Automatización", "Herramientas IA"]
+    "tags": [
+      "n8n",
+      "Automatización",
+      "Herramientas IA"
+    ]
   },
   {
     "slug": "whatsapp-business-automatico-atencion-clientes-24-7",
-    "title": "WhatsApp Business automatizado: atiende a tus clientes 24/7 sin contratar personal extra",
-    "metaDescription": "Aprende a automatizar WhatsApp Business con IA para responder clientes a cualquier hora, gestionar consultas frecuentes y convertir más leads sin aumentar tu equipo. Guía para negocios locales en España.",
+    "title": "WhatsApp Business automático: cómo atender clientes 24/7 sin contratar a nadie",
+    "metaDescription": "Guía completa para configurar WhatsApp Business con IA en tu negocio local: respuestas automáticas, gestión de consultas, reservas y seguimiento de clientes sin intervención humana.",
     "coverImage": "",
     "publishedAt": "2026-03-28T08:00:00Z",
-    "readingTime": 7,
-    "tags": ["WhatsApp Business", "Atención al Cliente", "Automatización IA"]
+    "readingTime": 9,
+    "tags": [
+      "WhatsApp Business",
+      "Atención al cliente",
+      "Automatización"
+    ]
   }
 ]
