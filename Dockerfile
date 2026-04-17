@@ -1,6 +1,7 @@
 # ─────────────────────────────────────────────
 # Aima Legacy — Hardened production Dockerfile
 # Multi-stage build: node (build) → nginx (serve)
+# Rebuild marker: 2026-04-17T14:50 (cache bust)
 # ─────────────────────────────────────────────
 
 # Stage 1: Build
