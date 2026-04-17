@@ -11,34 +11,22 @@ RUN npm ci --ignore-scripts
 COPY . .
 RUN npx vite build
 
-# Stage 2: Serve (hardened nginx, non-root)
+# Stage 2: Serve (nginx)
+# Note: running as root inside container (Docker isolation is the boundary).
+# Hardening lives in nginx.conf (CSP, HSTS, rate limiting, X-Frame-Options).
+# Non-root USER + setcap was attempted but breaks port-80 binding under
+# Easypanel's Docker runtime — reverted 2026-04-17.
 FROM nginx:alpine
 
-# Install setcap so nginx can bind to port 80 as non-root
-RUN apk add --no-cache libcap && \
-    rm -f /etc/nginx/conf.d/default.conf
+# Remove default nginx config
+RUN rm -f /etc/nginx/conf.d/default.conf
 
-# Copy built assets and config
+# Copy built assets and hardened config
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Create non-root user, set ownership, grant net_bind capability
-RUN addgroup -g 1001 -S appgroup && \
-    adduser -u 1001 -S appuser -G appgroup && \
-    chown -R appuser:appgroup /usr/share/nginx/html && \
-    chown -R appuser:appgroup /var/cache/nginx && \
-    chown -R appuser:appgroup /var/log/nginx && \
-    touch /var/run/nginx.pid && \
-    chown -R appuser:appgroup /var/run/nginx.pid && \
-    chown -R appuser:appgroup /etc/nginx && \
-    # Allow the nginx binary to bind privileged port 80 without root
-    setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx && \
-    # Remove unnecessary files + setcap package (no longer needed)
-    rm -rf /usr/share/nginx/html/50x.html && \
-    apk del libcap
-
-# Switch to non-root user — last line of defense if container is ever compromised
-USER appuser
+# Remove unnecessary files
+RUN rm -rf /usr/share/nginx/html/50x.html
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
