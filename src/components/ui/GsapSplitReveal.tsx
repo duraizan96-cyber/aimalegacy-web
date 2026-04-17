@@ -4,6 +4,21 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+/**
+ * Escape HTML special chars to prevent XSS when inserting user-provided
+ * or third-party text into innerHTML. Critical safety layer — even though
+ * this component is typically called with hardcoded strings, any future
+ * usage with dynamic data (API, CMS, i18n) stays safe.
+ */
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 interface GsapSplitRevealProps {
   children: string
   as?: 'h1' | 'h2' | 'h3' | 'p' | 'span'
@@ -45,11 +60,12 @@ export function GsapSplitReveal({
 
     const separator = splitBy === 'words' ? ' ' : ''
 
+    // XSS-safe: escape each unit before interpolating into innerHTML
     el.innerHTML = units
       .map(
         (unit) =>
           `<span class="gsap-split-unit" style="display:inline-block;overflow:hidden;vertical-align:bottom">`
-          + `<span class="gsap-split-inner" style="display:inline-block">${unit}${separator}</span></span>`
+          + `<span class="gsap-split-inner" style="display:inline-block">${escapeHtml(unit)}${separator}</span></span>`
       )
       .join(splitBy === 'words' ? ' ' : '')
 

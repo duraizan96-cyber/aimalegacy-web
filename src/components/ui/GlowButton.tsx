@@ -33,11 +33,20 @@ export function GlowButton({
 
   const Component = href ? motion.a : motion.button
 
+  // External link detection — any http(s):// that isn't aimalegacy.es
+  const isExternal =
+    typeof href === 'string' &&
+    /^https?:\/\//i.test(href) &&
+    !/^https?:\/\/([a-z0-9-]+\.)*aimalegacy\.es(\/|$)/i.test(href)
+
   return (
     <Component
       ref={magneticRef as React.RefObject<HTMLAnchorElement & HTMLButtonElement>}
       href={href}
       onClick={onClick}
+      // Prevent reverse tabnabbing and referrer leak on external links
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
       className={`${baseClasses} ${variants[variant]} ${className}`}
       whileHover={{ scale: 1.03, y: -2 }}
       whileTap={{ scale: 0.97 }}
