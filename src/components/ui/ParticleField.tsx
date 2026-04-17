@@ -37,7 +37,7 @@ export function ParticleField() {
             width: `${p.size}px`,
             height: `${p.size}px`,
             borderRadius: '50%',
-            backgroundColor: '#D4AF37',
+            backgroundColor: '#533afd',
             opacity: p.opacity,
             animation: `particle-float ${p.duration}s ${p.delay}s ease-in-out infinite alternate`,
           }}
@@ -67,7 +67,7 @@ export function ParticleField() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, #04040f 70%)',
+          background: 'radial-gradient(ellipse at center, transparent 0%, #05061a 70%)',
         }}
       />
 

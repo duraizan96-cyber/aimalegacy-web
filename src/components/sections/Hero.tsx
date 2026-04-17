@@ -87,7 +87,7 @@ export function Hero() {
           backgroundImage: 'url(/hero-bg.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.35,
+          opacity: 0.15,
           mixBlendMode: 'screen',
         }}
       />
@@ -103,7 +103,7 @@ export function Hero() {
       <div
         className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.015) 35%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(83,58,253,0.06) 0%, rgba(83,58,253,0.015) 35%, transparent 70%)',
           filter: 'blur(100px)',
         }}
       />
@@ -154,7 +154,7 @@ export function Hero() {
 
           {/* Accent line under headline */}
           <motion.div variants={fadeUp} className="flex justify-center mt-6">
-            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(83,58,253,0.5)]" />
           </motion.div>
 
           {/* Subtitle — sector-agnostic, premium B2B */}

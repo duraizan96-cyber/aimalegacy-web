@@ -26,9 +26,9 @@ export function GlowButton({
 
   const variants = {
     primary:
-      'bg-gradient-to-r from-accent via-accent-light to-accent text-black shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_4px_50px_rgba(212,175,55,0.5)] active:shadow-[0_2px_20px_rgba(212,175,55,0.6)]',
+      'bg-[#533afd] text-white shadow-[0_4px_15px_rgba(50,50,93,0.25),0_2px_25px_rgba(83,58,253,0.2)] hover:bg-[#4434d4] hover:shadow-[0_7px_30px_rgba(50,50,93,0.35),0_3px_40px_rgba(83,58,253,0.3)] active:shadow-[0_3px_15px_rgba(50,50,93,0.35),0_2px_20px_rgba(83,58,253,0.4)]',
     secondary:
-      'border border-white/[0.12] text-white/70 hover:text-accent hover:border-accent/30 hover:bg-accent/[0.04] hover:shadow-[0_0_30px_rgba(212,175,55,0.08)]',
+      'border border-white/[0.12] text-white/70 hover:text-accent hover:border-accent/30 hover:bg-accent/[0.04] hover:shadow-[0_0_30px_rgba(83,58,253,0.1)]',
   }
 
   const Component = href ? motion.a : motion.button

@@ -42,10 +42,10 @@ export function Navbar() {
         <motion.div
           className="absolute inset-0"
           style={{
-            backgroundColor: `rgba(4, 4, 15, ${bgOpacity})`,
+            backgroundColor: `rgba(5, 6, 26, ${bgOpacity})`,
             backdropFilter: `blur(${blurAmount}px)`,
             WebkitBackdropFilter: `blur(${blurAmount}px)`,
-            borderBottom: `1px solid rgba(212, 175, 55, ${borderOpacity})`,
+            borderBottom: `1px solid rgba(83, 58, 253, ${borderOpacity})`,
           }}
         />
 
@@ -62,7 +62,7 @@ export function Navbar() {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(212,175,55,0.2)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.45)] transition-all duration-300 group-hover:scale-105"
+                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(83,58,253,0.2)] group-hover:shadow-[0_0_30px_rgba(83,58,253,0.45)] transition-all duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 rounded-xl border border-accent/20 group-hover:border-accent/40 transition-colors" />
               </div>
@@ -158,7 +158,7 @@ export function Navbar() {
               height="64"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(83,58,253,0.3)]"
             />
             <div className="flex flex-col items-center gap-6">
               {navLinks.map((link, i) => {
