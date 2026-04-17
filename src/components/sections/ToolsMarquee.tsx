@@ -3,17 +3,19 @@ import { Marquee } from '../ui/Marquee'
 const tools = [
   { name: 'n8n', category: 'Automatización' },
   { name: 'OpenAI GPT-4', category: 'IA Generativa' },
+  { name: 'Claude AI', category: 'IA Generativa' },
   { name: 'ElevenLabs', category: 'Voz IA' },
   { name: 'WhatsApp Business', category: 'Mensajería' },
-  { name: 'Google Calendar', category: 'Calendario' },
+  { name: 'Google Workspace', category: 'Productividad' },
+  { name: 'HubSpot', category: 'CRM' },
   { name: 'Airtable', category: 'Base de datos' },
   { name: 'Make', category: 'Automatización' },
   { name: 'Zapier', category: 'Integración' },
-  { name: 'Telegram', category: 'Notificaciones' },
+  { name: 'Notion', category: 'Gestión' },
+  { name: 'Slack', category: 'Comunicación' },
   { name: 'Meta Ads', category: 'Publicidad' },
   { name: 'Google Ads', category: 'Publicidad' },
   { name: 'Groq AI', category: 'Inferencia IA' },
-  { name: 'Blotato', category: 'Publicación' },
   { name: 'Google Drive', category: 'Almacenamiento' },
 ]
 
