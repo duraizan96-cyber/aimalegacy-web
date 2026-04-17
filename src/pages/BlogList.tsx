@@ -54,7 +54,7 @@ export function BlogList() {
             <span className="text-gradient-accent">Aima Legacy</span>
           </h1>
           <p className="text-lg text-white-dim max-w-2xl">
-            Automatizacion, IA y estrategia para negocios locales. Articulos
+            Automatizacion, IA y estrategia para empresas y pymes. Articulos
             generados con inteligencia artificial y verificados por humanos.
           </p>
         </motion.div>

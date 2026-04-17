@@ -83,7 +83,7 @@ export function SavingsCalculator() {
             <span className="text-gradient-accent">automatización IA</span>
           </h2>
           <p className="mt-4 text-white/45 max-w-xl mx-auto">
-            Mueve el slider y descubre cuánto ahorra un negocio local al eliminar tareas manuales con automatización e inteligencia artificial. Datos reales, no humo.
+            Mueve el slider y descubre cuánto ahorra una empresa al eliminar tareas manuales con automatización e inteligencia artificial. Datos reales, no humo.
           </p>
         </ScrollReveal>
 

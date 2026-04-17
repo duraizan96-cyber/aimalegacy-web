@@ -101,7 +101,7 @@ export function Process() {
             <span className="text-gradient-accent">4 fases</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Antes de automatizar, <span className="text-white/75 font-semibold">Izan Dura</span> y el equipo de Aima Legacy mapean tu negocio local con BPMN profesional. Así cada propuesta de inteligencia artificial tiene impacto real en facturación.
+            Antes de automatizar, <span className="text-white/75 font-semibold">Izan Dura</span> y el equipo de Aima Legacy mapean tu operación con BPMN profesional. Así cada propuesta de inteligencia artificial tiene impacto real en tu P&amp;L.
           </p>
         </ScrollReveal>
 

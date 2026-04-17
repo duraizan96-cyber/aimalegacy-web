@@ -42,7 +42,7 @@ export function BlogPost() {
       if (desc) desc.setAttribute('content', post.metaDescription)
     }
     return () => {
-      document.title = 'Aima Legacy — Automatizacion con IA para Negocios Locales en Espana'
+      document.title = 'Aima Legacy — Automatizacion con IA para Empresas y Pymes en Espana'
     }
   }, [post])
 

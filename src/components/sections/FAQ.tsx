@@ -96,24 +96,24 @@ const faqs = [
       'No. Nosotros nos encargamos de todo lo técnico. Tú solo cuentas cómo funciona tu negocio y qué problemas tienes. Integramos la inteligencia artificial en las herramientas que ya usas (WhatsApp, Google Calendar, tu web) sin que tengas que cambiar nada.',
   },
   {
-    question: '¿Qué negocios locales automatizáis con IA en España?',
+    question: '¿Qué tipo de empresas automatizáis con IA en España?',
     answer:
-      'Aima Legacy automatiza con inteligencia artificial negocios locales en toda España: clínicas dentales, restaurantes, peluquerías, tatuadores, tiendas, gimnasios, estudios de yoga y academias. Cualquier pyme con procesos repetitivos que quiera optimizarlos con automatización profesional.',
+      'Aima Legacy trabaja con empresas y pymes en toda España, sin ataduras de sector. Nuestro filtro no es el vertical, sino el proceso: si hay fricción operativa, tareas repetitivas o cuellos de botella en atención al cliente, cualificación de leads, gestión de citas, reporting o facturación, lo mapeamos, lo ordenamos y lo automatizamos con IA aplicada a tu caso concreto.',
   },
   {
     question: '¿Qué pasa si algo falla después de implementar la automatización?',
     answer:
-      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automáticas. Tu negocio nunca se queda bloqueado. Además, monitorizamos todo con alertas en tiempo real vía Telegram.',
+      'Cada sistema que entregamos incluye Plan A, B, C y D. Si el componente principal falla, hay alternativas activas automáticas. Tu operación nunca se queda bloqueada. Además, monitorizamos todo con alertas en tiempo real vía Telegram.',
   },
   {
     question: '¿Puedo ver un ejemplo antes de contratar a Aima Legacy?',
     answer:
-      'Sí. Puedes hablar con Eric, nuestro agente de voz IA en vivo, directamente en esta web — es un ejemplo real, no una demo falsa. Además, el diagnóstico IA inicial es precisamente nuestro primer producto: donde demostramos que entendemos tu negocio. Nunca implementamos sin diagnóstico previo.',
+      'Sí. Puedes hablar con Eric, nuestro agente de voz IA en vivo, directamente en esta web — es un ejemplo real, no una demo falsa. Además, el diagnóstico IA inicial es precisamente nuestro primer producto: donde demostramos que entendemos tu empresa. Nunca implementamos sin diagnóstico previo.',
   },
   {
-    question: '¿Cuánto cuesta automatizar un negocio local con Aima Legacy?',
+    question: '¿Cuánto cuesta automatizar una empresa con Aima Legacy?',
     answer:
-      'El diagnóstico IA incluye las 4 fases completas (BPMN, mejoras, ciberseguridad, roadmap) y el entregable profesional firmado por Izan Dura. La implementación se presupuesta sobre el roadmap aprobado, adaptado a cada negocio. Contáctanos para recibir una propuesta personalizada sin compromiso.',
+      'El diagnóstico estratégico IA incluye las 4 fases completas (BPMN, mejoras, ciberseguridad, roadmap) y el entregable profesional firmado por Izan Dura. La implementación se presupuesta sobre el roadmap aprobado, adaptado a cada organización. Contáctanos para recibir una propuesta personalizada sin compromiso.',
   },
 ]
 
@@ -140,7 +140,7 @@ export function FAQ() {
             <span className="text-gradient-accent">automatización con IA</span>
           </h2>
           <p className="mt-4 max-w-lg mx-auto text-white/45">
-            Todo sobre automatización con IA para negocios locales en España.
+            Todo sobre automatización con IA para empresas y pymes en España.
           </p>
         </ScrollReveal>
 

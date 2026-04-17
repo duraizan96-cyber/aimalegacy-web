@@ -41,7 +41,7 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-5">
               <img
                 src="/logo-aima.jpg"
-                alt="Aima Legacy — Automatización con IA para negocios locales en España"
+                alt="Aima Legacy — Automatización con IA para empresas y pymes en España"
                 width="40"
                 height="40"
                 loading="lazy"
@@ -55,7 +55,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/40 leading-relaxed mb-3">
-              Automatización con inteligencia artificial para negocios locales en España. Restaurantes, clínicas, peluquerías y pymes que ahorran horas cada semana con IA bien aplicada.
+              Sistemas de IA a medida para empresas y pymes en España. Ordenamos procesos, reducimos costes y escalamos sin añadir plantilla. Diagnóstico primero, implementación después.
             </p>
             <p className="text-xs text-white/30 leading-relaxed mb-5">
               Fundada por <span className="text-accent/70 font-semibold">Izan Dura</span> — Consultor de automatización IA.
@@ -94,7 +94,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
-            &copy; {new Date().getFullYear()} AIMA Legacy · Automatización con IA para negocios locales en España · Fundador Izan Dura
+            &copy; {new Date().getFullYear()} AIMA Legacy · Automatización con IA para empresas y pymes en España · Fundador Izan Dura
           </p>
           <div className="flex items-center gap-5">
             <a

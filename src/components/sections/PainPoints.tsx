@@ -92,9 +92,9 @@ const painPoints = [
       'Sistemas con Plan A/B/C/D: si algo falla, hay alternativa activa. Nunca te quedas bloqueado.',
   },
   {
-    pain: 'Los negocios grandes tienen tecnología que tú no puedes permitirte.',
+    pain: 'Las grandes empresas tienen tecnología que tu pyme no puede permitirse.',
     solution:
-      'Misma tecnología IA adaptada a negocio local. Precio justo, resultados reales, sin humo.',
+      'Misma tecnología IA adaptada a tu tamaño y presupuesto. Precio justo, resultados reales, sin humo.',
   },
 ]
 
@@ -113,11 +113,11 @@ export function PainPoints() {
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Antes y después de automatizar con IA</SectionBadge>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Tu negocio local hoy{' '}
+            Tu empresa hoy{' '}
             <span className="text-gradient-accent">vs con automatización IA</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Estos problemas están costando dinero cada día a miles de negocios locales en España. Aquí está la diferencia con Aima Legacy.
+            Estos problemas están costando dinero cada día a miles de empresas y pymes en España. Aquí está la diferencia con Aima Legacy.
           </p>
         </ScrollReveal>
 

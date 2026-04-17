@@ -68,7 +68,7 @@ export function TechStack() {
             Resultados reales con IA
           </span>
           <h2 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
-            Lo que consiguen los negocios locales en España{' '}
+            Lo que consiguen las empresas y pymes en España{' '}
             <span className="text-gradient-accent-static">que automatizan con Aima Legacy</span>
           </h2>
         </ScrollReveal>

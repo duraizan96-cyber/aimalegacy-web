@@ -158,10 +158,10 @@ export function Services() {
           <SectionBadge>Servicios de automatización IA</SectionBadge>
           <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Automatización con IA para{' '}
-            <span className="text-gradient-accent">negocios locales en España</span>
+            <span className="text-gradient-accent">empresas y pymes en España</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            No vendemos tecnología. Resolvemos lo que frena cada día a restaurantes, clínicas, peluquerías y pymes españolas — para que facturen más con menos esfuerzo.
+            No vendemos tecnología. Resolvemos lo que frena cada día a tu operación — procesos desordenados, tareas manuales, atención saturada — para que tu empresa escale con menos esfuerzo.
           </p>
         </ScrollReveal>
 

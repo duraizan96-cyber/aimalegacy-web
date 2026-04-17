@@ -87,8 +87,8 @@ export function Hero() {
           backgroundImage: 'url(/hero-bg.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 0.12,
-          mixBlendMode: 'luminosity',
+          opacity: 0.35,
+          mixBlendMode: 'screen',
         }}
       />
 
@@ -99,15 +99,14 @@ export function Hero() {
         </Suspense>
       </motion.div>
 
-      {/* Morphing gradient blob */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="morphing-blob w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] bg-gradient-to-br from-accent/[0.08] via-accent/[0.02] to-blue/[0.04] blur-[80px]" />
-      </div>
-
-      {/* Ambient orbs */}
-      <div className="orb orb-accent w-64 h-64 -top-20 -left-20" />
-      <div className="orb orb-blue w-48 h-48 top-1/3 -right-10" style={{ animationDelay: '-4s' }} />
-      <div className="orb orb-accent w-32 h-32 bottom-20 left-1/4" style={{ animationDelay: '-2s' }} />
+      {/* Single editorial accent — Ferrari principle: sparseness of light */}
+      <div
+        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.015) 35%, transparent 70%)',
+          filter: 'blur(100px)',
+        }}
+      />
 
       {/* Content */}
       <motion.div
@@ -115,6 +114,15 @@ export function Hero() {
         className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-20"
       >
         <motion.div variants={stagger} initial="hidden" animate="visible">
+          {/* Editorial eyebrow — Ferrari tracking */}
+          <motion.p
+            variants={fadeUp}
+            className="mb-10 text-[10px] uppercase tracking-[0.4em] text-accent/70 font-medium"
+          >
+            <span className="inline-block h-px w-8 align-middle bg-accent/40 mr-3" />
+            Automatización con IA · Desde España
+          </motion.p>
+
           {/* Headline — no badge, clean and big */}
           <motion.h1
             variants={fadeUp}
@@ -149,14 +157,14 @@ export function Hero() {
             <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(212,175,55,0.5)]" />
           </motion.div>
 
-          {/* Subtitle */}
+          {/* Subtitle — sector-agnostic, premium B2B */}
           <motion.p
             variants={fadeUp}
             className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
           >
-            Automatización con inteligencia artificial para <strong className="text-white/90 font-semibold">negocios locales en España</strong>. Restaurantes, clínicas, peluquerías y pymes que ahorran horas cada semana y aumentan su facturación.
+            Diseñamos sistemas de IA a medida para <strong className="text-white/90 font-semibold">empresas y pymes en España</strong> que quieren ordenar procesos, recuperar horas y escalar sin añadir plantilla.
             <span className="block mt-2 text-white/45">
-              Sin complicaciones técnicas. Solo resultados reales.
+              Diagnóstico primero. Implementación después. Resultados medibles.
             </span>
           </motion.p>
 
@@ -183,16 +191,16 @@ export function Hero() {
             </GlowButton>
           </motion.div>
 
-          {/* Stats strip */}
+          {/* Stats strip — editorial hairlines, no card chrome */}
           <motion.div
             variants={fadeUp}
-            className="mt-20 grid grid-cols-3 rounded-2xl overflow-hidden border border-accent/[0.12] bg-accent/[0.03] backdrop-blur-sm shadow-[0_0_40px_rgba(212,175,55,0.06),inset_0_-20px_60px_-20px_rgba(212,175,55,0.05)]"
+            className="mt-24 grid grid-cols-3 border-y border-white/[0.08]"
           >
-            <div className="border-r border-accent/[0.1]">
-              <AnimatedStat value="-40%" label="Costes" sub="en tareas repetitivas" />
+            <div className="border-r border-white/[0.08]">
+              <AnimatedStat value="−40%" label="Costes operativos" sub="en tareas repetitivas" />
             </div>
-            <div className="border-r border-accent/[0.1]">
-              <AnimatedStat value="+10h" label="A la semana" sub="tiempo recuperado" />
+            <div className="border-r border-white/[0.08]">
+              <AnimatedStat value="+10h" label="Por semana" sub="tiempo recuperado" />
             </div>
             <div>
               <AnimatedStat value="24/7" label="Siempre activo" sub="sin intervención" />

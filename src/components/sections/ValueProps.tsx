@@ -109,7 +109,7 @@ export function ValueProps() {
             <span className="text-gradient-accent">más beneficio con IA</span>
           </h2>
           <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Tu negocio local funciona mejor, gasta menos y factura más con automatización e inteligencia artificial. Así de simple.
+            Tu empresa funciona mejor, gasta menos y factura más con automatización e inteligencia artificial. Así de simple.
           </p>
         </ScrollReveal>
 

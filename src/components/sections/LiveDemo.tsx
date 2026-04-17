@@ -271,7 +271,7 @@ export function LiveDemo() {
             <span className="text-gradient-accent">nuestro agente de voz IA</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Un agente de voz con IA real que reserva citas en tiempo real. No es una animación ni maqueta — puedes hablarle ahora mismo. Así son las automatizaciones que construimos en Aima Legacy para negocios locales en España.
+            Un agente de voz con IA real que reserva citas en tiempo real. No es una animación ni maqueta — puedes hablarle ahora mismo. Así son los sistemas que construimos en Aima Legacy para empresas y pymes en España.
           </p>
         </ScrollReveal>
 
@@ -287,7 +287,7 @@ export function LiveDemo() {
         <ScrollReveal delay={0.3}>
           <p className="mt-10 text-center text-sm text-white/40">
             <span className="text-accent/70 font-medium">Eric es un ejemplo real construido por Izan Dura y el equipo de Aima Legacy.</span>{' '}
-            Cada automatización con IA que construimos se adapta a tu negocio local y a tus procesos reales.
+            Cada automatización con IA que construimos se adapta a tu empresa y a tus procesos reales.
           </p>
         </ScrollReveal>
       </div>
