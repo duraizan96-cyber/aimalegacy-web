@@ -6,26 +6,26 @@
   <!-- Homepage -->
   <url>
     <loc>https://aimalegacy.es/</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aimalegacy.es/" />
     <image:image>
       <image:loc>https://aimalegacy.es/logo-aima.jpg</image:loc>
-      <image:title>Aima Legacy — Automatización con IA para negocios locales en España</image:title>
-      <image:caption>Agencia española de automatización con inteligencia artificial fundada por Izan Dura</image:caption>
+      <image:title>Aima Legacy — Estudio de sistemas de IA para empresas y pymes en España</image:title>
+      <image:caption>Estudio editorial de automatización e inteligencia artificial fundado por Izan Dura</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://aimalegacy.es/og-image.jpg</image:loc>
-      <image:title>Aima Legacy — Automatización con IA</image:title>
+      <image:title>Aima Legacy — Sistemas de IA a medida</image:title>
     </image:image>
   </url>
 
   <!-- Blog index -->
   <url>
     <loc>https://aimalegacy.es/blog</loc>
-    <lastmod>2026-04-16</lastmod>
+    <lastmod>2026-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es-ES" href="https://aimalegacy.es/blog" />

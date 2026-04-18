@@ -264,14 +264,37 @@ export function LiveDemo() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         <ScrollReveal className="text-center mb-16">
           <SectionBadge icon={<Sparkles className="h-3.5 w-3.5" />}>
-            Prueba en vivo
+            Demo en vivo
           </SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Habla con Eric,{' '}
-            <span className="text-gradient-accent">nuestro agente de voz IA</span>
+          <h2
+            className="mt-10 text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
+            Habla con{' '}
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Eric
+            </span>
+            , nuestro agente de voz.
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Un agente de voz con IA real que reserva citas en tiempo real. No es una animación ni maqueta — puedes hablarle ahora mismo. Así son los sistemas que construimos en Aima Legacy para empresas y pymes en España.
+          <p className="mt-8 max-w-2xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            Un agente de voz con IA real que reserva citas en tiempo real. No es una
+            animación ni maqueta — puedes hablarle ahora mismo. Así son los sistemas que
+            construimos en Aima Legacy.
           </p>
         </ScrollReveal>
 

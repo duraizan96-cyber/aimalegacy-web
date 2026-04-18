@@ -36,13 +36,105 @@ export function BlogPost() {
   }, [slug])
 
   useEffect(() => {
-    if (post) {
-      document.title = `${post.title} — Aima Legacy Blog`
-      const desc = document.querySelector('meta[name="description"]')
-      if (desc) desc.setAttribute('content', post.metaDescription)
+    if (!post) return
+
+    const HOME_TITLE = 'Automatización con IA para Empresas y Pymes | Aima Legacy'
+    const HOME_DESC =
+      'Sistemas de IA a medida para empresas y pymes en España. Ordenamos procesos, reducimos costes y escalamos sin añadir plantilla. Diagnóstico estratégico primero, implementación después.'
+    const HOME_CANONICAL = 'https://aimalegacy.es/'
+    const canonicalUrl = `https://aimalegacy.es/blog/${post.slug}`
+
+    // Helpers — idempotent upsert of meta/link by selector
+    const setMeta = (selector: string, attr: 'content', value: string) => {
+      const el = document.head.querySelector(selector) as HTMLMetaElement | null
+      if (el) el.setAttribute(attr, value)
     }
+    const upsertMetaProp = (prop: string, value: string, usePropertyAttr = true) => {
+      const key = usePropertyAttr ? 'property' : 'name'
+      let el = document.head.querySelector(`meta[${key}="${prop}"]`) as HTMLMetaElement | null
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute(key, prop)
+        document.head.appendChild(el)
+      }
+      el.setAttribute('content', value)
+    }
+    const upsertCanonical = (href: string) => {
+      let el = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+      if (!el) {
+        el = document.createElement('link')
+        el.setAttribute('rel', 'canonical')
+        document.head.appendChild(el)
+      }
+      el.setAttribute('href', href)
+    }
+
+    // 1. Title + description
+    document.title = `${post.title} — Aima Legacy`
+    setMeta('meta[name="description"]', 'content', post.metaDescription)
+
+    // 2. Canonical + hreflang
+    upsertCanonical(canonicalUrl)
+    let hreflang = document.head.querySelector('link[rel="alternate"][hreflang="es-ES"]') as HTMLLinkElement | null
+    if (hreflang) hreflang.setAttribute('href', canonicalUrl)
+
+    // 3. Open Graph
+    upsertMetaProp('og:type', 'article')
+    upsertMetaProp('og:url', canonicalUrl)
+    upsertMetaProp('og:title', post.title)
+    upsertMetaProp('og:description', post.metaDescription)
+    if (post.coverImage) upsertMetaProp('og:image', post.coverImage)
+    upsertMetaProp('article:published_time', post.publishedAt)
+    upsertMetaProp('article:modified_time', post.publishedAt)
+    upsertMetaProp('article:author', 'Izan Dura', true)
+
+    // 4. Twitter
+    upsertMetaProp('twitter:title', post.title, false)
+    upsertMetaProp('twitter:description', post.metaDescription, false)
+    upsertMetaProp('twitter:url', canonicalUrl, false)
+    if (post.coverImage) upsertMetaProp('twitter:image', post.coverImage, false)
+
+    // 5. Article JSON-LD
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${canonicalUrl}#article`,
+      headline: post.title,
+      description: post.metaDescription,
+      datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      inLanguage: 'es-ES',
+      url: canonicalUrl,
+      image: post.coverImage || 'https://aimalegacy.es/og-image.jpg',
+      keywords: post.tags?.join(', '),
+      author: { '@type': 'Person', '@id': 'https://aimalegacy.es/#founder', name: 'Izan Dura' },
+      publisher: { '@id': 'https://aimalegacy.es/#organization' },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      isPartOf: { '@type': 'Blog', '@id': 'https://aimalegacy.es/blog#blog', name: 'Aima Legacy Blog' },
+    }
+    const existing = document.getElementById('blog-article-ldjson')
+    if (existing) existing.remove()
+    const script = document.createElement('script')
+    script.id = 'blog-article-ldjson'
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(ld)
+    document.head.appendChild(script)
+
     return () => {
-      document.title = 'Aima Legacy — Automatizacion con IA para Empresas y Pymes en Espana'
+      document.title = HOME_TITLE
+      setMeta('meta[name="description"]', 'content', HOME_DESC)
+      upsertCanonical(HOME_CANONICAL)
+      if (hreflang) hreflang.setAttribute('href', HOME_CANONICAL)
+      upsertMetaProp('og:type', 'website')
+      upsertMetaProp('og:url', HOME_CANONICAL)
+      upsertMetaProp('og:title', HOME_TITLE)
+      upsertMetaProp('og:description', HOME_DESC)
+      upsertMetaProp('og:image', 'https://aimalegacy.es/og-image.jpg')
+      upsertMetaProp('twitter:title', HOME_TITLE, false)
+      upsertMetaProp('twitter:description', HOME_DESC, false)
+      upsertMetaProp('twitter:url', HOME_CANONICAL, false)
+      upsertMetaProp('twitter:image', 'https://aimalegacy.es/og-image.jpg', false)
+      document.getElementById('blog-article-ldjson')?.remove()
     }
   }, [post])
 

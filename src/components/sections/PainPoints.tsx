@@ -111,13 +111,35 @@ export function PainPoints() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Antes y después de automatizar con IA</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <SectionBadge>Antes · Después</SectionBadge>
+          <h2
+            className="mt-10 text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
             Tu empresa hoy{' '}
-            <span className="text-gradient-accent">vs con automatización IA</span>
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              vs con IA
+            </span>
+            .
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Estos problemas están costando dinero cada día a miles de empresas y pymes en España. Aquí está la diferencia con Aima Legacy.
+          <p className="mt-8 max-w-xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            Estos problemas están costando dinero cada día a miles de empresas y pymes
+            en España. Aquí está la diferencia con Aima Legacy.
           </p>
         </ScrollReveal>
 

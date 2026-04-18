@@ -30,6 +30,80 @@ export function BlogList() {
       .finally(() => setLoading(false))
   }, [])
 
+  useEffect(() => {
+    const HOME_TITLE = 'Automatización con IA para Empresas y Pymes | Aima Legacy'
+    const HOME_DESC =
+      'Sistemas de IA a medida para empresas y pymes en España. Ordenamos procesos, reducimos costes y escalamos sin añadir plantilla. Diagnóstico estratégico primero, implementación después.'
+    const HOME_CANONICAL = 'https://aimalegacy.es/'
+    const BLOG_URL = 'https://aimalegacy.es/blog'
+    const BLOG_TITLE = 'Blog — Automatización e IA para empresas y pymes | Aima Legacy'
+    const BLOG_DESC =
+      'Artículos sobre automatización, inteligencia artificial y sistemas eficientes para empresas y pymes en España. Guías prácticas, casos reales y estrategia sin humo.'
+
+    const setMeta = (selector: string, value: string) => {
+      const el = document.head.querySelector(selector) as HTMLMetaElement | null
+      if (el) el.setAttribute('content', value)
+    }
+    const upsertMetaProp = (prop: string, value: string, usePropertyAttr = true) => {
+      const key = usePropertyAttr ? 'property' : 'name'
+      let el = document.head.querySelector(`meta[${key}="${prop}"]`) as HTMLMetaElement | null
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute(key, prop)
+        document.head.appendChild(el)
+      }
+      el.setAttribute('content', value)
+    }
+    const upsertCanonical = (href: string) => {
+      let el = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+      if (!el) {
+        el = document.createElement('link')
+        el.setAttribute('rel', 'canonical')
+        document.head.appendChild(el)
+      }
+      el.setAttribute('href', href)
+    }
+
+    document.title = BLOG_TITLE
+    setMeta('meta[name="description"]', BLOG_DESC)
+    upsertCanonical(BLOG_URL)
+    const hreflang = document.head.querySelector('link[rel="alternate"][hreflang="es-ES"]') as HTMLLinkElement | null
+    if (hreflang) hreflang.setAttribute('href', BLOG_URL)
+    upsertMetaProp('og:url', BLOG_URL)
+    upsertMetaProp('og:title', BLOG_TITLE)
+    upsertMetaProp('og:description', BLOG_DESC)
+
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      '@id': `${BLOG_URL}#blog`,
+      name: 'Aima Legacy Blog',
+      description: BLOG_DESC,
+      url: BLOG_URL,
+      inLanguage: 'es-ES',
+      publisher: { '@id': 'https://aimalegacy.es/#organization' },
+      author: { '@id': 'https://aimalegacy.es/#founder' },
+    }
+    const existing = document.getElementById('blog-list-ldjson')
+    if (existing) existing.remove()
+    const script = document.createElement('script')
+    script.id = 'blog-list-ldjson'
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(ld)
+    document.head.appendChild(script)
+
+    return () => {
+      document.title = HOME_TITLE
+      setMeta('meta[name="description"]', HOME_DESC)
+      upsertCanonical(HOME_CANONICAL)
+      if (hreflang) hreflang.setAttribute('href', HOME_CANONICAL)
+      upsertMetaProp('og:url', HOME_CANONICAL)
+      upsertMetaProp('og:title', HOME_TITLE)
+      upsertMetaProp('og:description', HOME_DESC)
+      document.getElementById('blog-list-ldjson')?.remove()
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-black pt-28 pb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">

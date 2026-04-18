@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Fondo obsidian puro -->
+    <rect id="bg" width="1200" height="630" fill="#08070B"/>
+
+    <!-- Light leak dorado difuso (radial gradient en esquina top-right) -->
+    <radialGradient id="lightLeak" cx="0.88" cy="0.12" r="0.65">
+      <stop offset="0%" stop-color="rgba(232,213,168,0.22)"/>
+      <stop offset="35%" stop-color="rgba(232,213,168,0.10)"/>
+      <stop offset="70%" stop-color="rgba(232,213,168,0.03)"/>
+      <stop offset="100%" stop-color="rgba(232,213,168,0)"/>
+    </radialGradient>
+
+    <!-- Hairline dorada: gradient transparent → gold → transparent -->
+    <linearGradient id="hairline" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C9A86A" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C9A86A" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#C9A86A" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Vignette muy sutil para profundidad editorial -->
+    <radialGradient id="vignette" cx="0.5" cy="0.5" r="0.9">
+      <stop offset="60%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
+    </radialGradient>
+
+    <!-- Filter para suavizar el light leak (doble capa de blur ambiental) -->
+    <filter id="softLeak" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo obsidian -->
+  <rect width="1200" height="630" fill="#08070B"/>
+
+  <!-- Light leak dorado (top-right) con blur suave -->
+  <rect width="1200" height="630" fill="url(#lightLeak)"/>
+
+  <!-- Vignette editorial (bordes ligeramente más oscuros) -->
+  <rect width="1200" height="630" fill="url(#vignette)"/>
+
+  <!-- Mini-pill superior (eyebrow) — pequeñito, tracking amplio, bronce desaturado -->
+  <text x="600" y="90"
+        font-family="'Courier New', 'Courier', monospace"
+        font-size="11"
+        fill="#7F7869"
+        text-anchor="middle"
+        letter-spacing="4.5">
+    OBSIDIAN COUTURE · EST. 2026
+  </text>
+
+  <!-- AIMA LEGACY — wordmark principal -->
+  <!-- Cormorant Garamond si está en el sistema; fallback serif elegante -->
+  <text x="600" y="310"
+        font-family="'Cormorant Garamond', 'Playfair Display', 'Didot', 'Bodoni 72', Georgia, serif"
+        font-size="88"
+        font-weight="300"
+        fill="#F5EFE0"
+        text-anchor="middle"
+        letter-spacing="13.2">
+    AIMA LEGACY
+  </text>
+
+  <!-- Hairline dorada de 1px, 80px ancho, centrada bajo el wordmark -->
+  <rect x="560" y="352" width="80" height="1" fill="url(#hairline)"/>
+
+  <!-- Tagline italic serif en champagne gold -->
+  <text x="600" y="408"
+        font-family="'Cormorant Garamond', 'Playfair Display', 'Didot', Georgia, serif"
+        font-size="30"
+        font-style="italic"
+        font-weight="400"
+        fill="#C9A86A"
+        text-anchor="middle"
+        letter-spacing="1.2">
+    Estudio de sistemas de IA
+  </text>
+
+  <!-- Mini-pill inferior — rango de clientes -->
+  <text x="600" y="555"
+        font-family="'Courier New', 'Courier', monospace"
+        font-size="12"
+        fill="#7F7869"
+        text-anchor="middle"
+        letter-spacing="2.9">
+    — EMPRESAS Y PYMES EN ESPAÑA —
+  </text>
+
+  <!-- Marca URL muy sutil en esquina inferior derecha -->
+  <text x="1140" y="595"
+        font-family="'Courier New', 'Courier', monospace"
+        font-size="10"
+        fill="#7F7869"
+        text-anchor="end"
+        letter-spacing="2">
+    AIMALEGACY.ES
+  </text>
+
+  <!-- Marca copyright/año esquina inferior izquierda (simétrica) -->
+  <text x="60" y="595"
+        font-family="'Courier New', 'Courier', monospace"
+        font-size="10"
+        fill="#7F7869"
+        text-anchor="start"
+        letter-spacing="2">
+    MMXXVI
+  </text>
+</svg>

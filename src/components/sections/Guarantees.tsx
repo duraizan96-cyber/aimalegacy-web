@@ -78,14 +78,37 @@ export function Guarantees() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge icon={<ShieldCheck className="h-3.5 w-3.5" />}>
-            Garantías de Aima Legacy
+            Garantías
           </SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Automatización IA con{' '}
-            <span className="text-gradient-accent">garantía real</span>
+          <h2
+            className="mt-10 text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
+            Automatización con{' '}
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              garantía real
+            </span>
+            .
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-white/50">
-            <span className="text-white/75 font-semibold">Izan Dura</span> firma personalmente cada diagnóstico y cada automatización entregada. Plan A/B/C/D en cada sistema, revisión de ciberseguridad previa y soporte continuo. Sin humo, sin excusas.
+          <p className="mt-8 max-w-xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            <span className="text-[#F5EFE0]">Izan Dura</span> firma personalmente cada
+            diagnóstico y cada automatización entregada. Plan A/B/C/D en cada sistema,
+            revisión de ciberseguridad previa y soporte continuo. Sin humo, sin excusas.
           </p>
         </ScrollReveal>
 

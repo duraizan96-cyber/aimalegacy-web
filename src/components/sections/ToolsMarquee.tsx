@@ -40,9 +40,9 @@ export function ToolsMarquee() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.05] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.05] to-transparent" />
 
-      <div className="mb-4 text-center">
-        <span className="text-[10px] font-semibold tracking-[0.25em] text-white/20 uppercase">
-          Herramientas que integramos
+      <div className="mb-6 text-center">
+        <span className="text-[10px] font-medium tracking-[0.28em] text-[#7F7869] uppercase">
+          Stack de integraciones
         </span>
       </div>
 

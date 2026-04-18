@@ -16,9 +16,9 @@ export function Navbar() {
   const location = useLocation()
   const isLanding = location.pathname === '/'
   const { scrollY } = useScroll()
-  const bgOpacity = useTransform(scrollY, [0, 80], [0, 0.95])
-  const blurAmount = useTransform(scrollY, [0, 80], [0, 20])
-  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.12])
+  const bgOpacity = useTransform(scrollY, [0, 80], [0, 0.92])
+  const blurAmount = useTransform(scrollY, [0, 80], [0, 22])
+  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.14])
 
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 768) setMobileOpen(false) }
@@ -36,42 +36,58 @@ export function Navbar() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+        transition={{ duration: 0.9, ease: [0.32, 0.72, 0, 1] }}
         className="fixed top-0 left-0 right-0 z-50"
       >
         <motion.div
           className="absolute inset-0"
           style={{
-            backgroundColor: `rgba(5, 6, 26, ${bgOpacity})`,
+            backgroundColor: `rgba(8, 7, 11, ${bgOpacity})`,
             backdropFilter: `blur(${blurAmount}px)`,
             WebkitBackdropFilter: `blur(${blurAmount}px)`,
-            borderBottom: `1px solid rgba(83, 58, 253, ${borderOpacity})`,
+            borderBottom: `1px solid rgba(201, 168, 106, ${borderOpacity})`,
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
-            <Link to="/" aria-label="Aima Legacy — Inicio" className="flex items-center gap-3 group relative z-10 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            {/* Wordmark */}
+            <Link
+              to="/"
+              aria-label="Aima Legacy — Inicio"
+              className="flex items-center gap-3 group relative z-10 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A86A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#08070B]"
+            >
               <div className="relative">
                 <img
                   src="/logo-aima.jpg"
-                  alt="Aima Legacy — Logo"
-                  width="40"
-                  height="40"
+                  alt="Aima Legacy — Estudio de sistemas de IA"
+                  width="36"
+                  height="36"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="h-10 w-10 rounded-xl object-cover shadow-[0_0_20px_rgba(83,58,253,0.2)] group-hover:shadow-[0_0_30px_rgba(83,58,253,0.45)] transition-all duration-300 group-hover:scale-105"
+                  className="h-9 w-9 rounded-lg object-cover transition-all duration-500"
+                  style={{
+                    boxShadow:
+                      '0 0 0 1px rgba(201, 168, 106, 0.25), 0 0 24px -8px rgba(232, 213, 168, 0.2)',
+                  }}
                 />
-                <div className="absolute inset-0 rounded-xl border border-accent/20 group-hover:border-accent/40 transition-colors" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-[0.2em] text-white uppercase font-[family-name:var(--font-display)]">
-                  AIMA
+              <div className="flex flex-col leading-none">
+                <span
+                  className="text-[12px] tracking-[0.24em] uppercase text-[#F5EFE0] font-medium"
+                >
+                  Aima Legacy
                 </span>
-                <span className="text-[9px] font-medium tracking-[0.35em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
-                  Legacy
+                <span
+                  className="mt-1 text-[9px] tracking-[0.28em] uppercase text-[#C9A86A] font-medium"
+                  style={{
+                    fontFamily: 'var(--font-editorial)',
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                  }}
+                >
+                  Estudio de IA
                 </span>
               </div>
             </Link>
@@ -82,24 +98,30 @@ export function Navbar() {
                 const isRoute = link.href.startsWith('/')
                 const isAnchor = link.href.startsWith('#')
                 const anchorHref = isAnchor && !isLanding ? `/${link.href}` : link.href
+                const linkClass =
+                  'relative px-4 py-2 text-[13px] text-[#C7BFB1] hover:text-[#F5EFE0] transition-colors duration-300 tracking-[0.02em] group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A86A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#08070B]'
 
                 return isRoute ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                  >
+                  <Link key={link.href} to={link.href} className={linkClass}>
                     {link.label}
-                    <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <span
+                      className="absolute bottom-1 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                      style={{
+                        background:
+                          'linear-gradient(90deg, transparent 0%, #C9A86A 50%, transparent 100%)',
+                      }}
+                    />
                   </Link>
                 ) : (
-                  <a
-                    key={link.href}
-                    href={anchorHref}
-                    className="relative px-4 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide group rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                  >
+                  <a key={link.href} href={anchorHref} className={linkClass}>
                     {link.label}
-                    <span className="absolute bottom-0 left-4 right-4 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    <span
+                      className="absolute bottom-1 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+                      style={{
+                        background:
+                          'linear-gradient(90deg, transparent 0%, #C9A86A 50%, transparent 100%)',
+                      }}
+                    />
                   </a>
                 )
               })}
@@ -118,16 +140,16 @@ export function Navbar() {
               aria-label={mobileOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
-              className="md:hidden relative z-10 p-3 -m-1 text-white/60 hover:text-accent transition-colors cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="md:hidden relative z-10 p-3 -m-1 text-[#C7BFB1] hover:text-[#E8D5A8] transition-colors cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A86A]"
             >
               <AnimatePresence mode="wait">
                 {mobileOpen ? (
                   <motion.div key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                    <X size={24} />
+                    <X size={22} strokeWidth={1.5} />
                   </motion.div>
                 ) : (
                   <motion.div key="m" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                    <Menu size={24} />
+                    <Menu size={22} strokeWidth={1.5} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -147,48 +169,74 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center"
+            style={{
+              backgroundColor: 'rgba(8, 7, 11, 0.97)',
+              backdropFilter: 'blur(24px)',
+              WebkitBackdropFilter: 'blur(24px)',
+            }}
           >
-            {/* Logo in mobile menu */}
+            {/* Logo */}
             <motion.img
               src="/logo-aima.jpg"
-              alt="Aima Legacy — Logo"
-              width="64"
-              height="64"
-              initial={{ opacity: 0, scale: 0.8 }}
+              alt="Aima Legacy — Estudio de sistemas de IA"
+              width="56"
+              height="56"
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="h-16 w-16 rounded-2xl object-cover mb-10 shadow-[0_0_40px_rgba(83,58,253,0.3)]"
+              className="h-14 w-14 rounded-xl object-cover mb-12"
+              style={{
+                boxShadow: '0 0 0 1px rgba(201,168,106,0.25), 0 0 40px -8px rgba(232,213,168,0.25)',
+              }}
             />
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-8">
               {navLinks.map((link, i) => {
                 const isRoute = link.href.startsWith('/')
                 const isAnchor = link.href.startsWith('#')
                 const anchorHref = isAnchor && !isLanding ? `/${link.href}` : link.href
                 const motionProps = {
-                  initial: { opacity: 0, y: 20 },
+                  initial: { opacity: 0, y: 16 },
                   animate: { opacity: 1, y: 0 },
                   exit: { opacity: 0, y: 10 },
-                  transition: { delay: i * 0.08, duration: 0.3 },
-                  className: "text-2xl font-semibold text-white/60 hover:text-accent transition-colors",
+                  transition: { delay: i * 0.07, duration: 0.4, ease: [0.32, 0.72, 0, 1] as const },
+                }
+                const linkClass =
+                  'text-[28px] text-[#C7BFB1] hover:text-[#E8D5A8] transition-colors duration-300'
+                const linkStyle = {
+                  fontFamily: 'var(--font-editorial)',
+                  fontWeight: 300,
+                  letterSpacing: '-0.015em',
                 }
 
                 return isRoute ? (
                   <motion.div key={link.href} {...motionProps}>
-                    <Link to={link.href} onClick={() => setMobileOpen(false)} className={motionProps.className}>
+                    <Link
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={linkClass}
+                      style={linkStyle}
+                    >
                       {link.label}
                     </Link>
                   </motion.div>
                 ) : (
-                  <motion.a key={link.href} href={anchorHref} onClick={() => setMobileOpen(false)} {...motionProps}>
+                  <motion.a
+                    key={link.href}
+                    href={anchorHref}
+                    onClick={() => setMobileOpen(false)}
+                    className={linkClass}
+                    style={linkStyle}
+                    {...motionProps}
+                  >
                     {link.label}
                   </motion.a>
                 )
               })}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.3 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
                 className="mt-6"
               >
                 <GlowButton

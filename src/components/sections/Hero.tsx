@@ -1,58 +1,55 @@
-import { useEffect, useState, lazy, Suspense, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
 import { ArrowRight, Mic } from 'lucide-react'
 import { GlowButton } from '../ui/GlowButton'
 
-const ParticleField = lazy(() =>
-  import('../ui/ParticleField').then((m) => ({ default: m.ParticleField }))
-)
+/**
+ * Hero — "Obsidian Couture"
+ * Editorial premium. Cormorant italic display · warm obsidian · champagne gold.
+ * Reference: Tom Ford · Aesop · Koto Studio · La Tribu Divisual.
+ */
 
-const rotatingWords = [
-  'automatizado',
-  'optimizado',
-  'potenciado',
-  'digitalizado',
-  'escalado',
-]
+const rotatingWords = ['automatizado', 'optimizado', 'escalado']
 
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
-  },
-}
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.8, ease: [0.25, 0.4, 0.25, 1] as const },
-  },
-}
-
-function AnimatedStat({ value, label, sub }: { value: string; label: string; sub: string }) {
+function Stat({
+  value,
+  label,
+  sub,
+  delay,
+}: {
+  value: string
+  label: string
+  sub: string
+  delay: number
+}) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-50px' })
+  const inView = useInView(ref, { once: true, margin: '-40px' })
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 14 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="flex flex-col items-center py-7 px-4"
+      transition={{ duration: 0.7, delay, ease: [0.32, 0.72, 0, 1] }}
+      className="relative"
     >
-      <span className="text-3xl sm:text-4xl font-bold text-gradient-accent-static font-[family-name:var(--font-display)]">
+      <span className="block h-px w-8 bg-[#C9A86A]" />
+      <div
+        className="mt-5 text-[40px] sm:text-[48px] text-[#F5EFE0] leading-none"
+        style={{
+          fontFamily: 'var(--font-editorial)',
+          fontStyle: 'italic',
+          fontWeight: 400,
+          letterSpacing: '-0.02em',
+          fontVariantNumeric: 'lining-nums tabular-nums',
+        }}
+      >
         {value}
-      </span>
-      <span className="mt-1.5 text-xs font-medium text-white/60 tracking-wider uppercase">
+      </div>
+      <div className="mt-3 text-[11px] uppercase tracking-[0.2em] text-[#C7BFB1] font-medium">
         {label}
-      </span>
-      <span className="text-[10px] text-white/30 mt-0.5 hidden sm:block">
-        {sub}
-      </span>
+      </div>
+      <div className="text-[12px] text-[#7F7869] mt-1.5 leading-relaxed">{sub}</div>
     </motion.div>
   )
 }
@@ -60,176 +57,241 @@ function AnimatedStat({ value, label, sub }: { value: string; label: string; sub
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
   const { scrollY } = useScroll()
-  const bgY = useTransform(scrollY, [0, 600], [0, 150])
-  const contentY = useTransform(scrollY, [0, 600], [0, -60])
-  const opacity = useTransform(scrollY, [0, 400], [1, 0])
+  const contentY = useTransform(scrollY, [0, 600], [0, -40])
+  const opacity = useTransform(scrollY, [0, 500], [1, 0])
 
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length)
-    }, 2800)
+    }, 3200)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Volumetric light layers */}
-      <div className="absolute inset-0 pointer-events-none isolate">
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rotate-[-12deg] bg-gradient-to-br from-accent/[0.07] via-transparent to-transparent blur-[120px]" />
-        <div className="absolute bottom-[30%] right-[20%] w-[500px] h-[400px] rotate-[25deg] bg-gradient-to-tl from-blue/[0.05] via-transparent to-transparent blur-[100px]" />
-        <div className="absolute top-[60%] left-[15%] w-[400px] h-[400px] bg-gradient-to-r from-accent/[0.04] to-transparent blur-[80px] rounded-full" />
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden pt-28 lg:pt-32 pb-24">
+      {/* ——— Cinematic lighting ——— */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Primary warm gold light (top-right, like Tom Ford key light) */}
+        <div
+          className="absolute -top-40 -right-20 w-[1100px] h-[900px]"
+          style={{
+            background:
+              'radial-gradient(ellipse at center, rgba(232,213,168,0.16) 0%, rgba(201,168,106,0.07) 30%, transparent 70%)',
+            filter: 'blur(70px)',
+          }}
+        />
+        {/* Sapphire fill light (bottom-left, subtle tech undertone from logo) */}
+        <div
+          className="absolute -bottom-20 -left-20 w-[800px] h-[700px] opacity-70"
+          style={{
+            background:
+              'radial-gradient(ellipse at center, rgba(30,127,217,0.09) 0%, transparent 65%)',
+            filter: 'blur(90px)',
+          }}
+        />
+        {/* Editorial grid hairlines — very faint */}
+        <div
+          className="absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(245,239,224,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(245,239,224,0.035) 1px, transparent 1px)',
+            backgroundSize: '96px 96px',
+            maskImage:
+              'radial-gradient(ellipse 70% 55% at 50% 45%, black 30%, transparent 85%)',
+            WebkitMaskImage:
+              'radial-gradient(ellipse 70% 55% at 50% 45%, black 30%, transparent 85%)',
+          }}
+        />
+        {/* Warm floor gradient */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[45vh]"
+          style={{
+            background:
+              'linear-gradient(to top, rgba(232,213,168,0.035) 0%, transparent 100%)',
+          }}
+        />
       </div>
 
-      {/* Cinematic background — editorial gold light rays */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: 'url(/hero-bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.15,
-          mixBlendMode: 'screen',
-        }}
-      />
-
-      {/* Particle background with parallax */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0">
-        <Suspense fallback={null}>
-          <ParticleField />
-        </Suspense>
-      </motion.div>
-
-      {/* Single editorial accent — Ferrari principle: sparseness of light */}
-      <div
-        className="absolute top-[35%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(83,58,253,0.06) 0%, rgba(83,58,253,0.015) 35%, transparent 70%)',
-          filter: 'blur(100px)',
-        }}
-      />
-
-      {/* Content */}
+      {/* ——— Content ——— */}
       <motion.div
         style={{ y: contentY, opacity }}
-        className="relative z-10 mx-auto max-w-5xl px-6 text-center pt-20"
+        className="relative z-10 mx-auto max-w-6xl px-6 lg:px-10 w-full"
       >
-        <motion.div variants={stagger} initial="hidden" animate="visible">
-          {/* Editorial eyebrow — Ferrari tracking */}
-          <motion.p
-            variants={fadeUp}
-            className="mb-10 text-[10px] uppercase tracking-[0.4em] text-accent/70 font-medium"
+        <div className="max-w-[900px]">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.1 }}
+            className="flex items-center gap-4 mb-12"
           >
-            <span className="inline-block h-px w-8 align-middle bg-accent/40 mr-3" />
-            Automatización con IA · Desde España
-          </motion.p>
+            <span className="h-px w-12 bg-[#C9A86A]/70" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#C9A86A]">
+              Aima Legacy — Estudio de IA
+            </span>
+          </motion.div>
 
-          {/* Headline — no badge, clean and big */}
+          {/* Headline — editorial mixed typography */}
           <motion.h1
-            variants={fadeUp}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-light leading-[0.9] tracking-tight"
-            style={{ fontFamily: 'var(--font-editorial)' }}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.3, ease: [0.32, 0.72, 0, 1] }}
+            className="text-[52px] sm:text-[76px] md:text-[100px] lg:text-[120px] leading-[0.92]"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.025em',
+            }}
           >
-            <span className="text-white/90 font-light">Tu negocio</span>
-            <br />
-            <span className="relative inline-block w-full h-[1.15em]">
-              {/* Static keyword always in DOM for crawlers/SEO */}
+            <span className="block text-[#F5EFE0]">Tu negocio,</span>
+            <span className="relative inline-block align-baseline">
+              {/* SEO proxy for rotating word */}
               <span className="sr-only">automatizado</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={wordIndex}
-                  initial={{ opacity: 0, y: 30, rotateX: -40 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  exit={{ opacity: 0, y: -30, rotateX: 40 }}
-                  transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+                  initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -18, filter: 'blur(6px)' }}
+                  transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
                   aria-hidden="true"
-                  className="text-gradient-accent italic absolute inset-0"
+                  className="inline-block"
+                  style={{
+                    fontStyle: 'italic',
+                    fontWeight: 400,
+                    background:
+                      'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                    WebkitBackgroundClip: 'text',
+                    backgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter:
+                      'drop-shadow(0 0 24px rgba(232, 213, 168, 0.28)) drop-shadow(0 0 60px rgba(201, 168, 106, 0.15))',
+                  }}
                 >
-                  {rotatingWords[wordIndex]}
+                  {rotatingWords[wordIndex]}.
                 </motion.span>
               </AnimatePresence>
             </span>
-            <br />
-            <span className="text-white/90 font-light">con IA</span>
+            <span className="block text-[#C7BFB1]">Tu equipo, liberado.</span>
           </motion.h1>
 
-          {/* Accent line under headline */}
-          <motion.div variants={fadeUp} className="flex justify-center mt-6">
-            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-accent to-accent-light shadow-[0_0_12px_rgba(83,58,253,0.5)]" />
-          </motion.div>
+          {/* Gold divider */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 1.1, ease: [0.32, 0.72, 0, 1] }}
+            className="mt-12 h-px w-28 origin-left"
+            style={{
+              background:
+                'linear-gradient(90deg, #C9A86A 0%, rgba(201,168,106,0.1) 100%)',
+            }}
+          />
 
-          {/* Subtitle — sector-agnostic, premium B2B */}
+          {/* Sub-copy */}
           <motion.p
-            variants={fadeUp}
-            className="mt-8 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-white/70 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mt-10 max-w-xl text-[17px] md:text-[18px] leading-[1.6] text-[#C7BFB1]"
           >
-            Diseñamos sistemas de IA a medida para <strong className="text-white/90 font-semibold">empresas y pymes en España</strong> que quieren ordenar procesos, recuperar horas y escalar sin añadir plantilla.
-            <span className="block mt-2 text-white/45">
-              Diagnóstico primero. Implementación después. Resultados medibles.
-            </span>
+            Diseñamos sistemas de IA a medida para empresas y pymes en España que
+            quieren ordenar procesos, recuperar horas y escalar{' '}
+            <span className="text-[#F5EFE0]">sin añadir plantilla.</span>
           </motion.p>
 
-          {/* Founder credit — visible E-E-A-T signal */}
+          {/* Founder signature — editorial italic */}
           <motion.p
-            variants={fadeUp}
-            className="mt-4 text-xs uppercase tracking-[0.2em] text-white/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.9, delay: 1.5 }}
+            className="mt-7 text-[18px] text-[#C9A86A]"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              letterSpacing: '-0.005em',
+            }}
           >
-            Por <span className="text-accent/80 font-semibold">Izan Dura</span> · Fundador de Aima Legacy
+            — Izan Dura, fundador.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            variants={fadeUp}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 1.7 }}
+            className="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-3"
           >
-            <GlowButton href="#demo" variant="primary">
-              <Mic className="h-4 w-4" />
-              Habla con Eric
-              <ArrowRight className="h-4 w-4" />
-            </GlowButton>
-            <GlowButton href="#contacto" variant="secondary">
+            <GlowButton href="#contacto" variant="primary">
               Solicitar Diagnóstico
+              <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
+            </GlowButton>
+            <GlowButton href="#demo" variant="secondary">
+              <Mic className="h-4 w-4" strokeWidth={1.8} />
+              Habla con Eric
+              <span className="relative inline-flex h-1.5 w-1.5 ml-1">
+                <span className="absolute inset-0 rounded-full bg-[#4DD2FF] animate-ping opacity-60" />
+                <span className="relative rounded-full h-1.5 w-1.5 bg-[#4DD2FF] shadow-[0_0_8px_rgba(77,210,255,0.7)]" />
+              </span>
             </GlowButton>
           </motion.div>
 
-          {/* Stats strip — editorial hairlines, no card chrome */}
+          {/* Stats — editorial serif numbers with gold marks */}
           <motion.div
-            variants={fadeUp}
-            className="mt-24 grid grid-cols-3 border-y border-white/[0.08]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="mt-24 lg:mt-28 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-14 max-w-3xl"
           >
-            <div className="border-r border-white/[0.08]">
-              <AnimatedStat value="−40%" label="Costes operativos" sub="en tareas repetitivas" />
-            </div>
-            <div className="border-r border-white/[0.08]">
-              <AnimatedStat value="+10h" label="Por semana" sub="tiempo recuperado" />
-            </div>
-            <div>
-              <AnimatedStat value="24/7" label="Siempre activo" sub="sin intervención" />
-            </div>
+            <Stat
+              value="−40%"
+              label="Costes operativos"
+              sub="en tareas repetitivas"
+              delay={0}
+            />
+            <Stat
+              value="+10h"
+              label="Por semana"
+              sub="tiempo recuperado"
+              delay={0.1}
+            />
+            <Stat
+              value="24/7"
+              label="Siempre activo"
+              sub="sin intervención manual"
+              delay={0.2}
+            />
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        transition={{ delay: 2.4, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
       >
+        <span className="text-[9px] tracking-[0.35em] uppercase text-[#7F7869] font-medium">
+          Descubrir
+        </span>
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-[9px] tracking-[0.3em] uppercase text-white/30 font-medium">
-            Descubrir
-          </span>
-          <div className="h-10 w-px bg-gradient-to-b from-accent/40 to-transparent" />
-        </motion.div>
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
+          className="h-8 w-px"
+          style={{
+            background: 'linear-gradient(to bottom, #C9A86A, transparent)',
+          }}
+        />
       </motion.div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-[1]" />
+      {/* Bottom fade into next section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none z-[1]"
+        style={{
+          background: 'linear-gradient(to top, #08070B 0%, transparent 100%)',
+        }}
+      />
     </section>
   )
 }

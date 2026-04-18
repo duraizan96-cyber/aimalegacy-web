@@ -173,13 +173,34 @@ export function Sectors() {
         {/* Header — editorial */}
         <ScrollReveal className="text-center mb-14">
           <SectionBadge>Qué automatizamos</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+          <h2
+            className="mt-10 text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
             Procesos, no promesas.{' '}
-            <span className="text-gradient-accent">Resultados medibles.</span>
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              Resultados medibles.
+            </span>
           </h2>
-          <p className="mt-5 max-w-2xl mx-auto text-white/55 leading-relaxed">
-            Diseñamos sistemas de IA para procesos concretos que existen en cualquier empresa.
-            Sin ataduras de sector. Si tu proceso genera fricción, lo ordenamos, lo optimizamos y lo automatizamos.
+          <p className="mt-8 max-w-2xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            Diseñamos sistemas de IA para procesos concretos que existen en cualquier
+            empresa. Sin ataduras de sector. Si tu proceso genera fricción, lo ordenamos,
+            lo optimizamos y lo automatizamos.
           </p>
         </ScrollReveal>
 

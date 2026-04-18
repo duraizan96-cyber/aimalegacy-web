@@ -1,23 +1,24 @@
 # Aima Legacy
 
-> Consultoría de automatización con IA para negocios locales en España. Ordenamos tu empresa, detectamos oportunidades reales de IA, evaluamos riesgos y te damos un roadmap claro antes de implementar nada.
+> Estudio de sistemas de IA para empresas y pymes en España. Ordenamos tu empresa, detectamos oportunidades reales de automatización e IA, evaluamos riesgos y entregamos un roadmap claro antes de implementar nada.
 
-Aima Legacy ayuda a clínicas, restaurantes, peluquerías, tatuadores y otros negocios locales a optimizar procesos y automatizar con inteligencia artificial. Fundada por Izan Dura Merenciano. Nuestra filosofía: **primero optimizar, luego automatizar**. Si automatizas un proceso ineficiente, la IA devuelve super-ineficiencia.
+Aima Legacy diseña sistemas de inteligencia artificial a medida para empresas y pymes en España que quieren trabajar mejor, gastar menos y escalar sin contratar más personal. Sector-agnóstico: lo que importa es el proceso, no el sector. Fundado por Izan Dura Merenciano. Filosofía: **primero optimizar, luego automatizar**. Automatizar un proceso ineficiente con IA devuelve super-ineficiencia.
 
-La primera oferta del modelo es siempre un **Diagnóstico Inicial** — un producto cerrado, no una reunión gratis. El diagnóstico se estructura en 4 fases estrictas y no incluye implementación (eso es intencional: mezclar diagnóstico e implementación diluye el valor).
+La primera oferta del estudio es siempre un **Diagnóstico Inicial** — un producto cerrado, no una reunión gratis. El diagnóstico se estructura en 4 fases estrictas y no incluye implementación (eso es intencional: mezclar diagnóstico e implementación diluye el valor).
 
 ## Services
 
-- [Diagnóstico Inicial](https://aimalegacy.es/#servicios): Producto cerrado de 4 fases (BPMN, Mejoras, Ciberseguridad, Roadmap). Ordena tu empresa antes de implementar.
+- [Diagnóstico Inicial](https://aimalegacy.es/#servicios): Producto cerrado de 4 fases (BPMN, Mejoras, Ciberseguridad, Roadmap). Ordena tu empresa antes de implementar nada.
 - [Optimización de procesos](https://aimalegacy.es/#servicios): Mapeo BPMN de marketing, ventas, delivery y administración. Detectamos caos, fricción y cuellos de botella.
-- [Automatización con IA](https://aimalegacy.es/#servicios): Implementación de workflows, agentes y pipelines — solo después de un diagnóstico previo.
+- [Automatización con IA](https://aimalegacy.es/#servicios): Workflows, agentes e integraciones a medida — solo después de un diagnóstico previo.
+- [Agentes de IA](https://aimalegacy.es/#servicios): Asistentes conversacionales, voz y sistemas autónomos entrenados sobre la operación del cliente.
 - [Revisión de ciberseguridad](https://aimalegacy.es/#servicios): Cada oportunidad se evalúa desde accesos, datos, dependencias y riesgos. Si no es seguro, no se propone.
 - [Roadmap a medida](https://aimalegacy.es/#servicios): Priorización impacto vs riesgo, con el porqué de cada fase explicado.
 
 ## Process
 
-- [Cómo trabajamos](https://aimalegacy.es/#proceso): Las 4 fases del Diagnóstico Inicial explicadas en detalle.
-- [Fase 1 — BPMN](https://aimalegacy.es/#proceso): Mapeo de procesos reales. Analizamos marketing, ventas, delivery y admin. Todavía no hablamos de IA.
+- [Cómo trabajamos](https://aimalegacy.es/#proceso): Las 4 fases del Diagnóstico Inicial.
+- [Fase 1 — BPMN](https://aimalegacy.es/#proceso): Mapeo de procesos reales de marketing, ventas, delivery y admin. Todavía no hablamos de IA.
 - [Fase 2 — Mejoras y oportunidades](https://aimalegacy.es/#proceso): Optimizamos pasos innecesarios, detectamos cuellos de botella y oportunidades de automatización e IA (solo si tienen sentido).
 - [Fase 3 — Ciberseguridad](https://aimalegacy.es/#proceso): Revisamos cada oportunidad desde accesos, datos, dependencias y riesgos.
 - [Fase 4 — Roadmap](https://aimalegacy.es/#proceso): Ordenamos oportunidades, priorizamos impacto vs riesgo y explicamos el porqué de cada fase.
@@ -26,9 +27,19 @@ La primera oferta del modelo es siempre un **Diagnóstico Inicial** — un produ
 
 - **Primero optimizar, luego automatizar.** Automatizar un proceso ineficiente multiplica la ineficiencia.
 - **Diagnóstico antes de implementación.** Nunca implementamos sin un diagnóstico previo.
+- **Sector-agnóstico.** No vendemos por sector, vendemos por proceso. Si tu proceso genera fricción, lo ordenamos y lo automatizamos — sea cual sea tu industria.
 - **Garantía de sistemas con Plan A/B/C/D.** Todo sistema entregado incluye alternativas inmediatas si falla el componente principal. El cliente nunca se queda bloqueado.
 - **Vocabulario correcto:** usamos "diagnóstico" y "optimización de procesos", no "auditoría".
 - **Ciberseguridad no negociable.** Si una oportunidad no es segura, no se propone.
+
+## Stack de integraciones
+
+- Automatización: n8n, Make, Zapier
+- IA generativa: OpenAI GPT-4, Claude, Groq (inferencia)
+- Voz IA: ElevenLabs
+- CRM y datos: HubSpot, Airtable, Notion, Google Workspace
+- Mensajería: WhatsApp Business, Slack
+- Publicidad: Meta Ads, Google Ads
 
 ## FAQ
 
@@ -39,6 +50,7 @@ La primera oferta del modelo es siempre un **Diagnóstico Inicial** — un produ
 - [Contacto](https://aimalegacy.es/#contacto): Formulario de contacto y agendamiento del diagnóstico.
 - Email: izan@aimalegacy.es
 - Instagram: https://instagram.com/aimalegacy
+- LinkedIn: https://www.linkedin.com/in/izandura/
 - Fundador: Izan Dura Merenciano
 
 ## Optional

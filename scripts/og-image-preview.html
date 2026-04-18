@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>OG Image — Aima Legacy (Obsidian Couture)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --obsidian: #08070B;
+    --ivory: #F5EFE0;
+    --gold: #C9A86A;
+    --gold-leak: rgba(232, 213, 168, 0.16);
+    --muted: #7F7869;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    color: #888;
+  }
+
+  .toolbar {
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  button {
+    background: var(--gold);
+    color: var(--obsidian);
+    border: none;
+    padding: 10px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  button:hover { background: #e8c687; }
+  .note { font-size: 11px; color: #555; }
+
+  .canvas-wrap {
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+    background: var(--obsidian);
+  }
+
+  /* Canvas OG — 1200x630 exactos */
+  .og {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    background: var(--obsidian);
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    color: var(--ivory);
+  }
+
+  /* Light leak dorado difuso — top-right */
+  .og::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(
+      circle at center,
+      rgba(232, 213, 168, 0.22) 0%,
+      rgba(232, 213, 168, 0.10) 30%,
+      rgba(232, 213, 168, 0.03) 60%,
+      rgba(232, 213, 168, 0) 80%
+    );
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  /* Vignette editorial sutil */
+  .og::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 55%,
+      rgba(0, 0, 0, 0.35) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Eyebrow superior — OBSIDIAN COUTURE · EST. 2026 */
+  .eyebrow {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 4.5px;
+    z-index: 2;
+  }
+
+  /* Wordmark principal — AIMA LEGACY */
+  .wordmark {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 88px;
+    font-weight: 300;
+    color: var(--ivory);
+    letter-spacing: 0.15em;
+    text-indent: 0.15em; /* compensa centrado con tracking */
+    z-index: 2;
+  }
+
+  /* Hairline dorada */
+  .hairline {
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--gold) 50%,
+      transparent 100%
+    );
+    z-index: 2;
+  }
+
+  /* Tagline italic serif */
+  .tagline {
+    position: absolute;
+    top: 390px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    z-index: 2;
+  }
+
+  /* Mini-pill inferior — rango de clientes */
+  .footer-pill {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 2.9px;
+    z-index: 2;
+  }
+
+  /* Esquinas — URL y año romano */
+  .corner {
+    position: absolute;
+    bottom: 35px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    z-index: 2;
+  }
+  .corner-left  { left: 60px; }
+  .corner-right { right: 60px; }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button onclick="downloadImage()">⬇ DESCARGAR JPG (1200x630)</button>
+    <span class="note">→ Guarda el JPG en <code>public/og-image.jpg</code></span>
+  </div>
+
+  <div class="canvas-wrap">
+    <div class="og" id="ogCanvas">
+      <div class="eyebrow">OBSIDIAN COUTURE · EST. 2026</div>
+      <div class="wordmark">AIMA LEGACY</div>
+      <div class="hairline"></div>
+      <div class="tagline">Estudio de sistemas de IA</div>
+      <div class="footer-pill">— EMPRESAS Y PYMES EN ESPAÑA —</div>
+      <div class="corner corner-left">MMXXVI</div>
+      <div class="corner corner-right">AIMALEGACY.ES</div>
+    </div>
+  </div>
+
+  <!-- html2canvas para export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    async function downloadImage() {
+      const node = document.getElementById('ogCanvas');
+
+      // Esperamos a que las fuentes estén cargadas (crítico para evitar fallback serif)
+      await document.fonts.ready;
+
+      const canvas = await html2canvas(node, {
+        width: 1200,
+        height: 630,
+        scale: 1,
+        backgroundColor: '#08070B',
+        useCORS: true,
+        logging: false
+      });
+
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'og-image.jpg';
+        a.click();
+        URL.revokeObjectURL(url);
+      }, 'image/jpeg', 0.92);
+    }
+  </script>
+</body>
+</html>

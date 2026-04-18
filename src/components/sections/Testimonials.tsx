@@ -64,7 +64,6 @@ const proofPoints: Omit<ProofCardProps, 'delay'>[] = [
 ]
 
 const trustMetrics = [
-  { value: '1er', label: 'Cliente piloto sin coste' },
   { value: '48h', label: 'Propuesta en menos de' },
   { value: '24/7', label: 'Sistemas activos' },
   { value: '4', label: 'Fases del diagnóstico' },
@@ -84,13 +83,34 @@ export function Testimonials() {
         {/* Header */}
         <ScrollReveal className="text-center mb-16">
           <SectionBadge>Por qué confiar</SectionBadge>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Prueba real antes de{' '}
-            <span className="text-gradient-accent">comprometerte</span>
+          <h2
+            className="mt-10 text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
+            Prueba antes de{' '}
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              comprometerte
+            </span>
+            .
           </h2>
-          <p className="mt-4 max-w-xl mx-auto text-white/50">
-            Estamos abriendo los primeros proyectos de diagnóstico en 2026. Contacto directo
-            con Izan Dura — sin intermediarios, sin burocracia.
+          <p className="mt-8 max-w-xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            Estamos abriendo los primeros proyectos de diagnóstico en 2026. Contacto
+            directo con Izan Dura — sin intermediarios, sin burocracia.
           </p>
         </ScrollReveal>
 
@@ -106,7 +126,7 @@ export function Testimonials() {
           <ScrollReveal>
             <div className="relative rounded-2xl overflow-hidden border-beam border-beam-slow">
               <div className="relative rounded-2xl border border-white/[0.06] bg-white/[0.015] backdrop-blur-sm">
-                <div className="grid grid-cols-2 lg:grid-cols-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3">
                   {trustMetrics.map((m, i) => (
                     <motion.div
                       key={m.label}
@@ -114,8 +134,8 @@ export function Testimonials() {
                       animate={inView ? { opacity: 1, y: 0 } : {}}
                       transition={{ delay: i * 0.1, duration: 0.5 }}
                       className={`flex flex-col items-center py-6 px-4 ${
-                        i < trustMetrics.length - 1 ? 'lg:border-r border-white/[0.06]' : ''
-                      } ${i < 2 ? 'border-b lg:border-b-0 border-white/[0.06]' : ''}`}
+                        i < trustMetrics.length - 1 ? 'sm:border-r border-white/[0.06]' : ''
+                      } ${i < trustMetrics.length - 1 ? 'border-b sm:border-b-0 border-white/[0.06]' : ''}`}
                     >
                       <span className="text-2xl sm:text-3xl font-bold text-gradient-accent-static font-[family-name:var(--font-display)]">
                         {m.value}

@@ -63,13 +63,29 @@ export function TechStack() {
       <div className="h-px mx-auto max-w-xl bg-gradient-to-r from-transparent via-accent/30 to-transparent mb-12" />
 
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
-        <ScrollReveal className="text-center mb-12">
-          <span className="text-[11px] font-semibold tracking-[0.2em] text-accent/60 uppercase font-[family-name:var(--font-display)]">
-            Resultados reales con IA
-          </span>
-          <h2 className="mt-2 text-lg sm:text-xl font-semibold text-white/70">
+        <ScrollReveal className="text-center mb-14">
+          <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#C9A86A] mb-4">
+            Resultados reales
+          </p>
+          <h2
+            className="text-[22px] sm:text-[26px] lg:text-[30px] leading-[1.35] max-w-3xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.01em',
+              color: '#C7BFB1',
+            }}
+          >
             Lo que consiguen las empresas y pymes en España{' '}
-            <span className="text-gradient-accent-static">que automatizan con Aima Legacy</span>
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                color: '#F5EFE0',
+              }}
+            >
+              que automatizan con Aima Legacy.
+            </span>
           </h2>
         </ScrollReveal>
 

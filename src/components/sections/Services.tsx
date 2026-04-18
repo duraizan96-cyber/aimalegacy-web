@@ -154,14 +154,40 @@ export function Services() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
-        <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Servicios de automatización IA</SectionBadge>
-          <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
+        <ScrollReveal className="text-center mb-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#C9A86A] mb-8">
+            Servicios
+          </p>
+          <h2
+            ref={h2Ref}
+            className="text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
             Automatización con IA para{' '}
-            <span className="text-gradient-accent">empresas y pymes en España</span>
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              empresas y pymes en España
+            </span>
+            .
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            No vendemos tecnología. Resolvemos lo que frena cada día a tu operación — procesos desordenados, tareas manuales, atención saturada — para que tu empresa escale con menos esfuerzo.
+          <p className="mt-8 max-w-2xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            No vendemos tecnología. Resolvemos lo que frena cada día a tu operación —
+            procesos desordenados, tareas manuales, atención saturada — para que tu
+            empresa escale con menos esfuerzo.
           </p>
         </ScrollReveal>
 

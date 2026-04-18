@@ -4,3 +4,10 @@ dist
 *.local
 .DS_Store
 .claude
+
+# Security: never commit secrets
+.env
+.env.*
+*.pem
+*.key
+*.cert

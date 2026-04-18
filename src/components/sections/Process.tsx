@@ -94,14 +94,41 @@ export function Process() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <ScrollReveal className="text-center mb-16">
-          <SectionBadge>Proceso del diagnóstico IA en 4 fases</SectionBadge>
-          <h2 ref={h2Ref} className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Nuestro diagnóstico IA en{' '}
-            <span className="text-gradient-accent">4 fases</span>
+        <ScrollReveal className="text-center mb-20">
+          <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-[#C9A86A] mb-8">
+            Proceso — 4 fases
+          </p>
+          <h2
+            ref={h2Ref}
+            className="text-[36px] sm:text-[52px] lg:text-[68px] leading-[1.04] max-w-4xl mx-auto"
+            style={{
+              fontFamily: 'var(--font-editorial)',
+              fontWeight: 300,
+              letterSpacing: '-0.02em',
+              color: '#F5EFE0',
+            }}
+          >
+            Nuestro diagnóstico en{' '}
+            <span
+              style={{
+                fontStyle: 'italic',
+                fontWeight: 400,
+                background:
+                  'linear-gradient(180deg, #F0E3C0 0%, #E8D5A8 40%, #C9A86A 100%)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              cuatro fases
+            </span>
+            .
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-white/50">
-            Antes de automatizar, <span className="text-white/75 font-semibold">Izan Dura</span> y el equipo de Aima Legacy mapean tu operación con BPMN profesional. Así cada propuesta de inteligencia artificial tiene impacto real en tu P&amp;L.
+          <p className="mt-8 max-w-2xl mx-auto text-[16px] leading-[1.65] text-[#C7BFB1]">
+            Antes de automatizar,{' '}
+            <span className="text-[#F5EFE0]">Izan Dura</span> y el equipo de Aima Legacy
+            mapean tu operación con BPMN profesional. Así cada propuesta de inteligencia
+            artificial tiene impacto real en tu P&amp;L.
           </p>
         </ScrollReveal>
 
