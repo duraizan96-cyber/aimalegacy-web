@@ -450,30 +450,46 @@ h4 {
 .marquee-track:hover { animation-play-state: paused; }
 
 /* ============================
-   ERIC WIDGET — WARM SKIN
-   Sapphire primary (keeps intelligence code) · gold trim
+   ERIC WIDGET — OBSIDIAN COUTURE
+   Pure obsidian + champagne gold (no sapphire — editorial coherence)
    ============================ */
 
 elevenlabs-convai {
-  --el-primary-color: var(--color-sapphire) !important;
-  --el-background-color: var(--color-obsidian-700) !important;
+  --el-primary-color: var(--color-gold-deep) !important;
+  --el-background-color: var(--color-obsidian-800) !important;
   --el-text-color: var(--color-ink) !important;
-  --el-border-color: var(--color-hairline-strong) !important;
-  --el-border-radius: 16px !important;
+  --el-border-color: rgba(201, 168, 106, 0.22) !important;
+  --el-border-radius: 999px !important;
   --el-accent-color: var(--color-gold) !important;
 }
 
 elevenlabs-convai::part(button),
 elevenlabs-convai::part(trigger) {
   background: linear-gradient(180deg, var(--color-obsidian-700) 0%, var(--color-obsidian-800) 100%) !important;
-  border: 1px solid rgba(232, 213, 168, 0.32) !important;
+  border: 1px solid rgba(201, 168, 106, 0.35) !important;
+  border-radius: 999px !important;
   box-shadow:
-    inset 0 1px 0 rgba(245, 239, 224, 0.06),
-    0 0 0 1px var(--color-hairline),
-    0 10px 32px -8px rgba(232, 213, 168, 0.22),
-    0 0 50px -12px var(--color-sapphire-glow) !important;
+    inset 0 1px 0 rgba(245, 239, 224, 0.08),
+    0 0 0 1px rgba(232, 213, 168, 0.06),
+    0 10px 32px -8px rgba(0, 0, 0, 0.55),
+    0 0 36px -10px rgba(232, 213, 168, 0.32) !important;
   color: var(--color-gold-soft) !important;
   backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: border-color 320ms var(--ease-apple),
+              box-shadow 320ms var(--ease-apple),
+              transform 320ms var(--ease-apple) !important;
+}
+
+elevenlabs-convai::part(button):hover,
+elevenlabs-convai::part(trigger):hover {
+  border-color: rgba(232, 213, 168, 0.55) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(245, 239, 224, 0.12),
+    0 0 0 1px rgba(232, 213, 168, 0.14),
+    0 14px 40px -10px rgba(0, 0, 0, 0.65),
+    0 0 50px -8px rgba(232, 213, 168, 0.45) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* ============================
