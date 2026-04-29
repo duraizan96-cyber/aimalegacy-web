@@ -266,10 +266,10 @@ export function BlogPost() {
             puede ahorrarte +10h a la semana.
           </p>
           <a
-            href="/#contacto"
+            href="/diagnostico"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent via-accent-light to-accent text-black font-semibold shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_4px_50px_rgba(212,175,55,0.5)] transition-all duration-300"
           >
-            Solicitar Diagnostico
+            Solicitar Diagnóstico
           </a>
         </div>
       </article>

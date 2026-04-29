@@ -222,7 +222,7 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 1.7 }}
             className="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-3"
           >
-            <GlowButton href="#contacto" variant="primary">
+            <GlowButton href="/diagnostico" variant="primary">
               Solicitar Diagnóstico
               <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
             </GlowButton>

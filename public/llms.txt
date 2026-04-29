@@ -47,7 +47,7 @@ La primera oferta del estudio es siempre un **Diagnóstico Inicial** — un prod
 
 ## Contact
 
-- [Contacto](https://aimalegacy.es/#contacto): Formulario de contacto y agendamiento del diagnóstico.
+- [Solicitar Diagnóstico](https://aimalegacy.es/diagnostico): Formulario para solicitar el Diagnóstico Inicial. Respuesta en menos de 24h.
 - Email: izan@aimalegacy.es
 - Instagram: https://instagram.com/aimalegacy
 - LinkedIn: https://www.linkedin.com/in/izandura/

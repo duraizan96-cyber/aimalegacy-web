@@ -15,7 +15,7 @@ const footerLinks = [
     links: [
       { label: 'Proceso', href: '#proceso' },
       { label: 'Preguntas', href: '#faq' },
-      { label: 'Contacto', href: '#contacto' },
+      { label: 'Contacto', href: '/diagnostico' },
     ],
   },
   {

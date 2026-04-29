@@ -228,7 +228,7 @@ export function Sectors() {
           <p className="mt-10 text-center text-sm text-white/35">
             ¿Tienes un proceso específico en mente?{' '}
             <a
-              href="#contacto"
+              href="/diagnostico"
               className="text-accent/70 hover:text-accent transition-colors underline underline-offset-4 decoration-accent/20 hover:decoration-accent/60"
             >
               Cuéntanoslo en el diagnóstico
