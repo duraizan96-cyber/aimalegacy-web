@@ -129,7 +129,7 @@ export function Navbar() {
 
             {/* CTA */}
             <div className="hidden md:block">
-              <GlowButton href="#contacto" variant="primary">
+              <GlowButton href="/#contacto" variant="primary">
                 Solicitar Diagnóstico
               </GlowButton>
             </div>
@@ -240,7 +240,7 @@ export function Navbar() {
                 className="mt-6"
               >
                 <GlowButton
-                  href="#contacto"
+                  href="/#contacto"
                   variant="primary"
                   onClick={() => setMobileOpen(false)}
                 >
