@@ -10,8 +10,6 @@ import { ScrollProgress } from './components/ui/ScrollProgress'
 const Services = lazy(() => import('./components/sections/Services').then(m => ({ default: m.Services })))
 const LiveDemo = lazy(() => import('./components/sections/LiveDemo').then(m => ({ default: m.LiveDemo })))
 const Process = lazy(() => import('./components/sections/Process').then(m => ({ default: m.Process })))
-const SavingsCalculator = lazy(() => import('./components/sections/SavingsCalculator').then(m => ({ default: m.SavingsCalculator })))
-const PainPoints = lazy(() => import('./components/sections/PainPoints').then(m => ({ default: m.PainPoints })))
 const Testimonials = lazy(() => import('./components/sections/Testimonials').then(m => ({ default: m.Testimonials })))
 const FAQ = lazy(() => import('./components/sections/FAQ').then(m => ({ default: m.FAQ })))
 const CTA = lazy(() => import('./components/sections/CTA').then(m => ({ default: m.CTA })))
@@ -41,9 +39,7 @@ export default function App({ page }: AppProps) {
             <LiveDemo />
             <div className="section-divider mx-auto max-w-4xl" />
             <Process />
-            <SavingsCalculator />
             <div className="section-divider mx-auto max-w-4xl" />
-            <PainPoints />
             <Testimonials />
             <div className="section-divider mx-auto max-w-4xl" />
             <FAQ />
