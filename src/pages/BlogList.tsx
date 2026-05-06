@@ -128,7 +128,7 @@ export function BlogList() {
             <span className="text-gradient-accent">Aima Legacy</span>
           </h1>
           <p className="text-lg text-white-dim max-w-2xl">
-            Automatizacion, IA y estrategia para empresas y pymes. Articulos
+            Automatización, IA y estrategia para empresas y pymes. Artículos
             generados con inteligencia artificial y verificados por humanos.
           </p>
         </motion.div>
@@ -151,9 +151,9 @@ export function BlogList() {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <p className="text-xl text-white-dim mb-4">Todavia no hay articulos publicados.</p>
+            <p className="text-xl text-white-dim mb-4">Todavía no hay artículos publicados.</p>
             <p className="text-white-muted">
-              Los primeros articulos se generaran automaticamente. Vuelve pronto.
+              Los primeros artículos se generarán automáticamente. Vuelve pronto.
             </p>
           </motion.div>
         ) : (

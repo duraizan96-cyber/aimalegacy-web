@@ -55,7 +55,7 @@ La primera oferta del estudio es siempre un **Diagnóstico Inicial** — un prod
 
 ## Optional
 
-- [Política de privacidad](https://aimalegacy.es/privacidad)
-- [Términos y condiciones](https://aimalegacy.es/terminos)
-- [Política de cookies](https://aimalegacy.es/cookies)
+- [Política de privacidad](https://aimalegacy.es/privacidad.html)
+- [Aviso legal](https://aimalegacy.es/aviso-legal.html)
+- [Política de cookies](https://aimalegacy.es/cookies.html)
 - [Sitemap](https://aimalegacy.es/sitemap.xml)

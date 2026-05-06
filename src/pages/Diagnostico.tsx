@@ -395,12 +395,14 @@ export default function Diagnostico() {
                       <span>
                         Acepto el tratamiento de mis datos para responder a esta
                         solicitud, conforme a la{' '}
-                        <Link
-                          to="/privacy"
+                        <a
+                          href="/privacidad.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-[#C9A86A] hover:text-[#E8D5A8] underline-offset-2 hover:underline"
                         >
                           política de privacidad
-                        </Link>
+                        </a>
                         .
                       </span>
                     </label>
