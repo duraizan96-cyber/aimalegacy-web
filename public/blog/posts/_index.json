@@ -1,56 +1,5 @@
 [
   {
-    "slug": "ia-para-pymes",
-    "title": "IA para pymes: Automatiza tu negocio en 2026",
-    "metaDescription": "Descubre cómo implementar IA para pymes y automatiza tu negocio. Guía práctica 2026 para optimizar costes y aumentar productividad.",
-    "coverImage": "https://images.pexels.com/photos/34233738/pexels-photo-34233738.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "publishedAt": "2026-05-05T10:11:24.872Z",
-    "readingTime": 2,
-    "tags": [
-      "IA para Pymes",
-      "Automatización empresarial",
-      "Inteligencia Artificial PYME",
-      "Transformación digital",
-      "Herramientas IA económicas"
-    ]
-  },
-  {
-    "slug": "que-es-n8n-automatizacion-flujos",
-    "title": "N8n: La Automatización que Revoluciona las PyMEs",
-    "metaDescription": "Descubre cómo n8n revoluciona la automatización en PyMEs españolas. Automatiza tareas, ahorra tiempo y potencia tu productividad empresarial hoy mismo.",
-    "coverImage": "https://i.blogs.es/0ac42e/n8n/650_1200.jpeg",
-    "publishedAt": "2026-05-05T09:11:16.435Z",
-    "readingTime": 2,
-    "tags": [
-      "Automatización IA",
-      "Pymes España"
-    ]
-  },
-  {
-    "slug": "n8n-automatizacion-procesos-empresas",
-    "title": "n8n: Automatización sin código para PyMEs españolas",
-    "metaDescription": "Automatiza tus procesos con n8n sin código. Descubre cómo miles de PyMEs españolas aumentan productividad y reducen costos administrativos. ¡Empieza hoy!",
-    "coverImage": "https://dataseoacademy.com/wp-content/uploads/2025/05/Captura-de-pantalla-2025-05-14-a-las-5.13.01%E2%80%AFp.m-1024x529.png",
-    "publishedAt": "2026-05-04T20:46:51.022Z",
-    "readingTime": 2,
-    "tags": [
-      "Automatización IA",
-      "Pymes España"
-    ]
-  },
-  {
-    "slug": "automatizacion-ia-para-pymes",
-    "title": "Automatizacion IA PYMES",
-    "metaDescription": "Descubre cómo la automatización IA para PYMEs en España puede revolucionar tu negocio con n8n, reduciendo tareas manuales y ahorrando tiempo valioso, conoce más sobre automatizacion ia pymes.",
-    "coverImage": "https://tecnologiaparatuempresa.ituser.es/files/202310/inteligencia-artificial-almacen-pyme.jpg",
-    "publishedAt": "2026-05-04T17:47:32.277Z",
-    "readingTime": 1,
-    "tags": [
-      "Automatización IA",
-      "Pymes España"
-    ]
-  },
-  {
     "slug": "automatizar-citas-clinica-dental-whatsapp-ia",
     "title": "Cómo automatizar las citas de tu clínica dental con WhatsApp e IA",
     "metaDescription": "Descubre cómo una clínica dental puede automatizar reservas, confirmaciones y recordatorios de citas por WhatsApp usando inteligencia artificial. Ahorra +8h/semana sin cambiar cómo trabajas.",
@@ -91,15 +40,15 @@
   },
   {
     "slug": "whatsapp-business-automatico-atencion-clientes-24-7",
-    "title": "WhatsApp Business automático: cómo atender clientes 24/7 sin contratar a nadie",
-    "metaDescription": "Guía completa para configurar WhatsApp Business con IA en tu empresa: respuestas automáticas, gestión de consultas, reservas y seguimiento de clientes sin intervención humana.",
+    "title": "WhatsApp Business automatizado: atiende a tus clientes 24/7 sin contratar personal extra",
+    "metaDescription": "Aprende a automatizar WhatsApp Business con IA para responder clientes a cualquier hora, gestionar consultas frecuentes y convertir más leads sin aumentar tu equipo. Guía para empresas y pymes en España.",
     "coverImage": "",
     "publishedAt": "2026-03-28T08:00:00Z",
-    "readingTime": 9,
+    "readingTime": 7,
     "tags": [
       "WhatsApp Business",
-      "Atención al cliente",
-      "Automatización"
+      "Atención al Cliente",
+      "Automatización IA"
     ]
   }
 ]
